@@ -11,8 +11,8 @@ echo "logging in to huggingface hub"
 hf auth login --token "$HF_TOKEN"
 export HUGGING_FACE_HUB_TOKEN="$HF_TOKEN"
 
-#echo "removing bloat model files to save space"
-#rm -rf /workspace/ComfyUI/models/checkpoints/*.safetensors
+echo "removing bloat model files to save space"
+rm -rf /workspace/ComfyUI/models/checkpoints/*.safetensors
 
 echo "."
 echo "."

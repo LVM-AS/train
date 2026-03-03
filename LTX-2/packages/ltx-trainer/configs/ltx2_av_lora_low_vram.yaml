@@ -202,9 +202,11 @@ validation:
   # Provide prompts representative of your training data
   # LTX-2 prefers longer, detailed prompts that describe both visual content and audio
   prompts:
-    - "A woman with long blonde hair poses in public street, smiling naturally to the camera as she twirls her hair and bellydances slowly. Soft natural light streams down from above, casting warm shadows across the street. The audio captures the gentle sound of a street and people walking past her, ambient street noise with occasional distant bird chirps."
-    - "A woman with wavy pale blonde hair stands in a professional kitchen, carefully plating a gourmet dish with precise movements. Steam rises from freshly cooked vegetables as he arranges them with tweezers. The stainless steel surfaces gleam under bright overhead lights, and various pots simmer on the stove behind him. The audio features the sizzling of pans, the clinking of utensils against plates, and the ambient hum of kitchen ventilation."
-
+    - "A beautiful woman with long wavy hair performms a slow hypnotic dance in a in a sunny beach, moving her hips side to side with a kind smile and look towards the camera. She is wearing an intricate cosplay outfit with a white skirt with black edges, thigh high white and black pantyhose, a white form-fitting top with black edges and a deep neckline. The beautiful morning light casts golden light and shadows across her skin. The audio captures the sound of the waves of the water, the girl's movements across the sand as well as the sound of her clothing. The ambient beach sounds can also be heard with the occasional distant sounds of the city."
+    # - "A beautiful woman with long dark hair stands in a professional kitchen wearing a detailed, intricate and form-fitting uniform, plating a gourmet dish with precise movements as she smiles towards the camera. Steam rises from freshly cooked vegetables as she arranges them with tweezers. The stainless steel surfaces gleam under bright overhead lights, and various pots simmer on the stove behind him. The audio features the sizzling of pans, the clinking of utensils against plates, and the ambient hum of kitchen ventilation."
+    # - "A stunning woman with long beautiful hair is walking in a sunny beach wearing a skirt and detailed top, smiling kindly towards the camera as the wind gently blows through her hair. The beautiful golden sunlight lighting across her skin. The audio captures the sounds of dripping water and the girl humming melodically, as well as the distant sounds of the city."
+    # - "A woman with dark striped hair is walking in a sunny beach, smiling beautifully towards the camera, sunlight lighting across her skin. The audio captures the sounds of dripping water, the woman breathing as well as the distant sounds of the city."
+  
   # Negative prompt to avoid unwanted artifacts
   negative_prompt: "worst quality, inconsistent motion, blurry, jittery, distorted"
 

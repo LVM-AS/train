@@ -58,15 +58,15 @@ flow_matching:
 
 validation:
   prompts:
-    - "A beautiful woman with dark hair moves seductively in a public street during a sunset, erotic moving her hips side to side as she smiles seductively towards the camera. The beautiful sunset casts golden light across her wet skin. The audio captures the gentle sound of dripping water and the girl quietly moaning with a breathy voice, ambient street noise with occasional distant sounds of the city."
-    - "A beautiful woman with black hair and huge breasts stands in a professional kitchen wearing a schoolgirl cosplay outfit, plating a gourmet dish with precise movements as she smiles towards the camera. Steam rises from freshly cooked vegetables as she arranges them with tweezers. The stainless steel surfaces gleam under bright overhead lights, and various pots simmer on the stove behind him. The audio features the sizzling of pans, the clinking of utensils against plates, and the ambient hum of kitchen ventilation."
-    - "A beautiful woman with long beautiful hair is bellydancing and moving around in a sunny beach wearing a bikini, smiling seductively towards the camera. The beautiful golden sunlight lighting across her wet skin. The audio captures the sounds of dripping water and the girl quietly moaning in pleasure with a breathy voice and the distant sounds of the city."
-    - "A beautiful woman with dark striped hair is moving seductively in a sunny beach, smiling seductively towards the camera. The beautiful golden sunlight lighting across her wet skin. The audio captures the sounds of dripping water and the girl quietly moaning in pleasure with a breathy voice and the distant sounds of the city."
+    - "A beautiful woman with long wavy hair performms a slow hypnotic dance in a in a sunny beach, moving her hips side to side with a kind smile and look towards the camera. She is wearing an intricate cosplay outfit with a white skirt with black edges, thigh high white and black pantyhose, a white form-fitting top with black edges and a deep neckline. The beautiful morning light casts golden light and shadows across her skin. The audio captures the sound of the waves of the water, the girl's movements across the sand as well as the sound of her clothing. The ambient beach sounds can also be heard with the occasional distant sounds of the city."
+    # - "A beautiful woman with long dark hair stands in a professional kitchen wearing a detailed, intricate and form-fitting uniform, plating a gourmet dish with precise movements as she smiles towards the camera. Steam rises from freshly cooked vegetables as she arranges them with tweezers. The stainless steel surfaces gleam under bright overhead lights, and various pots simmer on the stove behind him. The audio features the sizzling of pans, the clinking of utensils against plates, and the ambient hum of kitchen ventilation."
+    # - "A stunning woman with long beautiful hair is walking in a sunny beach wearing a skirt and detailed top, smiling kindly towards the camera as the wind gently blows through her hair. The beautiful golden sunlight lighting across her skin. The audio captures the sounds of dripping water and the girl humming melodically, as well as the distant sounds of the city."
+    # - "A woman with dark striped hair is walking in a sunny beach, smiling beautifully towards the camera, sunlight lighting across her skin. The audio captures the sounds of dripping water, the woman breathing as well as the distant sounds of the city."
   
   negative_prompt: "worst quality, blurry, jittery, distorted, low resolution, watermark"
 
   images: null # Optional: First frame images for image-to-video validation. If provided, must have one image per prompt.
-  video_dims: [ 448, 768, 49 ]
+  video_dims: [ 448, 768, 89 ]
   frame_rate: 25.0
   seed: 42
   inference_steps: 15

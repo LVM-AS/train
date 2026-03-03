@@ -34,11 +34,11 @@
 model:
   # Path to the LTX-2 model checkpoint (.safetensors file)
   # This should be a local path to your downloaded model
-  model_path: "/workspace/train/models/checkpoint/ltx-2-19b-distilled-fp8.safetensors"
+  model_path: "/workspace/ComfyUI/models/checkpoints/LTX/ltx-2-19b-distilled-fp8.safetensors"
 
   # Path to the text encoder model directory
   # For LTX-2, this is typically the Gemma-based text encoder
-  text_encoder_path: "/workspace/train/models/text_encoder"
+  text_encoder_path: "/workspace/ComfyUI/models/text_encoders/LTX"
 
   # Training mode: "lora" for efficient adapter training, "full" for full fine-tuning
   # LoRA is recommended for most use cases (faster, less memory, prevents overfitting)
@@ -110,7 +110,7 @@ training_strategy:
   # Higher values train the model to perform better in image-to-video (I2V) mode,
   # where a clean first frame is provided and the model generates the rest of the video
   # Increase this value to train the model to perform better in image-to-video (I2V) mode
-  first_frame_conditioning_p: 0.1
+  first_frame_conditioning_p: 0.3
 
   # Enable joint audio-video training
   # Set to true if your dataset includes audio and you want to train the audio branch
@@ -183,7 +183,7 @@ acceleration:
 data:
   # Root directory containing preprocessed training data
   # Should contain: latents/, conditions/, and optionally audio_latents/
-  preprocessed_data_root: "/workspace/train/data/unprocessed/.precomputed"
+  preprocessed_data_root: "/workspace/train/data/dataset/.precomputed"
 
   # Number of worker processes for data loading
   # Used for parallel data loading to speed up data loading
@@ -200,10 +200,10 @@ validation:
   # Provide prompts representative of your training data
   # LTX-2 prefers longer, detailed prompts that describe both visual content and audio
   prompts:
-    - "A beautiful woman with dark hair moves seductively in a public street during a sunset, erotic moving her hips side to side as she smiles seductively towards the camera. The beautiful sunset casts golden light across her wet skin. The audio captures the gentle sound of dripping water and the girl quietly moaning with a breathy voice, ambient street noise with occasional distant sounds of the city."
-    - "A beautiful woman with black hair and huge breasts stands in a professional kitchen wearing a schoolgirl cosplay outfit, plating a gourmet dish with precise movements as she smiles towards the camera. Steam rises from freshly cooked vegetables as she arranges them with tweezers. The stainless steel surfaces gleam under bright overhead lights, and various pots simmer on the stove behind him. The audio features the sizzling of pans, the clinking of utensils against plates, and the ambient hum of kitchen ventilation."
-    - "A beautiful woman with long beautiful hair is bellydancing and moving around in a sunny beach wearing a bikini, smiling seductively towards the camera. The beautiful golden sunlight lighting across her wet skin. The audio captures the sounds of dripping water and the girl quietly moaning in pleasure with a breathy voice and the distant sounds of the city."
-    - "A beautiful woman with dark striped hair is moving seductively in a sunny beach, smiling seductively towards the camera. The beautiful golden sunlight lighting across her wet skin. The audio captures the sounds of dripping water and the girl quietly moaning in pleasure with a breathy voice and the distant sounds of the city."
+    - "A beautiful woman with long wavy hair performms a slow hypnotic dance in a in a sunny beach, moving her hips side to side with a kind smile and look towards the camera. She is wearing an intricate cosplay outfit with a white skirt with black edges, thigh high white and black pantyhose, a white form-fitting top with black edges and a deep neckline. The beautiful morning light casts golden light and shadows across her skin. The audio captures the sound of the waves of the water, the girl's movements across the sand as well as the sound of her clothing. The ambient beach sounds can also be heard with the occasional distant sounds of the city."
+    # - "A beautiful woman with long dark hair stands in a professional kitchen wearing a detailed, intricate and form-fitting uniform, plating a gourmet dish with precise movements as she smiles towards the camera. Steam rises from freshly cooked vegetables as she arranges them with tweezers. The stainless steel surfaces gleam under bright overhead lights, and various pots simmer on the stove behind him. The audio features the sizzling of pans, the clinking of utensils against plates, and the ambient hum of kitchen ventilation."
+    # - "A stunning woman with long beautiful hair is walking in a sunny beach wearing a skirt and detailed top, smiling kindly towards the camera as the wind gently blows through her hair. The beautiful golden sunlight lighting across her skin. The audio captures the sounds of dripping water and the girl humming melodically, as well as the distant sounds of the city."
+    # - "A woman with dark striped hair is walking in a sunny beach, smiling beautifully towards the camera, sunlight lighting across her skin. The audio captures the sounds of dripping water, the woman breathing as well as the distant sounds of the city."
   
   # Negative prompt to avoid unwanted artifacts
   negative_prompt: "worst quality, blurry, jittery, distorted, low resolution, watermark"
@@ -240,7 +240,7 @@ validation:
 
   # STG (Spatio-Temporal Guidance) parameters for improved video quality
   # STG is combined with CFG for better temporal coherence
-  stg_scale: 0.0  # Recommended: 1.0 (0.0 disables STG)
+  stg_scale: 1.0  # Recommended: 1.0 (0.0 disables STG)
   stg_blocks: [29]  # Recommended: single block 29
   stg_mode: "stg_av"  # "stg_av" perturbs both audio and video, "stg_v" video only
 
@@ -322,4 +322,4 @@ wandb:
 seed: 42
 
 # Directory to save outputs (checkpoints, validation videos, logs)
-output_dir: "/workspace/train/outputs/ltx2_av_lora_distilled"
+output_dir: "/workspace/train/output/custom"

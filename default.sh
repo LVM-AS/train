@@ -181,7 +181,7 @@ if [[ ! -f /.noprovisioning ]]; then
     provisioning_start
 fi
 
-echo "BEGINNING COMFYUI SLIM INSTALL SCRIPT"
+echo "BEGINNING COMFYUI INSTALL SCRIPT"
 
 echo "installing/updating basic tooling and huggingface hub"
 pip install -U pip setuptools wheel pip-tools build huggingface-hub
@@ -214,14 +214,14 @@ git clone https://github.com/city96/ComfyUI-GGUF
 git clone https://github.com/kijai/ComfyUI-KJNodes
 git clone https://github.com/Comfy-Org/ComfyUI-Manager
 git clone https://github.com/yuvraj108c/ComfyUI-Video-Depth-Anything
-git clone https://github.com/kijai/ComfyUI-WanVideoWrapper
-git clone https://github.com/kijai/ComfyUI-segment-anything-2
+#git clone https://github.com/kijai/ComfyUI-WanVideoWrapper
+#git clone https://github.com/kijai/ComfyUI-segment-anything-2
 git clone https://github.com/ai-shizuka/ComfyUI-tbox
 git clone https://github.com/Azornes/Comfyui-Resolution-Master
 git clone https://github.com/melMass/comfy_mtb
 git clone https://github.com/pythongosssss/ComfyUI-Custom-Scripts
 git clone https://github.com/yolain/ComfyUI-Easy-Use
-git clone https://github.com/ltdrdata/ComfyUI-Impact-Pack
+#git clone https://github.com/ltdrdata/ComfyUI-Impact-Pack
 git clone https://github.com/ltdrdata/ComfyUI-Inspire-Pack
 git clone https://github.com/1038lab/ComfyUI-RMBG
 git clone https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite
@@ -237,13 +237,13 @@ git clone https://github.com/evanspearman/ComfyMath
 git clone https://github.com/djbielejeski/a-person-mask-generator
 git clone https://github.com/Fannovel16/ComfyUI-Frame-Interpolation
 git clone https://github.com/calcuis/gguf
-git clone https://github.com/pollockjj/ComfyUI-MultiGPU
+#git clone https://github.com/pollockjj/ComfyUI-MultiGPU
 git clone https://github.com/1038lab/ComfyUI-QwenVL
-git clone https://github.com/kijai/ComfyUI-SCAIL-Pose
-git clone https://github.com/kijai/ComfyUI-WanAnimatePreprocess/
-git clone https://github.com/ClownsharkBatwing/RES4LYF
+#git clone https://github.com/kijai/ComfyUI-SCAIL-Pose
+#git clone https://github.com/kijai/ComfyUI-WanAnimatePreprocess/
+#git clone https://github.com/ClownsharkBatwing/RES4LYF
 git clone https://github.com/Lightricks/ComfyUI-LTXVideo
-git clone https://github.com/akatz-ai/ComfyUI-DepthCrafter-Nodes
+#git clone https://github.com/akatz-ai/ComfyUI-DepthCrafter-Nodes
 git clone https://github.com/princepainter/Comfyui-PainterAudioCut
 
 echo "installing custom nodes requirements"
@@ -252,14 +252,14 @@ pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-GGUF/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-KJNodes/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Manager/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Video-Depth-Anything/requirements.txt
-pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-WanVideoWrapper/requirements.txt
-pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-segment-anything-2/requirements.txt
+#pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-WanVideoWrapper/requirements.txt
+#pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-segment-anything-2/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-tbox/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/Comfyui-Resolution-Master/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/comfy_mtb/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Custom-Scripts/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Easy-Use/requirements.txt
-pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Impact-Pack/requirements.txt torch==2.8 torchvision torchaudio numpy==1.26.4
+#pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Impact-Pack/requirements.txt torch==2.8 torchvision torchaudio numpy==1.26.4
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Inspire-Pack/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-RMBG/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-VideoHelperSuite/requirements.txt
@@ -275,13 +275,13 @@ pip install -r /workspace/ComfyUI/custom_nodes/ComfyMath/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/a-person-mask-generator/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Frame-Interpolation/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/gguf/requirements.txt
-pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-MultiGPU/requirements.txt
+#pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-MultiGPU/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-QwenVL/requirements.txt
-pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-SCAIL-Pose/requirements.txt
-pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-WanAnimatePreprocess/requirements.txt
-pip install -r /workspace/ComfyUI/custom_nodes/RES4LYF/requirements.txt
+#pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-SCAIL-Pose/requirements.txt
+#pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-WanAnimatePreprocess/requirements.txt
+#pip install -r /workspace/ComfyUI/custom_nodes/RES4LYF/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-LTXVideo/requirements.txt
-pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-DepthCrafter-Nodes/requirements.txt
+#pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-DepthCrafter-Nodes/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/Comfyui-PainterAudioCut/requirements.txt
 pip uninstall -y xformers
 
@@ -320,6 +320,7 @@ echo "."
 echo "removing files and folders to be replaced by huggingface repo"
 rm -rf /workspace/ComfyUI/user/default/comfy.settings.json
 rm -rf /workspace/ComfyUI/comfy_extras/nodes_qwen.py
+echo "finished removing files and folders to be replaced by huggingface repo"
 
 echo "Downloading repositories from Hugging Face"
 cd /workspace/ComfyUI
@@ -373,6 +374,8 @@ echo "finished downloading LTX-2 text encoder config files from Hugging Face"
 #hf download LVMCS/49108215QW --local-dir .
 #rm -rf .cache/
 
+echo "finished downloading repositories from Hugging Face"
+
 echo "removing .cache folders to save space"
 cd /workspace
 rm -rf .cache/
@@ -395,6 +398,7 @@ rm -rf */*/*/*/*/*/*/*/.cache/
 rm -rf */*/*/*/*/*/*/*/.cache/
 rm -rf */*/*/*/*/*/*/*/*/.cache/
 rm -rf */*/*/*/*/*/*/*/*/.cache/
+echo "finished removing .cache folders to save space"
 
 echo "."
 echo "."

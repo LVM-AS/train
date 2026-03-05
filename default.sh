@@ -320,6 +320,7 @@ echo "."
 echo "removing files and folders to be replaced by huggingface repo"
 rm -rf /workspace/ComfyUI/user/default/comfy.settings.json
 rm -rf /workspace/ComfyUI/comfy_extras/nodes_qwen.py
+rm -rf /workspace/ComfyUI/custom_nodes/ComfyUI-QwenVL/hf_models.json
 echo "finished removing files and folders to be replaced by huggingface repo"
 
 echo "Downloading repositories from Hugging Face"
@@ -363,47 +364,47 @@ wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/p-e-w/gem
 cd /workspace/ComfyUI
 echo "finished downloading LTX-2 text encoder config files from Hugging Face"
 
-# echo "downloading loras from Hugging Face"
-# mkdir -p /workspace/ComfyUI/models/loras/LTX/AVTRAIN/c3c3_1
-# cd /workspace/ComfyUI/models/loras/LTX/AVTRAIN/c3c3_1
-# wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/c3c3_1/resolve/main/checkpoints/lora_weights_step_05000.safetensors
-# wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/c3c3_1/resolve/main/checkpoints/lora_weights_step_04000.safetensors
-# wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/c3c3_1/resolve/main/checkpoints/lora_weights_step_03500.safetensors
+echo "downloading loras from Hugging Face"
+mkdir -p /workspace/ComfyUI/models/loras/LTX/AVTRAIN/c3c3_1
+cd /workspace/ComfyUI/models/loras/LTX/AVTRAIN/c3c3_1
+wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/c3c3_1/resolve/main/checkpoints/lora_weights_step_05000.safetensors
+wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/c3c3_1/resolve/main/checkpoints/lora_weights_step_04000.safetensors
+wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/c3c3_1/resolve/main/checkpoints/lora_weights_step_03500.safetensors
 
-# mkdir -p /workspace/ComfyUI/models/loras/LTX/AVTRAIN/n4tal1a_1
-# cd /workspace/ComfyUI/models/loras/LTX/AVTRAIN/n4tal1a_1
-# wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/n4tal1a_1/resolve/main/checkpoints/lora_weights_step_05000.safetensors
-# wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/n4tal1a_1/resolve/main/checkpoints/lora_weights_step_04000.safetensors
-# wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/n4tal1a_1/resolve/main/checkpoints/lora_weights_step_03500.safetensors
+mkdir -p /workspace/ComfyUI/models/loras/LTX/AVTRAIN/n4tal1a_1
+cd /workspace/ComfyUI/models/loras/LTX/AVTRAIN/n4tal1a_1
+wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/n4tal1a_1/resolve/main/checkpoints/lora_weights_step_05000.safetensors
+wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/n4tal1a_1/resolve/main/checkpoints/lora_weights_step_04000.safetensors
+wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/n4tal1a_1/resolve/main/checkpoints/lora_weights_step_03500.safetensors
 
-# mkdir -p /workspace/ComfyUI/models/loras/LTX/AVTRAIN/b3lla
-# cd /workspace/ComfyUI/models/loras/LTX/AVTRAIN/b3lla
-# wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/b3lla/resolve/main/checkpoints/lora_weights_step_05000.safetensors
-# wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/b3lla/resolve/main/checkpoints/lora_weights_step_04000.safetensors
-# wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/b3lla/resolve/main/checkpoints/lora_weights_step_03500.safetensors
+mkdir -p /workspace/ComfyUI/models/loras/LTX/AVTRAIN/b3lla
+cd /workspace/ComfyUI/models/loras/LTX/AVTRAIN/b3lla
+wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/b3lla/resolve/main/checkpoints/lora_weights_step_05000.safetensors
+wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/b3lla/resolve/main/checkpoints/lora_weights_step_04000.safetensors
+wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/b3lla/resolve/main/checkpoints/lora_weights_step_03500.safetensors
 
-# mkdir -p /workspace/ComfyUI/models/loras/LTX/AVTRAIN/4siad0ll_3
-# cd /workspace/ComfyUI/models/loras/LTX/AVTRAIN/4siad0ll_3
-# wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/4siad0ll_3/resolve/main/checkpoints/lora_weights_step_05000.safetensors
-# wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/4siad0ll_3/resolve/main/checkpoints/lora_weights_step_04000.safetensors
-# wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/4siad0ll_3/resolve/main/checkpoints/lora_weights_step_03500.safetensors
+mkdir -p /workspace/ComfyUI/models/loras/LTX/AVTRAIN/4siad0ll_3
+cd /workspace/ComfyUI/models/loras/LTX/AVTRAIN/4siad0ll_3
+wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/4siad0ll_3/resolve/main/checkpoints/lora_weights_step_05000.safetensors
+wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/4siad0ll_3/resolve/main/checkpoints/lora_weights_step_04000.safetensors
+wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/4siad0ll_3/resolve/main/checkpoints/lora_weights_step_03500.safetensors
 
-# mkdir -p /workspace/ComfyUI/models/loras/LTX/AVTRAIN/4siad0ll_2
-# cd /workspace/ComfyUI/models/loras/LTX/AVTRAIN/4siad0ll_2
-# wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/4siad0ll_2/resolve/main/checkpoints/lora_weights_step_05000.safetensors
-# wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/4siad0ll_2/resolve/main/checkpoints/lora_weights_step_04000.safetensors
-# wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/4siad0ll_2/resolve/main/checkpoints/lora_weights_step_03500.safetensors
+mkdir -p /workspace/ComfyUI/models/loras/LTX/AVTRAIN/4siad0ll_2
+cd /workspace/ComfyUI/models/loras/LTX/AVTRAIN/4siad0ll_2
+wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/4siad0ll_2/resolve/main/checkpoints/lora_weights_step_05000.safetensors
+wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/4siad0ll_2/resolve/main/checkpoints/lora_weights_step_04000.safetensors
+wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/4siad0ll_2/resolve/main/checkpoints/lora_weights_step_03500.safetensors
 
-# mkdir -p /workspace/ComfyUI/models/loras/LTX/AVTRAIN/4lice_d3lish_2_distilled
-# cd /workspace/ComfyUI/models/loras/LTX/AVTRAIN/4lice_d3lish_2_distilled
-# wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/4lice_d3lish_2_distilled/resolve/main/checkpoints/lora_weights_step_05000.safetensors
-# wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/4lice_d3lish_2_distilled/resolve/main/checkpoints/lora_weights_step_04000.safetensors
-# wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/4lice_d3lish_2_distilled/resolve/main/checkpoints/lora_weights_step_03500.safetensors
-# echo "finished downloading loras from Hugging Face"
+mkdir -p /workspace/ComfyUI/models/loras/LTX/AVTRAIN/4lice_d3lish_2_distilled
+cd /workspace/ComfyUI/models/loras/LTX/AVTRAIN/4lice_d3lish_2_distilled
+wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/4lice_d3lish_2_distilled/resolve/main/checkpoints/lora_weights_step_05000.safetensors
+wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/4lice_d3lish_2_distilled/resolve/main/checkpoints/lora_weights_step_04000.safetensors
+wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/4lice_d3lish_2_distilled/resolve/main/checkpoints/lora_weights_step_03500.safetensors
+echo "finished downloading loras from Hugging Face"
 
-#KL
-#hf download LVMCS/49108215KL --local-dir .
-#rm -rf .cache/
+KL
+hf download LVMCS/49108215KL --local-dir .
+rm -rf .cache/
 
 #WA
 #hf download LVMCS/49108215WA --local-dir .

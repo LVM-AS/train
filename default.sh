@@ -291,9 +291,9 @@ pip uninstall -y xformers
 cd /workspace
 echo "finished installing custom nodes requirements"
 
-echo "installing flash-attention 2 with --no-build-isolation"
-pip install flash-attn --no-build-isolation
-echo "finished installing flash-attention 2"
+# echo "installing flash-attention 2 with --no-build-isolation"
+# pip install flash-attn --no-build-isolation
+# echo "finished installing flash-attention 2"
 
 echo "installing sageattention with --no-build-isolation"
 pip install sageattention --no-build-isolation

@@ -197,8 +197,10 @@ git pull
 echo "updated ComfyUI to latest version"
 
 echo "installing base requirements"
-pip install -U -r /workspace/ComfyUI/requirements.txt torch==2.8 torchvision torchaudio numpy==1.26.4
-pip install -r /workspace/ComfyUI/manager_requirements.txt torch==2.8 torchvision torchaudio numpy==1.26.4
+# pip install -U -r /workspace/ComfyUI/requirements.txt torch==2.8 torchvision torchaudio numpy==1.26.4
+# pip install -r /workspace/ComfyUI/manager_requirements.txt torch==2.8 torchvision torchaudio numpy==1.26.4
+pip install -U -r /workspace/ComfyUI/requirements.txt numpy==1.26.4
+pip install -r /workspace/ComfyUI/manager_requirements.txt numpy==1.26.4
 echo "finished installing base requirements"
 
 echo "removing bloat model files to save space"
@@ -259,7 +261,8 @@ pip install -r /workspace/ComfyUI/custom_nodes/Comfyui-Resolution-Master/require
 pip install -r /workspace/ComfyUI/custom_nodes/comfy_mtb/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Custom-Scripts/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Easy-Use/requirements.txt
-pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Impact-Pack/requirements.txt torch==2.8 torchvision torchaudio numpy==1.26.4
+#pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Impact-Pack/requirements.txt torch==2.8 torchvision torchaudio numpy==1.26.4
+pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Impact-Pack/requirements.txt numpy==1.26.4
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Inspire-Pack/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-RMBG/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-VideoHelperSuite/requirements.txt
@@ -301,8 +304,10 @@ pip install numpy==1.26.4
 echo "finished reinstalling numpy"
 
 echo "installing base requirements again to ensure all dependencies are met"
-pip install -r /workspace/ComfyUI/requirements.txt torch==2.8 torchvision torchaudio numpy==1.26.4
-pip install -r /workspace/ComfyUI/manager_requirements.txt torch==2.8 torchvision torchaudio numpy==1.26.4
+# pip install -U -r /workspace/ComfyUI/requirements.txt torch==2.8 torchvision torchaudio numpy==1.26.4
+# pip install -r /workspace/ComfyUI/manager_requirements.txt torch==2.8 torchvision torchaudio numpy==1.26.4
+pip install -U -r /workspace/ComfyUI/requirements.txt numpy==1.26.4
+pip install -r /workspace/ComfyUI/manager_requirements.txt numpy==1.26.4
 echo "finished installing base requirements again"
 
 echo "cleaning up pip cache to save space"
@@ -364,54 +369,28 @@ wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/p-e-w/gem
 cd /workspace/ComfyUI
 echo "finished downloading LTX-2 text encoder config files from Hugging Face"
 
-echo "downloading loras from Hugging Face"
-mkdir -p /workspace/ComfyUI/models/loras/LTX/AVTRAIN/c3c3_1
-cd /workspace/ComfyUI/models/loras/LTX/AVTRAIN/c3c3_1
-wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/c3c3_1/resolve/main/checkpoints/lora_weights_step_05000.safetensors
-wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/c3c3_1/resolve/main/checkpoints/lora_weights_step_04000.safetensors
-wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/c3c3_1/resolve/main/checkpoints/lora_weights_step_03500.safetensors
+echo "downloading LTX loras from Hugging Face"
+mkdir -p /workspace/ComfyUI/models/loras/LTX
+cd /workspace/ComfyUI/models/loras/LTX/
+hf download LVMCS/LTXTEMP --local-dir .
+rm -rf .cache/
+echo "finished downloading LTX loras from Hugging Face"
 
-mkdir -p /workspace/ComfyUI/models/loras/LTX/AVTRAIN/n4tal1a_1
-cd /workspace/ComfyUI/models/loras/LTX/AVTRAIN/n4tal1a_1
-wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/n4tal1a_1/resolve/main/checkpoints/lora_weights_step_05000.safetensors
-wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/n4tal1a_1/resolve/main/checkpoints/lora_weights_step_04000.safetensors
-wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/n4tal1a_1/resolve/main/checkpoints/lora_weights_step_03500.safetensors
-
-mkdir -p /workspace/ComfyUI/models/loras/LTX/AVTRAIN/b3lla
-cd /workspace/ComfyUI/models/loras/LTX/AVTRAIN/b3lla
-wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/b3lla/resolve/main/checkpoints/lora_weights_step_05000.safetensors
-wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/b3lla/resolve/main/checkpoints/lora_weights_step_04000.safetensors
-wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/b3lla/resolve/main/checkpoints/lora_weights_step_03500.safetensors
-
-mkdir -p /workspace/ComfyUI/models/loras/LTX/AVTRAIN/4siad0ll_3
-cd /workspace/ComfyUI/models/loras/LTX/AVTRAIN/4siad0ll_3
-wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/4siad0ll_3/resolve/main/checkpoints/lora_weights_step_05000.safetensors
-wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/4siad0ll_3/resolve/main/checkpoints/lora_weights_step_04000.safetensors
-wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/4siad0ll_3/resolve/main/checkpoints/lora_weights_step_03500.safetensors
-
-mkdir -p /workspace/ComfyUI/models/loras/LTX/AVTRAIN/4siad0ll_2
-cd /workspace/ComfyUI/models/loras/LTX/AVTRAIN/4siad0ll_2
-wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/4siad0ll_2/resolve/main/checkpoints/lora_weights_step_05000.safetensors
-wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/4siad0ll_2/resolve/main/checkpoints/lora_weights_step_04000.safetensors
-wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/4siad0ll_2/resolve/main/checkpoints/lora_weights_step_03500.safetensors
-
-mkdir -p /workspace/ComfyUI/models/loras/LTX/AVTRAIN/4lice_d3lish_2_distilled
-cd /workspace/ComfyUI/models/loras/LTX/AVTRAIN/4lice_d3lish_2_distilled
-wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/4lice_d3lish_2_distilled/resolve/main/checkpoints/lora_weights_step_05000.safetensors
-wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/4lice_d3lish_2_distilled/resolve/main/checkpoints/lora_weights_step_04000.safetensors
-wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/4lice_d3lish_2_distilled/resolve/main/checkpoints/lora_weights_step_03500.safetensors
-echo "finished downloading loras from Hugging Face"
+echo "changing working directory back to ComfyUI root"
 cd /workspace/ComfyUI
 
-KL
+#KL
+echo "downloading KL model from Hugging Face"
 hf download LVMCS/49108215KL --local-dir .
 rm -rf .cache/
 
 #WA
+#echo "downloading WA model from Hugging Face"
 #hf download LVMCS/49108215WA --local-dir .
 #rm -rf .cache/
 
 #QW
+#echo "downloading QW model from Hugging Face"
 #hf download LVMCS/49108215QW --local-dir .
 #rm -rf .cache/
 

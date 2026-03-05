@@ -201,50 +201,50 @@ pip install -U -r /workspace/ComfyUI/requirements.txt torch==2.8 torchvision tor
 pip install -r /workspace/ComfyUI/manager_requirements.txt torch==2.8 torchvision torchaudio numpy==1.26.4
 echo "finished installing base requirements"
 
-# echo "removing bloat model files to save space"
-# rm -rf /workspace/ComfyUI/models/checkpoints/*.safetensors
+echo "removing bloat model files to save space"
+rm -rf /workspace/ComfyUI/models/checkpoints/*.safetensors
 
-# echo "cloning comfyui custom nodes"
-# cd /workspace/ComfyUI/custom_nodes
-# rm -rf ComfyUI-Manager/
-# rm -rf Civicomfy/
-# rm -rf ComfyUI-KJNodes/
-# git clone https://github.com/MoonGoblinDev/Civicomfy
-# git clone https://github.com/city96/ComfyUI-GGUF
-# git clone https://github.com/kijai/ComfyUI-KJNodes
-# git clone https://github.com/Comfy-Org/ComfyUI-Manager
-# git clone https://github.com/yuvraj108c/ComfyUI-Video-Depth-Anything
-# #git clone https://github.com/kijai/ComfyUI-WanVideoWrapper
-# #git clone https://github.com/kijai/ComfyUI-segment-anything-2
-# git clone https://github.com/ai-shizuka/ComfyUI-tbox
-# git clone https://github.com/Azornes/Comfyui-Resolution-Master
-# git clone https://github.com/melMass/comfy_mtb
-# git clone https://github.com/pythongosssss/ComfyUI-Custom-Scripts
-# git clone https://github.com/yolain/ComfyUI-Easy-Use
-# #git clone https://github.com/ltdrdata/ComfyUI-Impact-Pack
-# git clone https://github.com/ltdrdata/ComfyUI-Inspire-Pack
-# git clone https://github.com/1038lab/ComfyUI-RMBG
-# git clone https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite
-# git clone https://github.com/Fannovel16/comfyui_controlnet_aux
-# git clone https://github.com/cubiq/ComfyUI_essentials
-# git clone https://github.com/chflame163/ComfyUI_LayerStyle
-# git clone https://github.com/TinyTerra/ComfyUI_tinyterraNodes
-# git clone https://github.com/Derfuu/Derfuu_ComfyUI_ModdedNodes
-# git clone https://github.com/jags111/efficiency-nodes-comfyui
-# git clone https://github.com/rgthree/rgthree-comfy
-# git clone https://github.com/ltdrdata/was-node-suite-comfyui
-# git clone https://github.com/evanspearman/ComfyMath
-# git clone https://github.com/djbielejeski/a-person-mask-generator
-# git clone https://github.com/Fannovel16/ComfyUI-Frame-Interpolation
-# git clone https://github.com/calcuis/gguf
-# #git clone https://github.com/pollockjj/ComfyUI-MultiGPU
-# git clone https://github.com/1038lab/ComfyUI-QwenVL
-# #git clone https://github.com/kijai/ComfyUI-SCAIL-Pose
-# #git clone https://github.com/kijai/ComfyUI-WanAnimatePreprocess/
-# #git clone https://github.com/ClownsharkBatwing/RES4LYF
-# git clone https://github.com/Lightricks/ComfyUI-LTXVideo
-# #git clone https://github.com/akatz-ai/ComfyUI-DepthCrafter-Nodes
-# git clone https://github.com/princepainter/Comfyui-PainterAudioCut
+echo "cloning comfyui custom nodes"
+cd /workspace/ComfyUI/custom_nodes
+rm -rf ComfyUI-Manager/
+rm -rf Civicomfy/
+rm -rf ComfyUI-KJNodes/
+git clone https://github.com/MoonGoblinDev/Civicomfy
+git clone https://github.com/city96/ComfyUI-GGUF
+git clone https://github.com/kijai/ComfyUI-KJNodes
+git clone https://github.com/Comfy-Org/ComfyUI-Manager
+git clone https://github.com/yuvraj108c/ComfyUI-Video-Depth-Anything
+git clone https://github.com/kijai/ComfyUI-WanVideoWrapper
+git clone https://github.com/kijai/ComfyUI-segment-anything-2
+git clone https://github.com/ai-shizuka/ComfyUI-tbox
+git clone https://github.com/Azornes/Comfyui-Resolution-Master
+git clone https://github.com/melMass/comfy_mtb
+git clone https://github.com/pythongosssss/ComfyUI-Custom-Scripts
+git clone https://github.com/yolain/ComfyUI-Easy-Use
+git clone https://github.com/ltdrdata/ComfyUI-Impact-Pack
+git clone https://github.com/ltdrdata/ComfyUI-Inspire-Pack
+git clone https://github.com/1038lab/ComfyUI-RMBG
+git clone https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite
+git clone https://github.com/Fannovel16/comfyui_controlnet_aux
+git clone https://github.com/cubiq/ComfyUI_essentials
+git clone https://github.com/chflame163/ComfyUI_LayerStyle
+git clone https://github.com/TinyTerra/ComfyUI_tinyterraNodes
+git clone https://github.com/Derfuu/Derfuu_ComfyUI_ModdedNodes
+git clone https://github.com/jags111/efficiency-nodes-comfyui
+git clone https://github.com/rgthree/rgthree-comfy
+git clone https://github.com/ltdrdata/was-node-suite-comfyui
+git clone https://github.com/evanspearman/ComfyMath
+git clone https://github.com/djbielejeski/a-person-mask-generator
+git clone https://github.com/Fannovel16/ComfyUI-Frame-Interpolation
+git clone https://github.com/calcuis/gguf
+#git clone https://github.com/pollockjj/ComfyUI-MultiGPU
+git clone https://github.com/1038lab/ComfyUI-QwenVL
+git clone https://github.com/kijai/ComfyUI-SCAIL-Pose
+git clone https://github.com/kijai/ComfyUI-WanAnimatePreprocess/
+git clone https://github.com/ClownsharkBatwing/RES4LYF
+git clone https://github.com/Lightricks/ComfyUI-LTXVideo
+git clone https://github.com/akatz-ai/ComfyUI-DepthCrafter-Nodes
+git clone https://github.com/princepainter/Comfyui-PainterAudioCut
 
 echo "installing custom nodes requirements"
 pip install -r /workspace/ComfyUI/custom_nodes/Civicomfy/requirements.txt
@@ -252,14 +252,14 @@ pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-GGUF/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-KJNodes/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Manager/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Video-Depth-Anything/requirements.txt
-#pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-WanVideoWrapper/requirements.txt
-#pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-segment-anything-2/requirements.txt
+pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-WanVideoWrapper/requirements.txt
+pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-segment-anything-2/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-tbox/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/Comfyui-Resolution-Master/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/comfy_mtb/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Custom-Scripts/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Easy-Use/requirements.txt
-#pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Impact-Pack/requirements.txt torch==2.8 torchvision torchaudio numpy==1.26.4
+pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Impact-Pack/requirements.txt torch==2.8 torchvision torchaudio numpy==1.26.4
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Inspire-Pack/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-RMBG/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-VideoHelperSuite/requirements.txt
@@ -277,11 +277,11 @@ pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Frame-Interpolation/requi
 pip install -r /workspace/ComfyUI/custom_nodes/gguf/requirements.txt
 #pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-MultiGPU/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-QwenVL/requirements.txt
-#pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-SCAIL-Pose/requirements.txt
-#pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-WanAnimatePreprocess/requirements.txt
-#pip install -r /workspace/ComfyUI/custom_nodes/RES4LYF/requirements.txt
+pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-SCAIL-Pose/requirements.txt
+pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-WanAnimatePreprocess/requirements.txt
+pip install -r /workspace/ComfyUI/custom_nodes/RES4LYF/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-LTXVideo/requirements.txt
-#pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-DepthCrafter-Nodes/requirements.txt
+pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-DepthCrafter-Nodes/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/Comfyui-PainterAudioCut/requirements.txt
 pip uninstall -y xformers
 
@@ -309,103 +309,103 @@ echo "cleaning up pip cache to save space"
 pip cache purge
 echo "finished cleaning up pip cache"
 
-# echo "."
-# echo "."
-# echo "."
-# echo "!!! BEGINNING DOWNLOAD OF FILES !!!"
-# echo "."
-# echo "."
-# echo "."
+echo "."
+echo "."
+echo "."
+echo "!!! BEGINNING DOWNLOAD OF FILES !!!"
+echo "."
+echo "."
+echo "."
 
-# echo "removing files and folders to be replaced by huggingface repo"
-# rm -rf /workspace/ComfyUI/user/default/comfy.settings.json
-# rm -rf /workspace/ComfyUI/comfy_extras/nodes_qwen.py
-# rm -rf /workspace/ComfyUI/custom_nodes/ComfyUI-QwenVL/hf_models.json
-# echo "finished removing files and folders to be replaced by huggingface repo"
+echo "removing files and folders to be replaced by huggingface repo"
+rm -rf /workspace/ComfyUI/user/default/comfy.settings.json
+rm -rf /workspace/ComfyUI/comfy_extras/nodes_qwen.py
+rm -rf /workspace/ComfyUI/custom_nodes/ComfyUI-QwenVL/hf_models.json
+echo "finished removing files and folders to be replaced by huggingface repo"
 
-# echo "Downloading repositories from Hugging Face"
-# cd /workspace/ComfyUI
-# hf auth login --token "$HF_TOKEN"
+echo "Downloading repositories from Hugging Face"
+cd /workspace/ComfyUI
+hf auth login --token "$HF_TOKEN"
 
-# #MI
-# hf download LVMCS/49108215MI --local-dir .
-# rm -rf .cache/
+#MI
+hf download LVMCS/49108215MI --local-dir .
+rm -rf .cache/
 
-# #MM
-# hf download LVMCS/49108215MM --local-dir .
-# rm -rf .cache/
+#MM
+hf download LVMCS/49108215MM --local-dir .
+rm -rf .cache/
 
-# #LT
-# hf download LVMCS/49108215LT --local-dir .
-# rm -rf .cache/
+#LT
+hf download LVMCS/49108215LT --local-dir .
+rm -rf .cache/
 
-# echo "downloading LTX-2 checkpoint model from Hugging Face"
-# mkdir -p /workspace/ComfyUI/models/checkpoints/LTX
-# cd /workspace/ComfyUI/models/checkpoints/LTX
-# hf download Lightricks/LTX-2 ltx-2-19b-distilled-fp8.safetensors --local-dir .
-# rm -rf .cache/
-# echo "finished downloading LTX-2 checkpoint model from Hugging Face"
+echo "downloading LTX-2 checkpoint model from Hugging Face"
+mkdir -p /workspace/ComfyUI/models/checkpoints/LTX
+cd /workspace/ComfyUI/models/checkpoints/LTX
+hf download Lightricks/LTX-2 ltx-2-19b-distilled-fp8.safetensors --local-dir .
+rm -rf .cache/
+echo "finished downloading LTX-2 checkpoint model from Hugging Face"
 
-# echo "downloading LTX-2 text encoder from Hugging Face"
-# mkdir -p /workspace/ComfyUI/models/text_encoders/LTX
-# cd /workspace/ComfyUI/models/text_encoders/LTX
-# hf download p-e-w/gemma-3-12b-it-heretic-v2 --local-dir .
-# rm -rf .cache/
-# echo "finished downloading LTX-2 text encoder from Hugging Face"
+echo "downloading LTX-2 text encoder from Hugging Face"
+mkdir -p /workspace/ComfyUI/models/text_encoders/LTX
+cd /workspace/ComfyUI/models/text_encoders/LTX
+hf download p-e-w/gemma-3-12b-it-heretic-v2 --local-dir .
+rm -rf .cache/
+echo "finished downloading LTX-2 text encoder from Hugging Face"
 
-# echo "downloading LTX-2 text encoder config files from Hugging Face"
-# wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/google/gemma-3-12b-it-qat-q4_0-unquantized/resolve/main/added_tokens.json
-# wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/google/gemma-3-12b-it-qat-q4_0-unquantized/resolve/main/chat_template.json
-# wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/google/gemma-3-12b-it-qat-q4_0-unquantized/resolve/main/preprocessor_config.json
-# wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/google/gemma-3-12b-it-qat-q4_0-unquantized/resolve/main/processor_config.json
-# wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/google/gemma-3-12b-it-qat-q4_0-unquantized/resolve/main/tokenizer.model
-# rm -rf tokenizer_config.json
-# wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/p-e-w/gemma-3-12b-it-heretic-v2/resolve/main/tokenizer_config.json
-# cd /workspace/ComfyUI
-# echo "finished downloading LTX-2 text encoder config files from Hugging Face"
+echo "downloading LTX-2 text encoder config files from Hugging Face"
+wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/google/gemma-3-12b-it-qat-q4_0-unquantized/resolve/main/added_tokens.json
+wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/google/gemma-3-12b-it-qat-q4_0-unquantized/resolve/main/chat_template.json
+wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/google/gemma-3-12b-it-qat-q4_0-unquantized/resolve/main/preprocessor_config.json
+wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/google/gemma-3-12b-it-qat-q4_0-unquantized/resolve/main/processor_config.json
+wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/google/gemma-3-12b-it-qat-q4_0-unquantized/resolve/main/tokenizer.model
+rm -rf tokenizer_config.json
+wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/p-e-w/gemma-3-12b-it-heretic-v2/resolve/main/tokenizer_config.json
+cd /workspace/ComfyUI
+echo "finished downloading LTX-2 text encoder config files from Hugging Face"
 
-# echo "downloading loras from Hugging Face"
-# mkdir -p /workspace/ComfyUI/models/loras/LTX/AVTRAIN/c3c3_1
-# cd /workspace/ComfyUI/models/loras/LTX/AVTRAIN/c3c3_1
-# wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/c3c3_1/resolve/main/checkpoints/lora_weights_step_05000.safetensors
-# wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/c3c3_1/resolve/main/checkpoints/lora_weights_step_04000.safetensors
-# wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/c3c3_1/resolve/main/checkpoints/lora_weights_step_03500.safetensors
+echo "downloading loras from Hugging Face"
+mkdir -p /workspace/ComfyUI/models/loras/LTX/AVTRAIN/c3c3_1
+cd /workspace/ComfyUI/models/loras/LTX/AVTRAIN/c3c3_1
+wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/c3c3_1/resolve/main/checkpoints/lora_weights_step_05000.safetensors
+wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/c3c3_1/resolve/main/checkpoints/lora_weights_step_04000.safetensors
+wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/c3c3_1/resolve/main/checkpoints/lora_weights_step_03500.safetensors
 
-# mkdir -p /workspace/ComfyUI/models/loras/LTX/AVTRAIN/n4tal1a_1
-# cd /workspace/ComfyUI/models/loras/LTX/AVTRAIN/n4tal1a_1
-# wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/n4tal1a_1/resolve/main/checkpoints/lora_weights_step_05000.safetensors
-# wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/n4tal1a_1/resolve/main/checkpoints/lora_weights_step_04000.safetensors
-# wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/n4tal1a_1/resolve/main/checkpoints/lora_weights_step_03500.safetensors
+mkdir -p /workspace/ComfyUI/models/loras/LTX/AVTRAIN/n4tal1a_1
+cd /workspace/ComfyUI/models/loras/LTX/AVTRAIN/n4tal1a_1
+wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/n4tal1a_1/resolve/main/checkpoints/lora_weights_step_05000.safetensors
+wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/n4tal1a_1/resolve/main/checkpoints/lora_weights_step_04000.safetensors
+wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/n4tal1a_1/resolve/main/checkpoints/lora_weights_step_03500.safetensors
 
-# mkdir -p /workspace/ComfyUI/models/loras/LTX/AVTRAIN/b3lla
-# cd /workspace/ComfyUI/models/loras/LTX/AVTRAIN/b3lla
-# wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/b3lla/resolve/main/checkpoints/lora_weights_step_05000.safetensors
-# wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/b3lla/resolve/main/checkpoints/lora_weights_step_04000.safetensors
-# wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/b3lla/resolve/main/checkpoints/lora_weights_step_03500.safetensors
+mkdir -p /workspace/ComfyUI/models/loras/LTX/AVTRAIN/b3lla
+cd /workspace/ComfyUI/models/loras/LTX/AVTRAIN/b3lla
+wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/b3lla/resolve/main/checkpoints/lora_weights_step_05000.safetensors
+wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/b3lla/resolve/main/checkpoints/lora_weights_step_04000.safetensors
+wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/b3lla/resolve/main/checkpoints/lora_weights_step_03500.safetensors
 
-# mkdir -p /workspace/ComfyUI/models/loras/LTX/AVTRAIN/4siad0ll_3
-# cd /workspace/ComfyUI/models/loras/LTX/AVTRAIN/4siad0ll_3
-# wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/4siad0ll_3/resolve/main/checkpoints/lora_weights_step_05000.safetensors
-# wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/4siad0ll_3/resolve/main/checkpoints/lora_weights_step_04000.safetensors
-# wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/4siad0ll_3/resolve/main/checkpoints/lora_weights_step_03500.safetensors
+mkdir -p /workspace/ComfyUI/models/loras/LTX/AVTRAIN/4siad0ll_3
+cd /workspace/ComfyUI/models/loras/LTX/AVTRAIN/4siad0ll_3
+wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/4siad0ll_3/resolve/main/checkpoints/lora_weights_step_05000.safetensors
+wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/4siad0ll_3/resolve/main/checkpoints/lora_weights_step_04000.safetensors
+wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/4siad0ll_3/resolve/main/checkpoints/lora_weights_step_03500.safetensors
 
-# mkdir -p /workspace/ComfyUI/models/loras/LTX/AVTRAIN/4siad0ll_2
-# cd /workspace/ComfyUI/models/loras/LTX/AVTRAIN/4siad0ll_2
-# wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/4siad0ll_2/resolve/main/checkpoints/lora_weights_step_05000.safetensors
-# wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/4siad0ll_2/resolve/main/checkpoints/lora_weights_step_04000.safetensors
-# wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/4siad0ll_2/resolve/main/checkpoints/lora_weights_step_03500.safetensors
+mkdir -p /workspace/ComfyUI/models/loras/LTX/AVTRAIN/4siad0ll_2
+cd /workspace/ComfyUI/models/loras/LTX/AVTRAIN/4siad0ll_2
+wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/4siad0ll_2/resolve/main/checkpoints/lora_weights_step_05000.safetensors
+wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/4siad0ll_2/resolve/main/checkpoints/lora_weights_step_04000.safetensors
+wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/4siad0ll_2/resolve/main/checkpoints/lora_weights_step_03500.safetensors
 
-# mkdir -p /workspace/ComfyUI/models/loras/LTX/AVTRAIN/4lice_d3lish_2_distilled
-# cd /workspace/ComfyUI/models/loras/LTX/AVTRAIN/4lice_d3lish_2_distilled
-# wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/4lice_d3lish_2_distilled/resolve/main/checkpoints/lora_weights_step_05000.safetensors
-# wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/4lice_d3lish_2_distilled/resolve/main/checkpoints/lora_weights_step_04000.safetensors
-# wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/4lice_d3lish_2_distilled/resolve/main/checkpoints/lora_weights_step_03500.safetensors
-# echo "finished downloading loras from Hugging Face"
-# cd /workspace/ComfyUI
+mkdir -p /workspace/ComfyUI/models/loras/LTX/AVTRAIN/4lice_d3lish_2_distilled
+cd /workspace/ComfyUI/models/loras/LTX/AVTRAIN/4lice_d3lish_2_distilled
+wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/4lice_d3lish_2_distilled/resolve/main/checkpoints/lora_weights_step_05000.safetensors
+wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/4lice_d3lish_2_distilled/resolve/main/checkpoints/lora_weights_step_04000.safetensors
+wget --header="Authorization: Bearer $HF_TOKEN" https://huggingface.co/LVMCS/4lice_d3lish_2_distilled/resolve/main/checkpoints/lora_weights_step_03500.safetensors
+echo "finished downloading loras from Hugging Face"
+cd /workspace/ComfyUI
 
-# KL
-# hf download LVMCS/49108215KL --local-dir .
-# rm -rf .cache/
+KL
+hf download LVMCS/49108215KL --local-dir .
+rm -rf .cache/
 
 #WA
 #hf download LVMCS/49108215WA --local-dir .

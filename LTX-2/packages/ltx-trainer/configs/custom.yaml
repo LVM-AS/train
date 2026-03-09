@@ -49,7 +49,7 @@ acceleration:
 
 checkpoints:
   interval: 500
-  keep_last_n: -1
+  keep_last_n: 5
   precision: "bfloat16"
 
 flow_matching:

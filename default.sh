@@ -345,6 +345,16 @@ rm -rf .cache/
 echo "finished downloading MM model from Hugging Face"
 
 #LT
+echo "downloading LT model from Hugging Face"
+cd /workspace/ComfyUI/models/
+hf download LVMCS/49108215LT --include="vae_approx/*" --local-dir .
+hf download LVMCS/49108215LT --include="vae/LTX/*" --local-dir .
+hf download LVMCS/49108215LT --include="text_encoders/LTX/*" --local-dir .
+rm -rf .cache/
+hf download LVMCS/49108215LT --include="checkpoints/LTX/*" --local-dir .
+rm -rf .cache/
+echo "finished downloading LT model from Hugging Face"
+
 # echo "downloading LT model from Hugging Face"
 # hf download LVMCS/49108215LT --local-dir .
 # rm -rf .cache/

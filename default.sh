@@ -208,9 +208,9 @@ rm -rf /workspace/ComfyUI/models/checkpoints/*.safetensors
 
 echo "cloning comfyui custom nodes"
 cd /workspace/ComfyUI/custom_nodes
-rm -rf ComfyUI-Manager/
-rm -rf Civicomfy/
-rm -rf ComfyUI-KJNodes/
+# rm -rf ComfyUI-Manager/
+# rm -rf Civicomfy/
+# rm -rf ComfyUI-KJNodes/
 git clone https://github.com/MoonGoblinDev/Civicomfy
 git clone https://github.com/city96/ComfyUI-GGUF
 git clone https://github.com/kijai/ComfyUI-KJNodes
@@ -345,10 +345,10 @@ rm -rf .cache/
 echo "finished downloading MM model from Hugging Face"
 
 #LT
-echo "downloading LT model from Hugging Face"
-hf download LVMCS/49108215LT --local-dir .
-rm -rf .cache/
-echo "finished downloading LT model from Hugging Face"
+# echo "downloading LT model from Hugging Face"
+# hf download LVMCS/49108215LT --local-dir .
+# rm -rf .cache/
+# echo "finished downloading LT model from Hugging Face"
 
 #KL
 # echo "downloading KL model from Hugging Face"

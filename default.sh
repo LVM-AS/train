@@ -328,73 +328,125 @@ rm -rf /workspace/ComfyUI/comfy_extras/nodes_qwen.py
 rm -rf /workspace/ComfyUI/custom_nodes/ComfyUI-QwenVL/hf_models.json
 echo "finished removing files and folders to be replaced by huggingface repo"
 
-echo "Downloading repositories from Hugging Face"
+echo "Downloading repositories"
 cd /workspace/ComfyUI
 hf auth login --token "$HF_TOKEN"
 
 #MI
-echo "downloading MI files from Hugging Face"
+echo "downloading MI files"
 hf download LVMCS/49108215MI --local-dir .
 rm -rf .cache/
-echo "finished downloading MI files from Hugging Face"
+echo "finished downloading MI files"
 
 #MM
-echo "downloading MM model from Hugging Face"
+echo "downloading MM model"
 hf download LVMCS/49108215MM --local-dir .
 rm -rf .cache/
-echo "finished downloading MM model from Hugging Face"
+echo "finished downloading MM model"
 
 #LT
-# echo "downloading LT model from Hugging Face"
-# cd /workspace/ComfyUI/models/
-# hf download LVMCS/49108215LT --include="vae_approx/*" --local-dir .
-# hf download LVMCS/49108215LT --include="vae/*" --local-dir .
-# hf download LVMCS/49108215LT --include="checkpoints/*" --local-dir .
-# rm -rf .cache/
-# echo "finished downloading LT model from Hugging Face"
-
-# echo "downloading LTX-2 text encoder from Hugging Face"
-# mkdir -p /workspace/ComfyUI/models/text_encoders/LTX
-# cd /workspace/ComfyUI/models/text_encoders/LTX
-# hf download p-e-w/gemma-3-12b-it-heretic-v2 --local-dir .
-# rm -rf .cache/
-# echo "finished downloading LTX-2 text encoder from Hugging Face"
-# echo "downloading LTX-2 text encoder config files from Hugging Face"
-# wget https://huggingface.co/google/gemma-3-12b-it-qat-q4_0-unquantized/resolve/main/added_tokens.json
-# wget https://huggingface.co/google/gemma-3-12b-it-qat-q4_0-unquantized/resolve/main/chat_template.json
-# wget https://huggingface.co/google/gemma-3-12b-it-qat-q4_0-unquantized/resolve/main/preprocessor_config.json
-# wget https://huggingface.co/google/gemma-3-12b-it-qat-q4_0-unquantized/resolve/main/processor_config.json
-# wget https://huggingface.co/google/gemma-3-12b-it-qat-q4_0-unquantized/resolve/main/tokenizer.model
-# rm -rf tokenizer_config.json
-# wget https://huggingface.co/p-e-w/gemma-3-12b-it-heretic-v2/resolve/main/tokenizer_config.json
-# echo "finished downloading LTX-2 text encoder config files from Hugging Face"
-
-echo "downloading LT model from Hugging Face"
+echo "downloading LTX 2.3 repositories"
+echo "downloading LT repository"
 cd /workspace/ComfyUI/models/
 hf download LVMCS/49108215LT --local-dir .
 rm -rf .cache/
+echo "finished downloading LT repository"
+
+#LTX 2.3 Safetensors
+echo "creating LTX 2.3 Safetensors model folders"
+mkdir -p /workspace/ComfyUI/models/diffusion_models/LTX23
+# echo "downloading LTX 2.3 Safetensors"
+# cd /workspace/ComfyUI/models/diffusion_models/LTX23
+# hf download Kijai/LTX2.3_comfy diffusion_models/ltx-2-3-22b-dev_transformer_only_fp8_input_scaled.safetensors --local-dir .
+# mv diffusion_models/ltx-2-3-22b-dev_transformer_only_fp8_input_scaled.safetensors .
+# rm -rf diffusion_models/
+# rm -rf .cache/
+echo "finished downloading LTX 2.3 Safetensors"
+
+#LTX 2.3 GGUF
+echo "creating LTX 2.3 GGUF model folders"
+mkdir -p /workspace/ComfyUI/models/unet/LTX23
+# echo "downloading LTX 2.3 GGUF models"
+# cd /workspace/ComfyUI/models/unet/LTX23
+# hf download unsloth/LTX-2.3-GGUF ltx-2.3-22b-dev-Q8_0.gguf --local-dir .
+# hf download unsloth/LTX-2.3-GGUF ltx-2.3-22b-dev-Q6_K.gguf --local-dir .
+# hf download unsloth/LTX-2.3-GGUF ltx-2.3-22b-dev-Q5_0.gguf --local-dir .
+# hf download unsloth/LTX-2.3-GGUF ltx-2.3-22b-dev-Q4_0.gguf --local-dir .
+# hf download unsloth/LTX-2.3-GGUF ltx-2.3-22b-dev-Q3_K_M.gguf --local-dir .
+# rm -rf .cache/
+# echo "finished downloading LTX 2.3 GGUF models"
+
+#LTX 2.3 Text Encoder Projections
+echo "downloading Gemma text encoder projections"
+mkdir -p /workspace/ComfyUI/models/text_encoders/LTX23
+cd /workspace/ComfyUI/models/text_encoders/LTX23
+hf download Kijai/LTX2.3_comfy text_encoders/ltx-2.3_text_projection_bf16.safetensors --local-dir .
+mv text_encoders/ltx-2.3_text_projection_bf16.safetensors .
+rm -rf text_encoders/
+rm -rf .cache/
+echo "finished downloading Gemma text encoder projections"
+
+#LTX 2.3 Text Encoder Embeddings
+# echo "downloading Gemma text encoder embeddings for LTX 2.3 GGUF"
+# mkdir -p /workspace/ComfyUI/models/text_encoders/LTX23
+# cd /workspace/ComfyUI/models/text_encoders/LTX23
+# wget https://huggingface.co/unsloth/LTX-2.3-GGUF/resolve/main/text_encoders/ltx-2.3-22b-dev_embeddings_connectors.safetensors
+# echo "finished downloading Gemma text encoder embeddings for LTX 2.3 GGUF"
+
+#Gemma Text Encoder
+# echo "downloading Gemma Heretic V2 text encoder"
+# mkdir -p /workspace/ComfyUI/models/text_encoders/LTX23
+# cd /workspace/ComfyUI/models/text_encoders/LTX23
+# hf download DreamFast/gemma-3-12b-it-heretic-v2 comfyui/gemma-3-12b-it-heretic-v2_fp8_e4m3fn.safetensors --local-dir .
+# mv comfyui/* .
+# rm -rf comfyui/
+# hf download DreamFast/gemma-3-12b-it-heretic-v2 comfyui/gemma-3-12b-it-heretic-v2_nvfp4.safetensors --local-dir .
+# hf download DreamFast/gemma-3-12b-it-heretic-v2 gguf/gemma-3-12b-it-heretic-v2-Q6_K.gguf --local-dir .
+# hf download DreamFast/gemma-3-12b-it-heretic-v2 gguf/gemma-3-12b-it-heretic-v2-Q5_K_M.gguf --local-dir .
+# hf download DreamFast/gemma-3-12b-it-heretic-v2 gguf/gemma-3-12b-it-heretic-v2-Q4_K_M.gguf --local-dir .
+# hf download DreamFast/gemma-3-12b-it-heretic-v2 gguf/gemma-3-12b-it-heretic-v2-Q3_K_M.gguf --local-dir .
+# mv gguf/* .
+# rm -rf gguf/
+# rm -rf .cache/
+# echo "finished downloading Gemma Heretic V2 text encoder"
+
+#LTX 2.3 distilled lora
+echo "downloading LTX 2.3 distilled lora"
+mkdir -p /workspace/ComfyUI/models/loras/LTX23/utility
+cd /workspace/ComfyUI/models/loras/LTX23/utility
+wget https://huggingface.co/Kijai/LTX2.3_comfy/resolve/main/loras/ltx-2.3-22b-distilled-lora-dynamic_fro09_avg_rank_105_bf16.safetensors
+echo "finished downloading LTX 2.3 distilled lora"
+
+#LTX 2.3 spatial and temporal upscalers
+echo "downloading LTX 2.3 spatial and temporal upscalers"
+mkdir -p /workspace/ComfyUI/models/latent_upscale_models/LTX23
+cd /workspace/ComfyUI/models/latent_upscale_models/LTX23
+wget https://huggingface.co/Lightricks/LTX-2.3/resolve/main/ltx-2.3-spatial-upscaler-x1.5-1.0.safetensors
+wget https://huggingface.co/Lightricks/LTX-2.3/resolve/main/ltx-2.3-spatial-upscaler-x2-1.0.safetensors
+wget https://huggingface.co/Lightricks/LTX-2.3/resolve/main/ltx-2.3-temporal-upscaler-x2-1.0.safetensors
+echo "finished downloading LTX 2.3 spatial and temporal upscalers"
+echo "finished downloading LTX 2.3 repositories"
 cd /workspace/ComfyUI
-echo "finished downloading LT model from Hugging Face"
 
 #KL
-# echo "downloading KL model from Hugging Face"
+# echo "downloading KL model"
 # hf download LVMCS/49108215KL --local-dir .
 # rm -rf .cache/
-# echo "finished downloading KL model from Hugging Face"
+# echo "finished downloading KL model"
 
 #WA
-# echo "downloading WA model from Hugging Face"
+# echo "downloading WA model"
 # hf download LVMCS/49108215WA --local-dir .
 # rm -rf .cache/
-# echo "finished downloading WA model from Hugging Face"
+# echo "finished downloading WA model"
 
 #QW
-# echo "downloading QW model from Hugging Face"
+# echo "downloading QW model"
 # hf download LVMCS/49108215QW --local-dir .
 # rm -rf .cache/
-# echo "finished downloading QW model from Hugging Face"
+# echo "finished downloading QW model"
 
-echo "finished downloading repositories from Hugging Face"
+echo "finished downloading repositories"
 
 echo "removing .cache folders to save space"
 cd /workspace

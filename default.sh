@@ -223,7 +223,7 @@ git clone https://github.com/Azornes/Comfyui-Resolution-Master
 git clone https://github.com/melMass/comfy_mtb
 git clone https://github.com/pythongosssss/ComfyUI-Custom-Scripts
 git clone https://github.com/yolain/ComfyUI-Easy-Use
-#git clone https://github.com/ltdrdata/ComfyUI-Impact-Pack
+git clone https://github.com/ltdrdata/ComfyUI-Impact-Pack
 git clone https://github.com/ltdrdata/ComfyUI-Inspire-Pack
 git clone https://github.com/1038lab/ComfyUI-RMBG
 git clone https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite
@@ -262,7 +262,7 @@ pip install -r /workspace/ComfyUI/custom_nodes/comfy_mtb/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Custom-Scripts/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Easy-Use/requirements.txt
 #pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Impact-Pack/requirements.txt torch==2.8 torchvision torchaudio numpy==1.26.4
-#pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Impact-Pack/requirements.txt numpy==1.26.4
+pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Impact-Pack/requirements.txt numpy==1.26.4
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Inspire-Pack/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-RMBG/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-VideoHelperSuite/requirements.txt
@@ -345,20 +345,36 @@ rm -rf .cache/
 echo "finished downloading MM model from Hugging Face"
 
 #LT
-echo "downloading LT model from Hugging Face"
-cd /workspace/ComfyUI/models/
-hf download LVMCS/49108215LT --include="vae_approx/*" --local-dir .
-hf download LVMCS/49108215LT --include="vae/LTX/*" --local-dir .
-hf download LVMCS/49108215LT --include="text_encoders/LTX/*" --local-dir .
-rm -rf .cache/
-hf download LVMCS/49108215LT --include="checkpoints/LTX/*" --local-dir .
-rm -rf .cache/
-echo "finished downloading LT model from Hugging Face"
-
 # echo "downloading LT model from Hugging Face"
-# hf download LVMCS/49108215LT --local-dir .
+# cd /workspace/ComfyUI/models/
+# hf download LVMCS/49108215LT --include="vae_approx/*" --local-dir .
+# hf download LVMCS/49108215LT --include="vae/*" --local-dir .
+# hf download LVMCS/49108215LT --include="checkpoints/*" --local-dir .
 # rm -rf .cache/
 # echo "finished downloading LT model from Hugging Face"
+
+# echo "downloading LTX-2 text encoder from Hugging Face"
+# mkdir -p /workspace/ComfyUI/models/text_encoders/LTX
+# cd /workspace/ComfyUI/models/text_encoders/LTX
+# hf download p-e-w/gemma-3-12b-it-heretic-v2 --local-dir .
+# rm -rf .cache/
+# echo "finished downloading LTX-2 text encoder from Hugging Face"
+# echo "downloading LTX-2 text encoder config files from Hugging Face"
+# wget https://huggingface.co/google/gemma-3-12b-it-qat-q4_0-unquantized/resolve/main/added_tokens.json
+# wget https://huggingface.co/google/gemma-3-12b-it-qat-q4_0-unquantized/resolve/main/chat_template.json
+# wget https://huggingface.co/google/gemma-3-12b-it-qat-q4_0-unquantized/resolve/main/preprocessor_config.json
+# wget https://huggingface.co/google/gemma-3-12b-it-qat-q4_0-unquantized/resolve/main/processor_config.json
+# wget https://huggingface.co/google/gemma-3-12b-it-qat-q4_0-unquantized/resolve/main/tokenizer.model
+# rm -rf tokenizer_config.json
+# wget https://huggingface.co/p-e-w/gemma-3-12b-it-heretic-v2/resolve/main/tokenizer_config.json
+# echo "finished downloading LTX-2 text encoder config files from Hugging Face"
+
+echo "downloading LT model from Hugging Face"
+cd /workspace/ComfyUI/models/
+hf download LVMCS/49108215LT --local-dir .
+rm -rf .cache/
+cd /workspace/ComfyUI
+echo "finished downloading LT model from Hugging Face"
 
 #KL
 # echo "downloading KL model from Hugging Face"

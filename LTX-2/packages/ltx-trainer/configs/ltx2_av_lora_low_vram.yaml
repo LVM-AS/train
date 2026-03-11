@@ -34,11 +34,11 @@
 model:
   # Path to the LTX-2 model checkpoint (.safetensors file)
   # This should be a local path to your downloaded model
-  model_path: "/workspace/train/models/checkpoint/ltx-2-19b-dev-fp8.safetensors"
+  model_path: "path/to/ltx-2-model.safetensors"
 
   # Path to the text encoder model directory
   # For LTX-2, this is typically the Gemma-based text encoder
-  text_encoder_path: "/workspace/train/models/text_encoder/gemma-3-12b-it-qat-q4_0-unquantized/"
+  text_encoder_path: "path/to/gemma-text-encoder"
 
   # Training mode: "lora" for efficient adapter training, "full" for full fine-tuning
   # LoRA is recommended for most use cases (faster, less memory, prevents overfitting)
@@ -116,7 +116,7 @@ training_strategy:
 
   # Enable joint audio-video training
   # Set to true if your dataset includes audio and you want to train the audio branch
-  with_audio: false
+  with_audio: true
 
   # Directory name (within preprocessed_data_root) containing audio latents
   # Only used when with_audio is true
@@ -132,7 +132,7 @@ optimization:
   learning_rate: 1e-4
 
   # Total number of training steps
-  steps: 3000
+  steps: 2000
 
   # Batch size per GPU
   # Reduce if running out of memory
@@ -185,7 +185,7 @@ acceleration:
 data:
   # Root directory containing preprocessed training data
   # Should contain: latents/, conditions/, and optionally audio_latents/
-  preprocessed_data_root: "/workspace/train/data/preprocessed/"
+  preprocessed_data_root: "/path/to/preprocessed/data"
 
   # Number of worker processes for data loading
   # Used for parallel data loading to speed up data loading
@@ -202,11 +202,9 @@ validation:
   # Provide prompts representative of your training data
   # LTX-2 prefers longer, detailed prompts that describe both visual content and audio
   prompts:
-    - "A beautiful woman with long wavy hair performms a slow hypnotic dance in a in a sunny beach, moving her hips side to side with a kind smile and look towards the camera. She is wearing an intricate cosplay outfit with a white skirt with black edges, thigh high white and black pantyhose, a white form-fitting top with black edges and a deep neckline. The beautiful morning light casts golden light and shadows across her skin. The audio captures the sound of the waves of the water, the girl's movements across the sand as well as the sound of her clothing. The ambient beach sounds can also be heard with the occasional distant sounds of the city."
-    # - "A beautiful woman with long dark hair stands in a professional kitchen wearing a detailed, intricate and form-fitting uniform, plating a gourmet dish with precise movements as she smiles towards the camera. Steam rises from freshly cooked vegetables as she arranges them with tweezers. The stainless steel surfaces gleam under bright overhead lights, and various pots simmer on the stove behind him. The audio features the sizzling of pans, the clinking of utensils against plates, and the ambient hum of kitchen ventilation."
-    # - "A stunning woman with long beautiful hair is walking in a sunny beach wearing a skirt and detailed top, smiling kindly towards the camera as the wind gently blows through her hair. The beautiful golden sunlight lighting across her skin. The audio captures the sounds of dripping water and the girl humming melodically, as well as the distant sounds of the city."
-    # - "A woman with dark striped hair is walking in a sunny beach, smiling beautifully towards the camera, sunlight lighting across her skin. The audio captures the sounds of dripping water, the woman breathing as well as the distant sounds of the city."
-  
+    - "A woman with long brown hair sits at a wooden desk in a cozy home office, typing on a laptop while occasionally glancing at notes beside her. Soft natural light streams through a large window, casting warm shadows across the room. She pauses to take a sip from a ceramic mug, then continues working with focused concentration. The audio captures the gentle clicking of keyboard keys, the soft rustle of papers, and ambient room tone with occasional distant bird chirps from outside."
+    - "A chef in a white uniform stands in a professional kitchen, carefully plating a gourmet dish with precise movements. Steam rises from freshly cooked vegetables as he arranges them with tweezers. The stainless steel surfaces gleam under bright overhead lights, and various pots simmer on the stove behind him. The audio features the sizzling of pans, the clinking of utensils against plates, and the ambient hum of kitchen ventilation."
+
   # Negative prompt to avoid unwanted artifacts
   negative_prompt: "worst quality, inconsistent motion, blurry, jittery, distorted"
 
@@ -217,7 +215,7 @@ validation:
   # Output video dimensions [width, height, frames]
   # Width and height must be divisible by 32
   # Frames must satisfy: frames % 8 == 1 (e.g., 1, 9, 17, 25, 33, 41, 49, 57, 65, 73, 81, 89, ...)
-  video_dims: [ 768, 768, 1 ]
+  video_dims: [ 576, 576, 49 ]
 
   # Frame rate for generated videos
   frame_rate: 25.0
@@ -243,7 +241,7 @@ validation:
   # STG (Spatio-Temporal Guidance) parameters for improved video quality
   # STG is combined with CFG for better temporal coherence
   stg_scale: 1.0  # Recommended: 1.0 (0.0 disables STG)
-  stg_blocks: [29]  # Recommended: single block 29
+  stg_blocks: [ 29 ]  # Recommended: single block 29
   stg_mode: "stg_av"  # "stg_av" perturbs both audio and video, "stg_v" video only
 
   # Whether to generate audio in validation samples
@@ -324,4 +322,4 @@ wandb:
 seed: 42
 
 # Directory to save outputs (checkpoints, validation videos, logs)
-output_dir: "/workspace/train/outputs/ltx2_av_lora"
+output_dir: "outputs/ltx2_av_lora"

@@ -216,7 +216,7 @@ git clone https://github.com/city96/ComfyUI-GGUF
 git clone https://github.com/kijai/ComfyUI-KJNodes
 git clone https://github.com/Comfy-Org/ComfyUI-Manager
 git clone https://github.com/yuvraj108c/ComfyUI-Video-Depth-Anything
-#git clone https://github.com/kijai/ComfyUI-WanVideoWrapper
+git clone https://github.com/kijai/ComfyUI-WanVideoWrapper
 #git clone https://github.com/kijai/ComfyUI-segment-anything-2
 git clone https://github.com/ai-shizuka/ComfyUI-tbox
 git clone https://github.com/Azornes/Comfyui-Resolution-Master
@@ -241,11 +241,11 @@ git clone https://github.com/Fannovel16/ComfyUI-Frame-Interpolation
 git clone https://github.com/calcuis/gguf
 #git clone https://github.com/pollockjj/ComfyUI-MultiGPU
 git clone https://github.com/1038lab/ComfyUI-QwenVL
-#git clone https://github.com/kijai/ComfyUI-SCAIL-Pose
-#git clone https://github.com/kijai/ComfyUI-WanAnimatePreprocess/
+git clone https://github.com/kijai/ComfyUI-SCAIL-Pose
+git clone https://github.com/kijai/ComfyUI-WanAnimatePreprocess/
 #git clone https://github.com/ClownsharkBatwing/RES4LYF
 git clone https://github.com/Lightricks/ComfyUI-LTXVideo
-#git clone https://github.com/akatz-ai/ComfyUI-DepthCrafter-Nodes
+git clone https://github.com/akatz-ai/ComfyUI-DepthCrafter-Nodes
 git clone https://github.com/princepainter/Comfyui-PainterAudioCut
 
 echo "installing custom nodes requirements"
@@ -254,7 +254,7 @@ pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-GGUF/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-KJNodes/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Manager/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Video-Depth-Anything/requirements.txt
-#pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-WanVideoWrapper/requirements.txt
+pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-WanVideoWrapper/requirements.txt
 #pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-segment-anything-2/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-tbox/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/Comfyui-Resolution-Master/requirements.txt
@@ -280,14 +280,13 @@ pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Frame-Interpolation/requi
 pip install -r /workspace/ComfyUI/custom_nodes/gguf/requirements.txt
 #pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-MultiGPU/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-QwenVL/requirements.txt
-#pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-SCAIL-Pose/requirements.txt
-#pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-WanAnimatePreprocess/requirements.txt
+pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-SCAIL-Pose/requirements.txt
+pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-WanAnimatePreprocess/requirements.txt
 #pip install -r /workspace/ComfyUI/custom_nodes/RES4LYF/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-LTXVideo/requirements.txt
-#pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-DepthCrafter-Nodes/requirements.txt
+pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-DepthCrafter-Nodes/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/Comfyui-PainterAudioCut/requirements.txt
 pip uninstall -y xformers
-
 cd /workspace
 echo "finished installing custom nodes requirements"
 
@@ -364,12 +363,12 @@ mkdir -p /workspace/ComfyUI/models/checkpoints/LTX23
 #LTX 2.3 Safetensors
 echo "creating LTX 2.3 Safetensors model folders"
 mkdir -p /workspace/ComfyUI/models/diffusion_models/LTX23
-# echo "downloading LTX 2.3 Safetensors"
-# cd /workspace/ComfyUI/models/diffusion_models/LTX23
-# hf download Kijai/LTX2.3_comfy diffusion_models/ltx-2-3-22b-dev_transformer_only_fp8_input_scaled.safetensors --local-dir .
-# mv /workspace/ComfyUI/models/diffusion_models/LTX23/diffusion_models/* .
-# rm -rf diffusion_models/
-# rm -rf .cache/
+echo "downloading LTX 2.3 Safetensors"
+cd /workspace/ComfyUI/models/diffusion_models/LTX23
+hf download Kijai/LTX2.3_comfy diffusion_models/ltx-2.3-22b-distilled_transformer_only_fp8_input_scaled_v2.safetensors --local-dir .
+mv /workspace/ComfyUI/models/diffusion_models/LTX23/diffusion_models/* .
+rm -rf diffusion_models/
+rm -rf .cache/
 echo "finished downloading LTX 2.3 Safetensors"
 
 #LTX 2.3 GGUF
@@ -403,12 +402,12 @@ echo "finished downloading Gemma text encoder projections"
 # echo "finished downloading Gemma text encoder embeddings for LTX 2.3 GGUF"
 
 #Gemma Text Encoder
-# echo "downloading Gemma Heretic V2 text encoder"
-# mkdir -p /workspace/ComfyUI/models/text_encoders/LTX23
-# cd /workspace/ComfyUI/models/text_encoders/LTX23
-# hf download DreamFast/gemma-3-12b-it-heretic-v2 comfyui/gemma-3-12b-it-heretic-v2_fp8_e4m3fn.safetensors --local-dir .
-# mv comfyui/* .
-# rm -rf comfyui/
+echo "downloading Gemma Heretic V2 text encoder"
+mkdir -p /workspace/ComfyUI/models/text_encoders/LTX23
+cd /workspace/ComfyUI/models/text_encoders/LTX23
+hf download DreamFast/gemma-3-12b-it-heretic-v2 comfyui/gemma-3-12b-it-heretic-v2_fp8_e4m3fn.safetensors --local-dir .
+mv /workspace/ComfyUI/models/text_encoders/LTX23/comfyui/* .
+rm -rf comfyui/
 # hf download DreamFast/gemma-3-12b-it-heretic-v2 comfyui/gemma-3-12b-it-heretic-v2_nvfp4.safetensors --local-dir .
 # hf download DreamFast/gemma-3-12b-it-heretic-v2 gguf/gemma-3-12b-it-heretic-v2-Q6_K.gguf --local-dir .
 # hf download DreamFast/gemma-3-12b-it-heretic-v2 gguf/gemma-3-12b-it-heretic-v2-Q5_K_M.gguf --local-dir .
@@ -416,8 +415,8 @@ echo "finished downloading Gemma text encoder projections"
 # hf download DreamFast/gemma-3-12b-it-heretic-v2 gguf/gemma-3-12b-it-heretic-v2-Q3_K_M.gguf --local-dir .
 # mv gguf/* .
 # rm -rf gguf/
-# rm -rf .cache/
-# echo "finished downloading Gemma Heretic V2 text encoder"
+rm -rf .cache/
+echo "finished downloading Gemma Heretic V2 text encoder"
 
 #LTX 2.3 distilled lora
 echo "downloading LTX 2.3 distilled lora"

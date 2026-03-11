@@ -419,11 +419,11 @@ rm -rf .cache/
 echo "finished downloading Gemma Heretic V2 text encoder"
 
 #LTX 2.3 distilled lora
-echo "downloading LTX 2.3 distilled lora"
-mkdir -p /workspace/ComfyUI/models/loras/LTX23/utility
-cd /workspace/ComfyUI/models/loras/LTX23/utility
-wget https://huggingface.co/Kijai/LTX2.3_comfy/resolve/main/loras/ltx-2.3-22b-distilled-lora-dynamic_fro09_avg_rank_105_bf16.safetensors
-echo "finished downloading LTX 2.3 distilled lora"
+# echo "downloading LTX 2.3 distilled lora"
+# mkdir -p /workspace/ComfyUI/models/loras/LTX23/utility
+# cd /workspace/ComfyUI/models/loras/LTX23/utility
+# wget https://huggingface.co/Kijai/LTX2.3_comfy/resolve/main/loras/ltx-2.3-22b-distilled-lora-dynamic_fro09_avg_rank_105_bf16.safetensors
+# echo "finished downloading LTX 2.3 distilled lora"
 
 #LTX 2.3 spatial and temporal upscalers
 echo "downloading LTX 2.3 spatial and temporal upscalers"

@@ -352,13 +352,22 @@ hf download LVMCS/49108215LT --local-dir .
 rm -rf .cache/
 echo "finished downloading LT repository"
 
+#LTX 2.3 checkpoint
+echo "creating LTX 2.3 checkpoint model folders"
+mkdir -p /workspace/ComfyUI/models/checkpoints/LTX23
+# echo "downloading LTX 2.3 checkpoint model from Hugging Face"
+# cd /workspace/ComfyUI/models/checkpoints/LTX23
+# hf download drbaph/LTX-2.3-FP8 ltx-2.3-22b-distilled-fp8.safetensors --local-dir .
+# rm -rf .cache/
+# echo "finished downloading LTX 2.3 checkpoint model from Hugging Face"
+
 #LTX 2.3 Safetensors
 echo "creating LTX 2.3 Safetensors model folders"
 mkdir -p /workspace/ComfyUI/models/diffusion_models/LTX23
 # echo "downloading LTX 2.3 Safetensors"
 # cd /workspace/ComfyUI/models/diffusion_models/LTX23
 # hf download Kijai/LTX2.3_comfy diffusion_models/ltx-2-3-22b-dev_transformer_only_fp8_input_scaled.safetensors --local-dir .
-# mv diffusion_models/ltx-2-3-22b-dev_transformer_only_fp8_input_scaled.safetensors .
+# mv /workspace/ComfyUI/models/diffusion_models/LTX23/diffusion_models/* .
 # rm -rf diffusion_models/
 # rm -rf .cache/
 echo "finished downloading LTX 2.3 Safetensors"
@@ -370,9 +379,9 @@ mkdir -p /workspace/ComfyUI/models/unet/LTX23
 # cd /workspace/ComfyUI/models/unet/LTX23
 # hf download unsloth/LTX-2.3-GGUF ltx-2.3-22b-dev-Q8_0.gguf --local-dir .
 # hf download unsloth/LTX-2.3-GGUF ltx-2.3-22b-dev-Q6_K.gguf --local-dir .
-# hf download unsloth/LTX-2.3-GGUF ltx-2.3-22b-dev-Q5_0.gguf --local-dir .
-# hf download unsloth/LTX-2.3-GGUF ltx-2.3-22b-dev-Q4_0.gguf --local-dir .
-# hf download unsloth/LTX-2.3-GGUF ltx-2.3-22b-dev-Q3_K_M.gguf --local-dir .
+# hf download unsloth/LTX-2.3-GGUF ltx-2.3-22b-dev-UD-Q5_K_M.gguf --local-dir .
+# hf download unsloth/LTX-2.3-GGUF ltx-2.3-22b-dev-UD-Q4_K_M.gguf --local-dir .
+# hf download unsloth/LTX-2.3-GGUF ltx-2.3-22b-dev-UD-Q3_K_M.gguf --local-dir .
 # rm -rf .cache/
 # echo "finished downloading LTX 2.3 GGUF models"
 

@@ -1,5 +1,5 @@
 model:
-  model_path: "/workspace/ComfyUI/models/checkpoints/LTX/ltx-2.3-22b-distilled-fp8.safetensors"
+  model_path: "/workspace/ComfyUI/models/checkpoints/LTX23/ltx-2.3-22b-dev-fp8.safetensors"
   text_encoder_path: "/workspace/ComfyUI/models/text_encoders/LTX"
   training_mode: "lora"
   load_checkpoint: null
@@ -32,8 +32,8 @@ lora:
     # - "audio_ff.net.2"
 
 optimization:
-  learning_rate: 2e-4
-  steps: 5000
+  learning_rate: 1e-5
+  steps: 4000
   batch_size: 1
   gradient_accumulation_steps: 1
   max_grad_norm: 1.0
@@ -45,7 +45,7 @@ optimization:
 acceleration:
   mixed_precision_mode: "bf16"
   quantization: "int8-quanto"
-  load_text_encoder_in_8bit: True
+  load_text_encoder_in_8bit: true
 
 checkpoints:
   interval: 500

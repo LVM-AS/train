@@ -1,6 +1,6 @@
 model:
-  model_path: "/workspace/ComfyUI/models/checkpoints/LTX23/ltx-2.3-22b-dev-fp8.safetensors"
-  text_encoder_path: "/workspace/ComfyUI/models/text_encoders/LTX"
+  model_path: "/workspace/ComfyUI/models/checkpoints/LTX23/ltx-2.3-22b-dev.safetensors"
+  text_encoder_path: "/workspace/ComfyUI/models/text_encoders/LTX23"
   training_mode: "lora"
   load_checkpoint: null
 
@@ -33,7 +33,7 @@ lora:
 
 optimization:
   learning_rate: 1e-5
-  steps: 4000
+  steps: 4500
   batch_size: 1
   gradient_accumulation_steps: 1
   max_grad_norm: 1.0

@@ -22,29 +22,29 @@ echo "."
 echo "."
 echo "."
 
-# echo "downloading LTX-2 checkpoint model from Hugging Face"
-# mkdir -p /workspace/ComfyUI/models/checkpoints/LTX
-# cd /workspace/ComfyUI/models/checkpoints/LTX
-# hf download drbaph/LTX-2.3-FP8 ltx-2.3-22b-distilled-fp8.safetensors --local-dir .
-# rm -rf .cache/
-# echo "finished downloading LTX-2 checkpoint model from Hugging Face"
+echo "downloading LTX-2 checkpoint model from Hugging Face"
+mkdir -p /workspace/ComfyUI/models/checkpoints/LTX23
+cd /workspace/ComfyUI/models/checkpoints/LTX23
+hf download Lightricks/LTX-2.3 ltx-2.3-22b-dev.safetensors --local-dir .
+rm -rf .cache/
+echo "finished downloading LTX-2 checkpoint model from Hugging Face"
 
-# echo "downloading LTX-2 text encoder from Hugging Face"
-# mkdir -p /workspace/ComfyUI/models/text_encoders/LTX
-# cd /workspace/ComfyUI/models/text_encoders/LTX
-# hf download p-e-w/gemma-3-12b-it-heretic-v2 --local-dir .
-# rm -rf .cache/
-# echo "finished downloading LTX-2 text encoder from Hugging Face"
+echo "downloading LTX-2 text encoder from Hugging Face"
+mkdir -p /workspace/ComfyUI/models/text_encoders/LTX23
+cd /workspace/ComfyUI/models/text_encoders/LTX23
+hf download DreamFast/gemma-3-12b-it-heretic-v2 --exclude="*/*gemma-*" --local-dir .
+rm -rf .cache/
+echo "finished downloading LTX-2 text encoder from Hugging Face"
 
-# echo "downloading LTX-2 text encoder config files from Hugging Face"
-# wget https://huggingface.co/google/gemma-3-12b-it-qat-q4_0-unquantized/resolve/main/added_tokens.json
-# wget https://huggingface.co/google/gemma-3-12b-it-qat-q4_0-unquantized/resolve/main/chat_template.json
-# wget https://huggingface.co/google/gemma-3-12b-it-qat-q4_0-unquantized/resolve/main/preprocessor_config.json
-# wget https://huggingface.co/google/gemma-3-12b-it-qat-q4_0-unquantized/resolve/main/processor_config.json
-# wget https://huggingface.co/google/gemma-3-12b-it-qat-q4_0-unquantized/resolve/main/tokenizer.model
-# rm -rf tokenizer_config.json
-# wget https://huggingface.co/p-e-w/gemma-3-12b-it-heretic-v2/resolve/main/tokenizer_config.json
-# echo "finished downloading LTX-2 text encoder config files from Hugging Face"
+echo "downloading LTX-2 text encoder config files from Hugging Face"
+wget --header="Authorization: $HF_TOKEN" https://huggingface.co/Lightricks/gemma-3-12b-it-qat-q4_0-unquantized/resolve/main/added_tokens.json
+wget --header="Authorization: $HF_TOKEN" https://huggingface.co/Lightricks/gemma-3-12b-it-qat-q4_0-unquantized/resolve/main/chat_template.json
+wget --header="Authorization: $HF_TOKEN" https://huggingface.co/Lightricks/gemma-3-12b-it-qat-q4_0-unquantized/resolve/main/preprocessor_config.json
+wget --header="Authorization: $HF_TOKEN" https://huggingface.co/Lightricks/gemma-3-12b-it-qat-q4_0-unquantized/resolve/main/processor_config.json
+wget --header="Authorization: $HF_TOKEN" https://huggingface.co/Lightricks/gemma-3-12b-it-qat-q4_0-unquantized/resolve/main/tokenizer.model
+rm -rf tokenizer_config.json
+wget --header="Authorization: $HF_TOKEN" https://huggingface.co/DreamFast/gemma-3-12b-it-heretic-v2/resolve/main/tokenizer_config.json
+echo "finished downloading LTX-2 text encoder config files from Hugging Face"
 
 echo "downloading training repo from GitHub"
 cd /workspace/

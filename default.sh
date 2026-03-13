@@ -200,7 +200,7 @@ echo "installing base requirements"
 # pip install -U -r /workspace/ComfyUI/requirements.txt torch==2.8 torchvision torchaudio numpy==1.26.4
 # pip install -r /workspace/ComfyUI/manager_requirements.txt torch==2.8 torchvision torchaudio numpy==1.26.4
 pip install -U -r /workspace/ComfyUI/requirements.txt numpy==1.26.4
-pip install -r /workspace/ComfyUI/manager_requirements.txt numpy==1.26.4
+pip install -U -r /workspace/ComfyUI/manager_requirements.txt numpy==1.26.4
 echo "finished installing base requirements"
 
 echo "removing bloat model files to save space"
@@ -283,7 +283,7 @@ pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-QwenVL/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-SCAIL-Pose/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-WanAnimatePreprocess/requirements.txt
 #pip install -r /workspace/ComfyUI/custom_nodes/RES4LYF/requirements.txt
-pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-LTXVideo/requirements.txt
+pip install -U -r /workspace/ComfyUI/custom_nodes/ComfyUI-LTXVideo/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-DepthCrafter-Nodes/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/Comfyui-PainterAudioCut/requirements.txt
 pip uninstall -y xformers

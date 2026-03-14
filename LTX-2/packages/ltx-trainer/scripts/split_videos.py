@@ -44,7 +44,7 @@ def get_video_duration(input_path: Path) -> float:
         raise
 
 
-def split_video(input_path: Path, output_folder: Path, segment_duration: int = 5) -> None:
+def split_video(input_path: Path, output_folder: Path, segment_duration: float = 5) -> None:
     """
     Split a video into segments of specified duration.
     
@@ -154,14 +154,27 @@ Example usage:
         help='Output folder for video segments'
     )
     
-    parser.add_argument(
+    group = parser.add_mutually_exclusive_group()
+    group.add_argument(
         '--duration', '-d',
         type=int,
-        default=5,
+        default=None,
         help='Duration of each segment in seconds (default: 5)'
+    )
+    group.add_argument(
+        '--frames', '-f',
+        type=int,
+        default=None,
+        help='Duration of each segment in frames (at 24 FPS)'
     )
     
     args = parser.parse_args()
+    
+    FPS = 24
+    if args.frames is not None:
+        args.duration = args.frames / FPS
+    elif args.duration is None:
+        args.duration = 5
     
     # Convert to Path objects
     input_folder = Path(args.input).resolve()
@@ -189,7 +202,10 @@ Example usage:
         return 0
     
     print(f"\nFound {len(video_files)} video file(s) to process")
-    print(f"Segment duration: {args.duration} seconds\n")
+    if args.frames is not None:
+        print(f"Segment duration: {args.frames} frames ({args.duration:.4f}s at 24 FPS)\n")
+    else:
+        print(f"Segment duration: {args.duration} seconds\n")
     
     # Process each video
     success_count = 0

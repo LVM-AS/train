@@ -346,8 +346,7 @@ echo "finished downloading MM model"
 #LT
 echo "downloading LTX 2.3 repositories"
 echo "downloading LT repository"
-cd /workspace/ComfyUI/models/
-hf download LVMCS/49108215LT --local-dir .
+hf download LVMCS/49108215LT --exclude="models/text_encoders/LTX23/*" --local-dir .
 rm -rf .cache/
 echo "finished downloading LT repository"
 
@@ -426,15 +425,15 @@ echo "finished downloading Gemma Heretic V2 text encoder"
 # echo "finished downloading LTX 2.3 distilled lora"
 
 #LTX 2.3 spatial and temporal upscalers
-echo "downloading LTX 2.3 spatial and temporal upscalers"
-mkdir -p /workspace/ComfyUI/models/latent_upscale_models/LTX23
-cd /workspace/ComfyUI/models/latent_upscale_models/LTX23
-wget https://huggingface.co/Lightricks/LTX-2.3/resolve/main/ltx-2.3-spatial-upscaler-x1.5-1.0.safetensors
-wget https://huggingface.co/Lightricks/LTX-2.3/resolve/main/ltx-2.3-spatial-upscaler-x2-1.0.safetensors
-wget https://huggingface.co/Lightricks/LTX-2.3/resolve/main/ltx-2.3-temporal-upscaler-x2-1.0.safetensors
-echo "finished downloading LTX 2.3 spatial and temporal upscalers"
-echo "finished downloading LTX 2.3 repositories"
-cd /workspace/ComfyUI
+# echo "downloading LTX 2.3 spatial and temporal upscalers"
+# mkdir -p /workspace/ComfyUI/models/latent_upscale_models/LTX23
+# cd /workspace/ComfyUI/models/latent_upscale_models/LTX23
+# wget https://huggingface.co/Lightricks/LTX-2.3/resolve/main/ltx-2.3-spatial-upscaler-x1.5-1.0.safetensors
+# wget https://huggingface.co/Lightricks/LTX-2.3/resolve/main/ltx-2.3-spatial-upscaler-x2-1.0.safetensors
+# wget https://huggingface.co/Lightricks/LTX-2.3/resolve/main/ltx-2.3-temporal-upscaler-x2-1.0.safetensors
+# echo "finished downloading LTX 2.3 spatial and temporal upscalers"
+# echo "finished downloading LTX 2.3 repositories"
+# cd /workspace/ComfyUI
 
 #KL
 # echo "downloading KL model"

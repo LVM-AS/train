@@ -324,16 +324,16 @@ pip install sageattention --no-build-isolation
 # pip install sageattention==1.0.6
 echo "finished installing sageattention"
 
+# #Reinstalling base requirements
+echo "installing base requirements again to ensure all dependencies are met"
+pip install -r /workspace/ComfyUI/requirements.txt #numpy==1.26.4 torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu128
+pip install -r /workspace/ComfyUI/manager_requirements.txt #numpy==1.26.4 torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu128
+echo "finished installing base requirements again"
+
 # #Reinstalling numpy
 echo "reinstalling numpy to ensure compatibility"
 pip install numpy==1.26.4
 echo "finished reinstalling numpy"
-
-# #Reinstalling base requirements
-echo "installing base requirements again to ensure all dependencies are met"
-pip install -r /workspace/ComfyUI/requirements.txt numpy==1.26.4 #torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu128
-pip install -r /workspace/ComfyUI/manager_requirements.txt numpy==1.26.4 #torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu128
-echo "finished installing base requirements again"
 
 #Clearing pip cache
 echo "cleaning up pip cache to save space"

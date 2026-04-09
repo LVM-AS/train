@@ -1,0 +1,92 @@
+model:
+  model_path: "/workspace/ComfyUI/models/checkpoints/LTX23/ltx-2.3-22b-dev.safetensors"
+  text_encoder_path: "/workspace/ComfyUI/models/text_encoders/LTX23"
+  training_mode: "lora"
+  load_checkpoint: null
+
+output_dir: "/workspace/train/output/custom"
+seed: 42
+
+data:
+  preprocessed_data_root: "/workspace/train/data/dataset/.precomputed"
+  num_dataloader_workers: 2
+
+training_strategy:
+  name: "text_to_video"
+  first_frame_conditioning_p: 0.4
+  with_audio: false
+  audio_latents_dir: "audio_latents"
+
+lora:
+  rank: 32
+  alpha: 32
+  dropout: 0.0
+  target_modules:
+    - "to_k"
+    - "to_q"
+    - "to_v"
+    - "to_out.0"
+    # - "ff.net.0.proj"
+    # - "ff.net.2"
+    # - "audio_ff.net.0.proj"
+    # - "audio_ff.net.2"
+
+optimization:
+  learning_rate: 1e-4
+  steps: 3500
+  batch_size: 1
+  gradient_accumulation_steps: 1
+  max_grad_norm: 1.0
+  optimizer_type: "adamw8bit"
+  # Options: "constant", "linear", "cosine", "cosine_with_restarts", "polynomial"
+  scheduler_type: "linear"
+  scheduler_params: { }
+  enable_gradient_checkpointing: True
+
+acceleration:
+  mixed_precision_mode: "bf16"
+  quantization: "int8-quanto"
+  load_text_encoder_in_8bit: true
+
+checkpoints:
+  interval: 500
+  keep_last_n: 5
+  precision: "bfloat16"
+
+flow_matching:
+  timestep_sampling_mode: "shifted_logit_normal"
+  timestep_sampling_params: { }
+
+validation:
+  prompts:
+    - "A beautiful woman with long wavy hair performms a slow hypnotic dance in a public beach, moving her hips side to side with a kind smile and look towards the camera. She is wearing a revealing outfit with a white skirt, thigh high, a white and black pantyhose and a white form-fitting top with a deep neckline. The audio captures the sound of dripping water, the woman's movements across the sand as well as the sound of her clothing rustling slightly from the wind. Ambient sounds of people in the background can also be heard with the occasional sounds of water and waves."
+    # - "A beautiful woman with long dark hair stands in a professional kitchen wearing a detailed, intricate and form-fitting uniform, plating a gourmet dish with precise movements as she smiles towards the camera. Steam rises from freshly cooked vegetables as she arranges them with tweezers. The stainless steel surfaces gleam under bright overhead lights, and various pots simmer on the stove behind him. The audio features the sizzling of pans, the clinking of utensils against plates, and the ambient hum of kitchen ventilation."
+    - "A young woman with long beautiful hair cascading down her shoulders is walking in a public street. She is wearing a skirt and a form-fitting top. She has a slight smile as the breeze of the wind gently blows through her hair. The audio captures the background sounds of the people walking past her, and the woman is humming an eerie melody."
+    # - "A woman with dark striped hair is walking in a sunny beach, smiling beautifully towards the camera, sunlight lighting across her skin. The audio captures the sounds of dripping water, the woman breathing as well as the distant sounds of the city."
+  
+  negative_prompt: "worst quality, blurry, jittery, distorted, low resolution, watermark"
+
+  images: null # Optional: First frame images for image-to-video validation. If provided, must have one image per prompt.
+  video_dims: [ 576, 832, 49 ]
+  frame_rate: 25.0
+  seed: 42
+  inference_steps: 25
+  interval: 500
+  videos_per_prompt: 1
+  guidance_scale: 4
+  stg_scale: 1.0  # Recommended: 1.0 (0.0 disables STG)
+  stg_blocks: [29]  # Recommended: single block 29
+  stg_mode: "stg_av"  # "stg_av" perturbs both audio and video, "stg_v" video only
+  generate_audio: true
+  skip_initial_validation: false
+
+hub:
+  push_to_hub: false
+  hub_model_id: null
+
+wandb:
+  enabled: false
+  project: "ltx-2-trainer"
+  entity: null
+  tags: [ "ltx2", "lora" ]
+  log_validation_videos: true

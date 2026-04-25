@@ -303,10 +303,10 @@ rm -rf /workspace/ComfyUI/models/checkpoints/*.safetensors
 # echo "finished installing custom nodes requirements"
 
 # #Sage Attention
-# echo "installing sageattention"
-# pip install sageattention --no-build-isolation
-# # pip install sageattention==1.0.6
-# echo "finished installing sageattention"
+echo "installing sageattention"
+pip install sageattention --no-build-isolation
+# pip install sageattention==1.0.6
+echo "finished installing sageattention"
 
 # #Reinstalling numpy
 echo "reinstalling numpy to ensure compatibility"

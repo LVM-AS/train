@@ -13,7 +13,7 @@ data:
 
 training_strategy:
   name: "text_to_video"
-  first_frame_conditioning_p: 0.4
+  first_frame_conditioning_p: 0.3
   with_audio: false
   audio_latents_dir: "audio_latents"
 

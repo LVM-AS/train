@@ -213,100 +213,124 @@ rm -rf /workspace/ComfyUI/models/checkpoints/*.safetensors
 
 #Custom Nodes
 #Removing old custom node repositories
-# echo "removing old custom node repositories"
-# cd /workspace/ComfyUI/custom_nodes
-# rm -rf ComfyUI-Manager/
-# rm -rf Civicomfy/
-# rm -rf ComfyUI-KJNodes/
+echo "removing old custom node repositories"
+cd /workspace/ComfyUI/custom_nodes
+rm -rf ComfyUI-Manager/
+rm -rf Civicomfy/
+rm -rf ComfyUI-KJNodes/
 
-# #Cloning custom node repositories
-# #Essential Stuff
-# echo "cloning comfyui custom nodes"
-# echo "cloning essential custom nodes repositories"
-# git clone https://github.com/Comfy-Org/ComfyUI-Manager
-# git clone https://github.com/kijai/ComfyUI-KJNodes
-# git clone https://github.com/city96/ComfyUI-GGUF
-# git clone https://github.com/calcuis/gguf
-# git clone https://github.com/MoonGoblinDev/Civicomfy
-# git clone https://github.com/Azornes/Comfyui-Resolution-Master
-# git clone https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite
+#Cloning custom node repositories
+#Essential Stuff
+echo "cloning comfyui custom nodes"
+echo "cloning essential custom nodes repositories"
+git clone https://github.com/Comfy-Org/ComfyUI-Manager
+git clone https://github.com/kijai/ComfyUI-KJNodes
+git clone https://github.com/city96/ComfyUI-GGUF
+git clone https://github.com/calcuis/gguf
+git clone https://github.com/MoonGoblinDev/Civicomfy
+git clone https://github.com/Azornes/Comfyui-Resolution-Master
+git clone https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite
 
-# # General Packs & Misc
-# echo "cloning general packs and misc custom nodes repositories"
-# git clone https://github.com/djbielejeski/a-person-mask-generator
-# git clone https://github.com/jags111/efficiency-nodes-comfyui
-# git clone https://github.com/melMass/comfy_mtb
-# git clone https://github.com/pythongosssss/ComfyUI-Custom-Scripts
-# git clone https://github.com/cubiq/ComfyUI_essentials
-# git clone https://github.com/TinyTerra/ComfyUI_tinyterraNodes
-# git clone https://github.com/Derfuu/Derfuu_ComfyUI_ModdedNodes
-# git clone https://github.com/rgthree/rgthree-comfy
-# git clone https://github.com/evanspearman/ComfyMath
-# git clone https://github.com/princepainter/Comfyui-PainterAudioCut
-# git clone https://github.com/chflame163/ComfyUI_LayerStyle
-# git clone https://github.com/ltdrdata/was-node-suite-comfyui
+# General Packs & Misc
+echo "cloning general packs and misc custom nodes repositories"
+git clone https://github.com/ltdrdata/ComfyUI-Impact-Pack
+git clone https://github.com/ltdrdata/ComfyUI-Inspire-Pack
+git clone https://github.com/djbielejeski/a-person-mask-generator
+git clone https://github.com/jags111/efficiency-nodes-comfyui
+git clone https://github.com/melMass/comfy_mtb
+git clone https://github.com/pythongosssss/ComfyUI-Custom-Scripts
+git clone https://github.com/cubiq/ComfyUI_essentials
+git clone https://github.com/TinyTerra/ComfyUI_tinyterraNodes
+git clone https://github.com/Derfuu/Derfuu_ComfyUI_ModdedNodes
+git clone https://github.com/rgthree/rgthree-comfy
+git clone https://github.com/evanspearman/ComfyMath
+git clone https://github.com/princepainter/Comfyui-PainterAudioCut
+git clone https://github.com/chflame163/ComfyUI_LayerStyle
+git clone https://github.com/ltdrdata/was-node-suite-comfyui
+git clone https://github.com/yolain/ComfyUI-Easy-Use
 
-# # Functions & Features
-# echo "cloning functions and features custom nodes repositories"
-# git clone https://github.com/yuvraj108c/ComfyUI-Video-Depth-Anything
-# git clone https://github.com/1038lab/ComfyUI-RMBG
-# git clone https://github.com/Fannovel16/comfyui_controlnet_aux
-# git clone https://github.com/1038lab/ComfyUI-QwenVL
-# git clone https://github.com/ai-shizuka/ComfyUI-tbox
-# git clone https://github.com/ClownsharkBatwing/RES4LYF
-# git clone https://github.com/akatz-ai/ComfyUI-DepthCrafter-Nodes
-# git clone https://github.com/kijai/ComfyUI-segment-anything-2
-# git clone https://github.com/Lightricks/ComfyUI-LTXVideo
-# git clone https://github.com/alisson-anjos/ComfyUI-BFSNodes
+# Functions & Features
+echo "cloning functions and features custom nodes repositories"
+git clone https://github.com/Fannovel16/ComfyUI-Frame-Interpolation
+git clone https://github.com/kijai/ComfyUI-WanVideoWrapper
+git clone https://github.com/yuvraj108c/ComfyUI-Video-Depth-Anything
+git clone https://github.com/1038lab/ComfyUI-RMBG
+git clone https://github.com/Fannovel16/comfyui_controlnet_aux
+git clone https://github.com/1038lab/ComfyUI-QwenVL
+git clone https://github.com/ai-shizuka/ComfyUI-tbox
+git clone https://github.com/ClownsharkBatwing/RES4LYF
+# git clone https://github.com/pollockjj/ComfyUI-MultiGPU
+git clone https://github.com/kijai/ComfyUI-WanAnimatePreprocess/
+git clone https://github.com/kijai/ComfyUI-SCAIL-Pose
+git clone https://github.com/akatz-ai/ComfyUI-DepthCrafter-Nodes
+git clone https://github.com/kijai/ComfyUI-segment-anything-2
+git clone https://github.com/mengqin/ComfyUI-UnetBnbModelLoader
+git clone https://github.com/Lightricks/ComfyUI-LTXVideo
+git clone https://github.com/alisson-anjos/ComfyUI-BFSNodes
 
-# #Installing custom node repositories
-# #Essential Stuff
-# echo "installing custom nodes requirements"
-# echo "installing essential custom nodes requirements"
-# pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Manager/requirements.txt
-# pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-KJNodes/requirements.txt
-# pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-GGUF/requirements.txt
-# pip install -r /workspace/ComfyUI/custom_nodes/gguf/requirements.txt
-# pip install -r /workspace/ComfyUI/custom_nodes/Civicomfy/requirements.txt
-# pip install -r /workspace/ComfyUI/custom_nodes/Comfyui-Resolution-Master/requirements.txt
-# pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-VideoHelperSuite/requirements.txt
+#Installing custom node repositories
+#Essential Stuff
+echo "installing custom nodes requirements"
+echo "installing essential custom nodes requirements"
+pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Manager/requirements.txt
+pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-KJNodes/requirements.txt
+pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-GGUF/requirements.txt
+pip install -r /workspace/ComfyUI/custom_nodes/gguf/requirements.txt
+pip install -r /workspace/ComfyUI/custom_nodes/Civicomfy/requirements.txt
+pip install -r /workspace/ComfyUI/custom_nodes/Comfyui-Resolution-Master/requirements.txt
+pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-VideoHelperSuite/requirements.txt
 
-# #General Packs & Misc
-# echo "installing general packs and misc custom nodes requirements"
-# pip install -r /workspace/ComfyUI/custom_nodes/a-person-mask-generator/requirements.txt
-# pip install -r /workspace/ComfyUI/custom_nodes/efficiency-nodes-comfyui/requirements.txt
-# pip install -r /workspace/ComfyUI/custom_nodes/comfy_mtb/requirements.txt
-# pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Custom-Scripts/requirements.txt
-# pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI_essentials/requirements.txt
-# pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI_tinyterraNodes/requirements.txt
-# pip install -r /workspace/ComfyUI/custom_nodes/Derfuu_ComfyUI_ModdedNodes/requirements.txt
-# pip install -r /workspace/ComfyUI/custom_nodes/rgthree-comfy/requirements.txt
-# pip install -r /workspace/ComfyUI/custom_nodes/ComfyMath/requirements.txt
-# pip install -r /workspace/ComfyUI/custom_nodes/Comfyui-PainterAudioCut/requirements.txt
-# pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI_LayerStyle/requirements.txt
-# pip install -r /workspace/ComfyUI/custom_nodes/was-node-suite-comfyui/requirements.txt
+#General Packs & Misc
+echo "installing general packs and misc custom nodes requirements"
+pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Impact-Pack/requirements.txt
+pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Inspire-Pack/requirements.txt
+pip install -r /workspace/ComfyUI/custom_nodes/a-person-mask-generator/requirements.txt
+pip install -r /workspace/ComfyUI/custom_nodes/efficiency-nodes-comfyui/requirements.txt
+pip install -r /workspace/ComfyUI/custom_nodes/comfy_mtb/requirements.txt
+pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Custom-Scripts/requirements.txt
+pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI_essentials/requirements.txt
+pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI_tinyterraNodes/requirements.txt
+pip install -r /workspace/ComfyUI/custom_nodes/Derfuu_ComfyUI_ModdedNodes/requirements.txt
+pip install -r /workspace/ComfyUI/custom_nodes/rgthree-comfy/requirements.txt
+pip install -r /workspace/ComfyUI/custom_nodes/ComfyMath/requirements.txt
+pip install -r /workspace/ComfyUI/custom_nodes/Comfyui-PainterAudioCut/requirements.txt
+pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI_LayerStyle/requirements.txt
+pip install -r /workspace/ComfyUI/custom_nodes/was-node-suite-comfyui/requirements.txt
+pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Easy-Use/requirements.txt
 
-# #Functions & Features
-# echo "installing functions and features custom nodes requirements"
-# pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Video-Depth-Anything/requirements.txt
-# pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-RMBG/requirements.txt
-# pip install -r /workspace/ComfyUI/custom_nodes/comfyui_controlnet_aux/requirements.txt
-# pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-QwenVL/requirements.txt
-# pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-tbox/requirements.txt
-# pip install -r /workspace/ComfyUI/custom_nodes/RES4LYF/requirements.txt
-# pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-DepthCrafter-Nodes/requirements.txt
-# pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-segment-anything-2/requirements.txt
-# pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-LTXVideo/requirements.txt
-# pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-BFSNodes/requirements.txt
+#Functions & Features
+echo "installing functions and features custom nodes requirements"
+pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Frame-Interpolation/requirements.txt
+pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-WanVideoWrapper/requirements.txt
+pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Video-Depth-Anything/requirements.txt
+pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-RMBG/requirements.txt
+pip install -r /workspace/ComfyUI/custom_nodes/comfyui_controlnet_aux/requirements.txt
+pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-QwenVL/requirements.txt
+pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-tbox/requirements.txt
+pip install -r /workspace/ComfyUI/custom_nodes/RES4LYF/requirements.txt
+# pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-MultiGPU/requirements.txt
+pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-WanAnimatePreprocess/requirements.txt
+pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-SCAIL-Pose/requirements.txt
+pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-DepthCrafter-Nodes/requirements.txt
+pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-segment-anything-2/requirements.txt
+pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-UnetBnbModelLoader/requirements.txt
+pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-LTXVideo/requirements.txt
+pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-BFSNodes/requirements.txt
 # pip uninstall -y xformers
-# cd /workspace
-# echo "finished installing custom nodes requirements"
+cd /workspace
+echo "finished installing custom nodes requirements"
 
 # #Sage Attention
 echo "installing sageattention"
 pip install sageattention --no-build-isolation
 # pip install sageattention==1.0.6
 echo "finished installing sageattention"
+
+# #Reinstalling base requirements
+echo "installing base requirements again to ensure all dependencies are met"
+pip install -r /workspace/ComfyUI/requirements.txt #numpy==1.26.4 torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu128
+pip install -r /workspace/ComfyUI/manager_requirements.txt #numpy==1.26.4 torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu128
+echo "finished installing base requirements again"
 
 # #Reinstalling numpy
 echo "reinstalling numpy to ensure compatibility"

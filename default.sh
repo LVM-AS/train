@@ -280,7 +280,7 @@ pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-VideoHelperSuite/requirem
 
 #General Packs & Misc
 echo "installing general packs and misc custom nodes requirements"
-pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Impact-Pack/requirements.txt #numpy==1.26.4 torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu128
+pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Impact-Pack/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Inspire-Pack/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/a-person-mask-generator/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/efficiency-nodes-comfyui/requirements.txt

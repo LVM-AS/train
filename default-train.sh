@@ -335,6 +335,7 @@ echo "finished installing base requirements again"
 # #Reinstalling numpy
 echo "reinstalling numpy to ensure compatibility"
 pip install numpy==1.26.4
+# pip install numpy==2.4.3
 echo "finished reinstalling numpy"
 
 #NOVENV

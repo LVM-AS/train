@@ -181,45 +181,74 @@ if [[ ! -f /.noprovisioning ]]; then
     provisioning_start
 fi
 
-echo "BEGINNING COMFYUI INSTALL SCRIPT"
-#source /venv/main/bin/activate
 
+echo "|||||||||||||||||||||||||||||||||||||||||||||||||||||"
+echo "|||||||||||||||||||||||||||||||||||||||||||||||||||||"
+echo "||||||||||||||||| STARTING INSTALL ||||||||||||||||||"
+echo "||||||||||||||||| STARTING INSTALL ||||||||||||||||||"
+echo "||||||||||||||||| STARTING INSTALL ||||||||||||||||||"
+echo "|||||||||||||||||||||||||||||||||||||||||||||||||||||"
+echo "|||||||||||||||||||||||||||||||||||||||||||||||||||||"
+
+
+echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
+echo "backing up current requirements to bak-requirements.txt"
 cd /workspace
 pip freeze > bak-requirements.txt
+echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
-echo "installing/updating basic tooling and huggingface hub"
-pip install -U pip huggingface-hub
 
+echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
+echo "installing/updating basic tooling, hf_transfer and huggingface hub"
+pip install -U pip
+pip install -U huggingface-hub hf_transfer
+echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
+
+
+echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
 echo "logging in to huggingface hub"
 hf auth login --token "$HF_TOKEN"
+echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
+
+echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
 echo "updating ComfyUI"
 cd /workspace/ComfyUI
 git pull
 git config --global --add safe.directory /workspace/ComfyUI
 git checkout master
 git pull
-echo "updated ComfyUI to latest version"
+echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
+
+echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
 echo "installing base requirements"
 pip3 install -r /workspace/ComfyUI/requirements.txt
 pip3 install -r /workspace/ComfyUI/manager_requirements.txt
-echo "finished installing base requirements"
+echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
+
+echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
 echo "removing bloat model files to save space"
 rm -rf /workspace/ComfyUI/models/checkpoints/*.safetensors
+echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
-#Custom Nodes
-#Removing old custom node repositories
+
+echo "|||||||||||||||||||||||||||||||||||||||||||||||||||||"
+echo "||||||||||||||||||| CUSTOM NODES ||||||||||||||||||||"
+echo "|||||||||||||||||||||||||||||||||||||||||||||||||||||"
+
+
+echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
 echo "removing old custom node repositories"
 cd /workspace/ComfyUI/custom_nodes
 rm -rf ComfyUI-Manager/
 rm -rf Civicomfy/
 rm -rf ComfyUI-KJNodes/
+echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
-#Cloning custom node repositories
-#Essential Stuff
-echo "cloning comfyui custom nodes"
+
+echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
 echo "cloning essential custom nodes repositories"
 git clone https://github.com/Comfy-Org/ComfyUI-Manager
 git clone https://github.com/kijai/ComfyUI-KJNodes
@@ -228,8 +257,10 @@ git clone https://github.com/calcuis/gguf
 git clone https://github.com/MoonGoblinDev/Civicomfy
 git clone https://github.com/Azornes/Comfyui-Resolution-Master
 git clone https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite
+echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
-# General Packs & Misc
+
+echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
 echo "cloning general packs and misc custom nodes repositories"
 git clone https://github.com/ltdrdata/ComfyUI-Impact-Pack
 git clone https://github.com/ltdrdata/ComfyUI-Inspire-Pack
@@ -246,8 +277,10 @@ git clone https://github.com/princepainter/Comfyui-PainterAudioCut
 git clone https://github.com/chflame163/ComfyUI_LayerStyle
 git clone https://github.com/ltdrdata/was-node-suite-comfyui
 git clone https://github.com/yolain/ComfyUI-Easy-Use
+echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
-# Functions & Features
+
+echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
 echo "cloning functions and features custom nodes repositories"
 git clone https://github.com/Fannovel16/ComfyUI-Frame-Interpolation
 git clone https://github.com/kijai/ComfyUI-WanVideoWrapper
@@ -265,9 +298,10 @@ git clone https://github.com/kijai/ComfyUI-segment-anything-2
 git clone https://github.com/mengqin/ComfyUI-UnetBnbModelLoader
 git clone https://github.com/Lightricks/ComfyUI-LTXVideo
 git clone https://github.com/alisson-anjos/ComfyUI-BFSNodes
+echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
-#Installing custom node repositories
-#Essential Stuff
+
+echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
 echo "installing custom nodes requirements"
 echo "installing essential custom nodes requirements"
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Manager/requirements.txt
@@ -277,8 +311,10 @@ pip install -r /workspace/ComfyUI/custom_nodes/gguf/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/Civicomfy/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/Comfyui-Resolution-Master/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-VideoHelperSuite/requirements.txt
+echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
-#General Packs & Misc
+
+echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
 echo "installing general packs and misc custom nodes requirements"
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Impact-Pack/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Inspire-Pack/requirements.txt
@@ -295,8 +331,10 @@ pip install -r /workspace/ComfyUI/custom_nodes/Comfyui-PainterAudioCut/requireme
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI_LayerStyle/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/was-node-suite-comfyui/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Easy-Use/requirements.txt
+echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
-#Functions & Features
+
+echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
 echo "installing functions and features custom nodes requirements"
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Frame-Interpolation/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-WanVideoWrapper/requirements.txt
@@ -314,137 +352,113 @@ pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-segment-anything-2/requir
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-UnetBnbModelLoader/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-LTXVideo/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-BFSNodes/requirements.txt
-# pip uninstall -y xformers
+echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
+
+
+echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
+echo "removing xformers to avoid conflicts"
+pip uninstall -y xformers
 cd /workspace
-echo "finished installing custom nodes requirements"
+echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
-# #Sage Attention
-echo "installing sageattention"
-pip install sageattention --no-build-isolation
+
+# echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
+# echo "installing sageattention"
+# pip install sageattention --no-build-isolation
 # pip install sageattention==1.0.6
-echo "finished installing sageattention"
+# echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
-# #Reinstalling base requirements
+
+echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
 echo "installing base requirements again to ensure all dependencies are met"
 pip install -r /workspace/ComfyUI/requirements.txt #numpy==1.26.4 torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu128
 pip install -r /workspace/ComfyUI/manager_requirements.txt #numpy==1.26.4 torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu128
-echo "finished installing base requirements again"
+echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
-# #Reinstalling numpy
-echo "reinstalling numpy to ensure compatibility"
-pip install numpy==1.26.4
-echo "finished reinstalling numpy"
 
-#Clearing pip cache
+# echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
+# echo "reinstalling numpy to ensure compatibility"
+# pip install numpy==1.26.4
+# echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
+
+
+echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
 echo "cleaning up pip cache to save space"
 pip cache purge
-echo "finished cleaning up pip cache"
+echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
-#Downloading Huggingface repositories and files
-echo "."
-echo "."
-echo "."
-echo "!!! BEGINNING DOWNLOAD OF FILES !!!"
-echo "."
-echo "."
-echo "."
 
+echo "|||||||||||||||||||||||||||||||||||||||||||||||||||||"
+echo "||||||||||||||||| STARTING DOWNLOADS ||||||||||||||||"
+echo "|||||||||||||||||||||||||||||||||||||||||||||||||||||"
+
+
+echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
 echo "removing files and folders to be replaced by huggingface repo"
 rm -rf /workspace/ComfyUI/user/default/comfy.settings.json
 rm -rf /workspace/ComfyUI/comfy_extras/nodes_qwen.py
 rm -rf /workspace/ComfyUI/custom_nodes/ComfyUI-QwenVL/hf_models.json
-echo "finished removing files and folders to be replaced by huggingface repo"
+echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
-echo "Downloading repositories"
+
+echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
+echo "navigating to ComfyUI directory for repo downloads"
 cd /workspace/ComfyUI
+echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
+
+
+echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
+echo "logging in to huggingface hub again just in case"
 hf auth login --token "$HF_TOKEN"
+echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
-# -------------------------------------
-# # MAIN
-echo "Downloading main models repositories"
 
-# # REPO                        SIZE_GB
-# # 49108215MI                  0.013 GB
+echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
+echo "- - - - - - |||| 49108215MI 0.013 GB |||| - - - - - -"
 echo "downloading MI files"
 cd /workspace/ComfyUI && hf download LVMCS/49108215MI --local-dir . && rm -rf .cache/
-echo "finished downloading MI files"
+echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
-# # 49108215MM                  4.66  GB
-echo "downloading MM model"
+
+echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
+echo "- - - - - - |||| 49108215MM 4.66 GB |||| - - - - - -"
 cd /workspace/ComfyUI && hf download LVMCS/49108215MM --local-dir . && rm -rf .cache/
-echo "finished downloading MM model"
+echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
-# # 49108215LT                  104.0 GB
+
+# echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
+# echo "- - - - - - |||| 49108215LT 108.0 GB |||| - - - - - -"
+# echo "49108215LT                  108.0 GB"
 # echo "downloading LT repository"
 # cd /workspace/ComfyUI && hf download LVMCS/49108215LT --local-dir . && rm -rf .cache/
-# echo "finished downloading LT repository"
+# echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
-# # 49108215KL                  35.50 GB
+
+# echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
+# echo "- - - - - - |||| 49108215KL 35.50 GB |||| - - - - - -"
+# echo "49108215KL                  35.50 GB"
 # echo "downloading KL model"
 # cd /workspace/ComfyUI && hf download LVMCS/49108215KL --local-dir . && rm -rf .cache/
-# echo "finished downloading KL model"
+# echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
-# # 49108215WA                  89.00 GB
+
+# echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
+# echo "- - - - - - |||| 49108215WA 89.00 GB |||| - - - - - -"
+# echo "49108215WA                  89.00 GB"
 # echo "downloading WA model"
 # cd /workspace/ComfyUI && hf download LVMCS/49108215WA --local-dir . && rm -rf .cache/
-# echo "finished downloading WA model"
+# echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
-# # 49108215QW                  58.30 GB
+
+# echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
+# echo "- - - - - - |||| 49108215QW 59.90 GB |||| - - - - - -"
+# echo "49108215QW                  59.90 GB"
 # echo "downloading QW model"
 # cd /workspace/ComfyUI && hf download LVMCS/49108215QW --local-dir . && rm -rf .cache/
-# echo "finished downloading QW model"
-# -------------------------------------
+# echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
-# -------------------------------------
-# # LORA
-# echo "downloading LT Lora models"
-# mkdir -p /workspace/ComfyUI/models/loras/LVMCS/
-# cd /workspace/ComfyUI/models/loras
 
-# # # REPO                        SIZE_GB
-# # # s1mps0ns                    1.71  GB
-# hf download LVMCS/s1mps0ns --local-dir ./LVMCS/s1mps0ns 
-# rm -rf LVMCS/s1mps0ns/.cache/
-
-# # # futur4m4                    1.71  GB
-# hf download LVMCS/futur4m4 --local-dir ./LVMCS/futur4m4 
-# rm -rf LVMCS/futur4m4/.cache/
-
-# # # hug3br3asts                 1.71  GB
-# hf download LVMCS/hug3br3asts --local-dir ./LVMCS/hug3br3asts 
-# rm -rf LVMCS/hug3br3asts/.cache/
-
-# # # c3c3_1                      1.71  GB
-# hf download LVMCS/c3c3_1 --local-dir ./LVMCS/c3c3_1 
-# rm -rf LVMCS/c3c3_1/.cache/
-
-# # # n4tal1a_2                   1.71  GB
-# hf download LVMCS/n4tal1a_2 --local-dir ./LVMCS/n4tal1a_2 
-# rm -rf LVMCS/n4tal1a_2/.cache/
-
-# # # b3lla                       1.71  GB
-# hf download LVMCS/b3lla --local-dir ./LVMCS/b3lla 
-# rm -rf LVMCS/b3lla/.cache/
-
-# # # 4siad0ll_3                  1.71  GB
-# hf download LVMCS/4siad0ll_3 --local-dir ./LVMCS/4siad0ll_3 
-# rm -rf LVMCS/4siad0ll_3/.cache/
-
-# # # 4siad0ll_2                  1.71  GB
-# hf download LVMCS/4siad0ll_2 --local-dir ./LVMCS/4siad0ll_2 
-# rm -rf LVMCS/4siad0ll_2/.cache/
-
-# # # 4lice_d3lish_3              2.22  GB
-# hf download LVMCS/4lice_d3lish_3 --local-dir ./LVMCS/4lice_d3lish_3 
-# rm -rf LVMCS/4lice_d3lish_3/.cache/
-
-# # # 4lice_d3lish_2_distilled    2.22  GB
-# hf download LVMCS/4lice_d3lish_2_distilled --local-dir ./LVMCS/4lice_d3lish_2_distilled 
-# rm -rf LVMCS/4lice_d3lish_2_distilled/.cache/
-# -------------------------------------
-
-echo "finished downloading repositories"
-
+echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
 echo "removing .cache folders to save space"
 cd /workspace
 rm -rf .cache/
@@ -467,16 +481,19 @@ rm -rf */*/*/*/*/*/*/*/.cache/
 rm -rf */*/*/*/*/*/*/*/.cache/
 rm -rf */*/*/*/*/*/*/*/*/.cache/
 rm -rf */*/*/*/*/*/*/*/*/.cache/
-echo "finished removing .cache folders to save space"
+echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
+
+echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
 echo "cleaning up pip cache to save space"
 pip cache purge
-echo "finished cleaning up pip cache"
+echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
-echo "."
-echo "."
-echo "."
-echo "FINISHED"
-echo "."
-echo "."
-echo "."
+
+echo "|||||||||||||||||||||||||||||||||||||||||||||||||||||"
+echo "|||||||||||||||||||||||||||||||||||||||||||||||||||||"
+echo "||||||||||||||| INSTALLATION COMPLETE |||||||||||||||"
+echo "||||||||||||||| INSTALLATION COMPLETE |||||||||||||||"
+echo "||||||||||||||| INSTALLATION COMPLETE |||||||||||||||"
+echo "|||||||||||||||||||||||||||||||||||||||||||||||||||||"
+echo "|||||||||||||||||||||||||||||||||||||||||||||||||||||"

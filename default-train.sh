@@ -477,8 +477,9 @@ echo "installing ltx-trainer requirements"
 cd /workspace/train/LTX-2/packages/ltx-trainer
 pip3 install .
 
-echo "installing transformers 4.57.6 for training compatibility"
+echo "installing transformers 4.57.6 and numpy 1.26.4 for training compatibility"
 pip3 install -U transformers==4.57.6
+pip3 install numpy==1.26.4
 
 echo "removing .cache folders to save space"
 cd /workspace

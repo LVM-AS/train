@@ -71,7 +71,7 @@ validation:
   frame_rate: 25.0
   seed: 42
   inference_steps: 25
-  interval: 500
+  interval: null
   videos_per_prompt: 1
   guidance_scale: 4
   stg_scale: 1.0  # Recommended: 1.0 (0.0 disables STG)

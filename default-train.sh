@@ -421,29 +421,29 @@ echo "||||||||||||||||||| CUSTOM NODES ||||||||||||||||||||"
 echo "|||||||||||||||||||||||||||||||||||||||||||||||||||||"
 
 
-echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
-echo "removing old custom node repositories"
-cd /workspace/ComfyUI/custom_nodes
-rm -rf ComfyUI-Manager/
-rm -rf Civicomfy/
-rm -rf ComfyUI-KJNodes/
-echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
+# echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
+# echo "removing old custom node repositories"
+# cd /workspace/ComfyUI/custom_nodes
+# rm -rf ComfyUI-Manager/
+# rm -rf Civicomfy/
+# rm -rf ComfyUI-KJNodes/
+# echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 
-echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
-echo "cloning essential custom nodes repositories"
-git clone https://github.com/Comfy-Org/ComfyUI-Manager
-git clone https://github.com/kijai/ComfyUI-KJNodes
-git clone https://github.com/city96/ComfyUI-GGUF
-git clone https://github.com/calcuis/gguf
-git clone https://github.com/MoonGoblinDev/Civicomfy
-git clone https://github.com/Azornes/Comfyui-Resolution-Master
-git clone https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite
-echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
+# echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
+# echo "cloning essential custom nodes repositories"
+# git clone https://github.com/Comfy-Org/ComfyUI-Manager
+# git clone https://github.com/kijai/ComfyUI-KJNodes
+# git clone https://github.com/city96/ComfyUI-GGUF
+# git clone https://github.com/calcuis/gguf
+# git clone https://github.com/MoonGoblinDev/Civicomfy
+# git clone https://github.com/Azornes/Comfyui-Resolution-Master
+# git clone https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite
+# echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 
-echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
-echo "cloning general packs and misc custom nodes repositories"
+# echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
+# echo "cloning general packs and misc custom nodes repositories"
 # git clone https://github.com/ltdrdata/ComfyUI-Impact-Pack
 # git clone https://github.com/ltdrdata/ComfyUI-Inspire-Pack
 # git clone https://github.com/djbielejeski/a-person-mask-generator
@@ -459,13 +459,13 @@ echo "cloning general packs and misc custom nodes repositories"
 # git clone https://github.com/chflame163/ComfyUI_LayerStyle
 # git clone https://github.com/ltdrdata/was-node-suite-comfyui
 # git clone https://github.com/yolain/ComfyUI-Easy-Use
-echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
+# echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 
-echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
-echo "cloning functions and features custom nodes repositories"
+# echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
+# echo "cloning functions and features custom nodes repositories"
 # git clone https://github.com/Fannovel16/ComfyUI-Frame-Interpolation
-git clone https://github.com/kijai/ComfyUI-WanVideoWrapper
+# git clone https://github.com/kijai/ComfyUI-WanVideoWrapper
 # git clone https://github.com/yuvraj108c/ComfyUI-Video-Depth-Anything
 # git clone https://github.com/1038lab/ComfyUI-RMBG
 # git clone https://github.com/Fannovel16/comfyui_controlnet_aux
@@ -478,26 +478,26 @@ git clone https://github.com/kijai/ComfyUI-WanVideoWrapper
 # git clone https://github.com/akatz-ai/ComfyUI-DepthCrafter-Nodes
 # git clone https://github.com/kijai/ComfyUI-segment-anything-2
 # git clone https://github.com/mengqin/ComfyUI-UnetBnbModelLoader
-git clone https://github.com/Lightricks/ComfyUI-LTXVideo
+# git clone https://github.com/Lightricks/ComfyUI-LTXVideo
 # git clone https://github.com/alisson-anjos/ComfyUI-BFSNodes
-echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
+# echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 
-echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
-echo "installing custom nodes requirements"
-echo "installing essential custom nodes requirements"
-pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Manager/requirements.txt
-pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-KJNodes/requirements.txt
-pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-GGUF/requirements.txt
-pip install -r /workspace/ComfyUI/custom_nodes/gguf/requirements.txt
-pip install -r /workspace/ComfyUI/custom_nodes/Civicomfy/requirements.txt
-pip install -r /workspace/ComfyUI/custom_nodes/Comfyui-Resolution-Master/requirements.txt
-pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-VideoHelperSuite/requirements.txt
-echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
+# echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
+# echo "installing custom nodes requirements"
+# echo "installing essential custom nodes requirements"
+# pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Manager/requirements.txt
+# pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-KJNodes/requirements.txt
+# pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-GGUF/requirements.txt
+# pip install -r /workspace/ComfyUI/custom_nodes/gguf/requirements.txt
+# pip install -r /workspace/ComfyUI/custom_nodes/Civicomfy/requirements.txt
+# pip install -r /workspace/ComfyUI/custom_nodes/Comfyui-Resolution-Master/requirements.txt
+# pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-VideoHelperSuite/requirements.txt
+# echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 
-echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
-echo "installing general packs and misc custom nodes requirements"
+# echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
+# echo "installing general packs and misc custom nodes requirements"
 # pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Impact-Pack/requirements.txt
 # pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Inspire-Pack/requirements.txt
 # pip install -r /workspace/ComfyUI/custom_nodes/a-person-mask-generator/requirements.txt
@@ -513,13 +513,13 @@ echo "installing general packs and misc custom nodes requirements"
 # pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI_LayerStyle/requirements.txt
 # pip install -r /workspace/ComfyUI/custom_nodes/was-node-suite-comfyui/requirements.txt
 # pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Easy-Use/requirements.txt
-echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
+# echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 
-echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
-echo "installing functions and features custom nodes requirements"
+# echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
+# echo "installing functions and features custom nodes requirements"
 # pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Frame-Interpolation/requirements.txt
-pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-WanVideoWrapper/requirements.txt
+# pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-WanVideoWrapper/requirements.txt
 # pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Video-Depth-Anything/requirements.txt
 # pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-RMBG/requirements.txt
 # pip install -r /workspace/ComfyUI/custom_nodes/comfyui_controlnet_aux/requirements.txt
@@ -532,23 +532,26 @@ pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-WanVideoWrapper/requireme
 # pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-DepthCrafter-Nodes/requirements.txt
 # pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-segment-anything-2/requirements.txt
 # pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-UnetBnbModelLoader/requirements.txt
-pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-LTXVideo/requirements.txt
+# pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-LTXVideo/requirements.txt
 # pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-BFSNodes/requirements.txt
-echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
+# echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 
 echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
 echo "removing xformers to avoid conflicts"
 pip uninstall -y xformers
+pip3 uninstall -y xformers
+pip uninstall -y xformers
+pip3 uninstall -y xformers
 cd /workspace
 echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 
-echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
-echo "installing sageattention"
-pip install sageattention --no-build-isolation
+# echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
+# echo "installing sageattention"
+# pip install sageattention --no-build-isolation
 # pip install sageattention==1.0.6
-echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
+# echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 
 echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
@@ -567,6 +570,7 @@ echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
 echo "cleaning up pip cache to save space"
 pip cache purge
+pip3 cache purge
 echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 
@@ -641,37 +645,17 @@ echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 
 echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
-echo "removing .cache folders to save space"
-cd /workspace
-rm -rf .cache/
-rm -rf .cache/
-rm -rf */.cache/
-rm -rf */.cache/
-rm -rf */*/.cache/
-rm -rf */*/.cache/
-rm -rf */*/*/.cache/
-rm -rf */*/*/.cache/
-rm -rf */*/*/*/.cache/
-rm -rf */*/*/*/.cache/
-rm -rf */*/*/*/*/.cache/
-rm -rf */*/*/*/*/.cache/
-rm -rf */*/*/*/*/*/.cache/
-rm -rf */*/*/*/*/*/.cache/
-rm -rf */*/*/*/*/*/*/.cache/
-rm -rf */*/*/*/*/*/*/.cache/
-rm -rf */*/*/*/*/*/*/*/.cache/
-rm -rf */*/*/*/*/*/*/*/.cache/
-rm -rf */*/*/*/*/*/*/*/*/.cache/
-rm -rf */*/*/*/*/*/*/*/*/.cache/
-echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
-
-
-echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
 echo "cleaning up pip cache to save space"
 pip cache purge
 echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 
+echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
+echo "moving back to ComfyUI directory to finish up"
+cd /workspace/ComfyUI
+echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
+
+
 echo "|||||||||||||||||||||||||||||||||||||||||||||||||||||"
 echo "|||||||||||||||||||||||||||||||||||||||||||||||||||||"
 echo "||||||||||||||| INSTALLATION COMPLETE |||||||||||||||"
@@ -680,25 +664,26 @@ echo "||||||||||||||| INSTALLATION COMPLETE |||||||||||||||"
 echo "|||||||||||||||||||||||||||||||||||||||||||||||||||||"
 echo "|||||||||||||||||||||||||||||||||||||||||||||||||||||"
 
-echo "Downloading repositories"
-cd /workspace/ComfyUI
-hf auth login --token "$HF_TOKEN"
+
+# echo "DOWNLOADING LTX MODELS"
+# cd /workspace/ComfyUI
+# hf auth login --token "$HF_TOKEN"
 
 # -------------------------------------
 # # INDIVIDUAL DOWNLOADS
 #LTX 2.3 checkpoint
-echo "creating LTX 2.3 checkpoint model folders"
-mkdir -p /workspace/ComfyUI/models/checkpoints/LTX23
-echo "downloading LTX 2.3 checkpoint model from Hugging Face"
-cd /workspace/ComfyUI/models/checkpoints/LTX23
+# echo "creating LTX 2.3 checkpoint model folders"
+# mkdir -p /workspace/ComfyUI/models/checkpoints/LTX23
+# echo "downloading LTX 2.3 checkpoint model from Hugging Face"
+# cd /workspace/ComfyUI/models/checkpoints/LTX23
 
 ##DISTILLED BF16
 # hf download Lightricks/LTX-2.3 ltx-2.3-22b-distilled.safetensors --local-dir .
 # rm -rf .cache/
 
 ##DEV BF16
-hf download Lightricks/LTX-2.3 ltx-2.3-22b-dev.safetensors --local-dir .
-rm -rf .cache/
+# hf download Lightricks/LTX-2.3 ltx-2.3-22b-dev.safetensors --local-dir .
+# rm -rf .cache/
 
 ##DISTILLED FP8
 # hf download Lightricks/LTX-2.3-fp8 ltx-2.3-22b-distilled-fp8.safetensors --local-dir .
@@ -708,18 +693,18 @@ rm -rf .cache/
 # hf download Lightricks/LTX-2.3-fp8 ltx-2.3-22b-dev-fp8.safetensors --local-dir .
 # rm -rf .cache/
 
-echo "finished downloading LTX 2.3 checkpoint model from Hugging Face"
+# echo "finished downloading LTX 2.3 checkpoint model from Hugging Face"
 
 #Gemma Text Encoder
-echo "downloading Gemma text encoder"
-mkdir -p /workspace/ComfyUI/models/text_encoders/LTX23
-cd /workspace/ComfyUI/models/text_encoders/LTX23
-hf download Lightricks/gemma-3-12b-it-qat-q4_0-unquantized --local-dir .
-rm -rf .cache/
-echo "finished downloading Gemma text encoder"
+# echo "downloading Gemma text encoder"
+# mkdir -p /workspace/ComfyUI/models/text_encoders/LTX23
+# cd /workspace/ComfyUI/models/text_encoders/LTX23
+# hf download Lightricks/gemma-3-12b-it-qat-q4_0-unquantized --local-dir .
+# rm -rf .cache/
+# echo "finished downloading Gemma text encoder"
 # -------------------------------------
 
-echo "finished downloading repositories"
+# echo "finished downloading repositories"
 
 echo "."
 echo "."
@@ -752,7 +737,7 @@ cd /workspace/train/LTX-2/packages/ltx-trainer
 pip3 install .
 
 echo "installing transformers 4.57.6 and numpy 1.26.4 for training compatibility"
-pip3 install -U transformers==4.57.6
+# pip3 install -U transformers==4.57.6
 pip3 install numpy==1.26.4
 
 echo "removing .cache folders to save space"

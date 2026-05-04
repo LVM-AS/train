@@ -664,82 +664,99 @@ echo "||||||||||||||| INSTALLATION COMPLETE |||||||||||||||"
 echo "|||||||||||||||||||||||||||||||||||||||||||||||||||||"
 echo "|||||||||||||||||||||||||||||||||||||||||||||||||||||"
 
+echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
+echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
+echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
 
-# echo "DOWNLOADING LTX MODELS"
-# cd /workspace/ComfyUI
-# hf auth login --token "$HF_TOKEN"
+echo "|||||||||||||||||||||||||||||||||||||||||||||||||||||"
+echo "|||||||||||||||||||||||||||||||||||||||||||||||||||||"
+echo "||||||||||||||| LTX TRAIN PROCEDURES ||||||||||||||||"
+echo "||||||||||||||| LTX TRAIN PROCEDURES ||||||||||||||||"
+echo "||||||||||||||| LTX TRAIN PROCEDURES ||||||||||||||||"
+echo "|||||||||||||||||||||||||||||||||||||||||||||||||||||"
+echo "|||||||||||||||||||||||||||||||||||||||||||||||||||||"
 
-# -------------------------------------
-# # INDIVIDUAL DOWNLOADS
-#LTX 2.3 checkpoint
-# echo "creating LTX 2.3 checkpoint model folders"
+
+echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
+echo "moving to ComfyUI directory and logging in to huggingface hub"
+cd /workspace/ComfyUI
+hf auth login --token "$HF_TOKEN"
+echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
+
+
+# echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
+# echo "creating LTX 2.3 checkpoint model folder and changing to it"
 # mkdir -p /workspace/ComfyUI/models/checkpoints/LTX23
 # echo "downloading LTX 2.3 checkpoint model from Hugging Face"
 # cd /workspace/ComfyUI/models/checkpoints/LTX23
+# echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
-##DISTILLED BF16
-# hf download Lightricks/LTX-2.3 ltx-2.3-22b-distilled.safetensors --local-dir .
-# rm -rf .cache/
 
-##DEV BF16
+# echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
+# echo "downloading LTX 2.3 Dev BF16 checkpoint model from Hugging Face"
 # hf download Lightricks/LTX-2.3 ltx-2.3-22b-dev.safetensors --local-dir .
 # rm -rf .cache/
+# echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
-##DISTILLED FP8
-# hf download Lightricks/LTX-2.3-fp8 ltx-2.3-22b-distilled-fp8.safetensors --local-dir .
-# rm -rf .cache/
 
-##DEV FP8
+# echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
+# echo "downloading LTX 2.3 Dev FP8 checkpoint model from Hugging Face"
 # hf download Lightricks/LTX-2.3-fp8 ltx-2.3-22b-dev-fp8.safetensors --local-dir .
 # rm -rf .cache/
+# echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
-# echo "finished downloading LTX 2.3 checkpoint model from Hugging Face"
 
-#Gemma Text Encoder
+# echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
 # echo "downloading Gemma text encoder"
 # mkdir -p /workspace/ComfyUI/models/text_encoders/LTX23
 # cd /workspace/ComfyUI/models/text_encoders/LTX23
 # hf download Lightricks/gemma-3-12b-it-qat-q4_0-unquantized --local-dir .
 # rm -rf .cache/
-# echo "finished downloading Gemma text encoder"
-# -------------------------------------
+# echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
-# echo "finished downloading repositories"
 
-echo "."
-echo "."
-echo "."
-echo "!!! BEGINNING INSTALL OF TRAINING !!!"
-echo "."
-echo "."
-echo "."
-
+echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
 echo "downloading training repo from GitHub"
 cd /workspace/
 git clone https://github.com/LVM-AS/train
 cd /workspace/train/LTX-2
-echo "finished downloading training repo from GitHub"
+echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
-echo "installing base requirements for training"
+
+# echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
 # echo "running uv sync to install ltx-core, ltx-pipelines, and ltx-trainer"
 # uv sync
 
+
+echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
 echo "installing ltx-core requirements"
 cd /workspace/train/LTX-2/packages/ltx-core
 pip3 install .
+echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
+
+echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
 echo "installing ltx-pipelines requirements"
 cd /workspace/train/LTX-2/packages/ltx-pipelines
 pip3 install .
+echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
+
+echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
 echo "installing ltx-trainer requirements"
 cd /workspace/train/LTX-2/packages/ltx-trainer
 pip3 install .
+echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
-echo "installing transformers 4.57.6 and numpy 1.26.4 for training compatibility"
+
+# echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
+# echo "installing transformers 4.57.6 and numpy 1.26.4 for training compatibility"
 # pip3 install -U transformers==4.57.6
-pip3 install numpy==1.26.4
+# pip3 install numpy==1.26.4
+# echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
+
+echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
 echo "removing .cache folders to save space"
 cd /workspace
 rm -rf .cache/
@@ -762,17 +779,24 @@ rm -rf */*/*/*/*/*/*/*/.cache/
 rm -rf */*/*/*/*/*/*/*/.cache/
 rm -rf */*/*/*/*/*/*/*/*/.cache/
 rm -rf */*/*/*/*/*/*/*/*/.cache/
-echo "finished removing .cache folders to save space"
+echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
+
+echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
 echo "cleaning up pip cache to save space"
 pip3 cache purge
 pip cache purge
-echo "finished cleaning up pip cache"
+pip3 cache purge
+pip cache purge
+uv cache prune
+uv cache clean
+echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
-echo "."
-echo "."
-echo "."
-echo "FINISHED"
-echo "."
-echo "."
-echo "."
+
+echo "|||||||||||||||||||||||||||||||||||||||||||||||||||||"
+echo "|||||||||||||||||||||||||||||||||||||||||||||||||||||"
+echo "||||||||||||||| INSTALLATION COMPLETE |||||||||||||||"
+echo "||||||||||||||| INSTALLATION COMPLETE |||||||||||||||"
+echo "||||||||||||||| INSTALLATION COMPLETE |||||||||||||||"
+echo "|||||||||||||||||||||||||||||||||||||||||||||||||||||"
+echo "|||||||||||||||||||||||||||||||||||||||||||||||||||||"

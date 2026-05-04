@@ -358,6 +358,9 @@ echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
 echo "removing xformers to avoid conflicts"
 pip uninstall -y xformers
+pip3 uninstall -y xformers
+pip uninstall -y xformers
+pip3 uninstall -y xformers
 cd /workspace
 echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
@@ -376,10 +379,10 @@ pip install -r /workspace/ComfyUI/manager_requirements.txt #numpy==1.26.4 torch 
 echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 
-# echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
-# echo "reinstalling numpy to ensure compatibility"
-# pip install numpy==1.26.4
-# echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
+echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
+echo "reinstalling numpy to ensure compatibility"
+pip install numpy==1.26.4
+echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 
 echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"

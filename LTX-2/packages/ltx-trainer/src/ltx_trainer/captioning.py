@@ -19,7 +19,7 @@ import torch
 
 # Instruction for audio-visual captioning (default) - includes speech transcription and sounds
 DEFAULT_CAPTION_INSTRUCTION = """\
-Analyze this media and provide a detailed caption in the following EXACT format. Fill in ALL sections:
+Analyze this media and provide a detailed caption in the following EXACT format. Fill in ALL sections, and do not add conversational input such as "If you have any other images or media you'd like me to analyze, feel free to share!" or similar. Output ONLY the caption in the specified format, without any additional commentary or conversation:
 
 [VISUAL]: <Detailed description of people, objects, actions, settings, colors, and movements>
 [SPEECH]: <Word-for-word transcription of everything spoken.
@@ -33,7 +33,7 @@ If anything sexually explicit occurs in the media, you MUST include it in the ca
 
 # Instruction for video-only captioning (no audio processing)
 VIDEO_ONLY_CAPTION_INSTRUCTION = """\
-Analyze this media and provide a detailed caption in the following EXACT format. Fill in ALL sections:
+Analyze this media and provide a detailed caption in the following EXACT format. Fill in ALL sections, and do not add conversational input such as "If you have any other images or media you'd like me to analyze, feel free to share!" or similar. Output ONLY the caption in the specified format, without any additional commentary or conversation:
 
 [VISUAL]: <Detailed description of people, objects, actions, settings, colors, and movements>
 [TEXT]: <Any on-screen text visible, such as watermarks, logos, captions etc. If none, write "None">

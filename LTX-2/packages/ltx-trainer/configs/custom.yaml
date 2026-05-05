@@ -35,7 +35,7 @@ optimization:
 #                1e-5 = 0.00001
 #                1e-5 = 0.00001
 #                5e-5 = 0.00005
-  learning_rate: 0.00005
+  learning_rate: 5e-5
   steps: 4000
   batch_size: 1
   gradient_accumulation_steps: 1

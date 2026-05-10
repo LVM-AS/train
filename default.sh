@@ -374,7 +374,7 @@ echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
 echo "installing base requirements again to ensure all dependencies are met"
-pip install -r /workspace/ComfyUI/requirements.txt numpy==1.26.4 torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu128
+pip install -r /workspace/ComfyUI/requirements.txt #numpy==1.26.4 torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu128
 pip install -r /workspace/ComfyUI/manager_requirements.txt #numpy==1.26.4 torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu128
 echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
@@ -500,3 +500,25 @@ echo "||||||||||||||| INSTALLATION COMPLETE |||||||||||||||"
 echo "||||||||||||||| INSTALLATION COMPLETE |||||||||||||||"
 echo "|||||||||||||||||||||||||||||||||||||||||||||||||||||"
 echo "|||||||||||||||||||||||||||||||||||||||||||||||||||||"
+
+
+
+
+mkdir -p /workspace/upload/
+cd /workspace/upload/ 
+hf download LVMCS/49108215LT --exclude="models/diffusion_models/*" --local-dir .
+rm -rf .cache
+
+mkdir -p /workspace/upload/models/checkpoints/LTX23/
+cd /workspace/upload/models/checkpoints/LTX23/
+hf download TenStrip/LTX2.3-10Eros 10Eros_v1-fp8mixed_learned.safetensors --local-dir .
+rm -rf .cache
+
+cd /workspace/upload/models/loras/LTX23/utility
+wget https://huggingface.co/TenStrip/LTX2.3_Distilled_Lora_1.1_Experiments/resolve/main/ltx-2.3-22b-distilled-lora-1.1_fro90_ceil72_condsafe.safetensors
+rm -rf .cache
+
+mkdir -p /workspace/upload/models/loras/LTX23/people/
+cd /workspace/upload/models/loras/LTX23/people
+hf download malcolmrey/ltx --exclude="temporary/*" --include="*.safetensors" --local-dir .
+rm -rf .cache

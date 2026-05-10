@@ -199,9 +199,9 @@ echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 
 echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
-echo "installing/updating basic tooling, hf_transfer and huggingface hub"
+echo "installing/updating basic tooling and huggingface hub"
 pip install -U pip
-pip install -U huggingface-hub hf_transfer
+pip install -U huggingface-hub #hf_transfer
 echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 

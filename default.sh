@@ -201,7 +201,10 @@ echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
 echo "installing/updating basic tooling and huggingface hub"
 pip install -U pip
+pip install huggingface-hub #hf_transfer
+pip install hf_xet
 pip install -U huggingface-hub #hf_transfer
+pip install -U hf_xet
 echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 
@@ -290,7 +293,7 @@ git clone https://github.com/Fannovel16/comfyui_controlnet_aux
 git clone https://github.com/1038lab/ComfyUI-QwenVL
 git clone https://github.com/ai-shizuka/ComfyUI-tbox
 git clone https://github.com/ClownsharkBatwing/RES4LYF
-# git clone https://github.com/pollockjj/ComfyUI-MultiGPU
+git clone https://github.com/pollockjj/ComfyUI-MultiGPU
 git clone https://github.com/kijai/ComfyUI-WanAnimatePreprocess/
 git clone https://github.com/kijai/ComfyUI-SCAIL-Pose
 git clone https://github.com/akatz-ai/ComfyUI-DepthCrafter-Nodes
@@ -344,7 +347,7 @@ pip install -r /workspace/ComfyUI/custom_nodes/comfyui_controlnet_aux/requiremen
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-QwenVL/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-tbox/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/RES4LYF/requirements.txt
-# pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-MultiGPU/requirements.txt
+pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-MultiGPU/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-WanAnimatePreprocess/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-SCAIL-Pose/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-DepthCrafter-Nodes/requirements.txt
@@ -434,9 +437,9 @@ echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 
 # echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
-# echo "- - - - - - |||| 49108215LT 108.0 GB |||| - - - - - -"
-# echo "49108215LT                  108.0 GB"
-# echo "downloading LT repository"
+# echo "- - - - - - |||| 49108215LT 146.0 GB |||| - - - - - -"
+# echo "- - - - - - |||| MR LORAS - 40.20 GB |||| - - - - - -"
+# echo "- - - - - - |||| WITHOUT MR 105.8 GB |||| - - - - - -"
 # cd /workspace/ComfyUI
 # hf download LVMCS/49108215LT --local-dir . #--exclude="models/loras/LTX23/people/*"
 # rm -rf .cache/
@@ -444,9 +447,9 @@ echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 
 # echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
-# echo "- - - - - - |||| 49108215KL 35.50 GB |||| - - - - - -"
-# echo "49108215KL                  35.50 GB"
-# echo "downloading KL model"
+# echo "- - - - - - |||| 49108215KL 158.0 GB |||| - - - - - -"
+# echo "- - - - - - |||| MR LORAS - 122.0 GB |||| - - - - - -"
+# echo "- - - - - - |||| WITHOUT MR 36.00 GB |||| - - - - - -"
 # cd /workspace/ComfyUI
 # hf download LVMCS/49108215KL --local-dir . #--exclude="models/loras/flux/klein/people/*"
 # rm -rf .cache/
@@ -455,20 +458,16 @@ echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 # echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
 # echo "- - - - - - |||| 49108215WA 89.00 GB |||| - - - - - -"
-# echo "49108215WA                  89.00 GB"
-# echo "downloading WA model"
 # cd /workspace/ComfyUI
-# hf download LVMCS/49108215WA --local-dir . #--exclude="/*"
+# hf download LVMCS/49108215WA --local-dir .
 # rm -rf .cache/
 # echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 
 # echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
 # echo "- - - - - - |||| 49108215QW 59.90 GB |||| - - - - - -"
-# echo "49108215QW                  59.90 GB"
-# echo "downloading QW model"
 # cd /workspace/ComfyUI
-# hf download LVMCS/49108215QW --local-dir . #--exclude="/*"
+# hf download LVMCS/49108215QW --local-dir .
 # rm -rf .cache/
 # echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 

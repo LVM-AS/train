@@ -293,7 +293,7 @@ git clone https://github.com/Fannovel16/comfyui_controlnet_aux
 git clone https://github.com/1038lab/ComfyUI-QwenVL
 git clone https://github.com/ai-shizuka/ComfyUI-tbox
 git clone https://github.com/ClownsharkBatwing/RES4LYF
-git clone https://github.com/pollockjj/ComfyUI-MultiGPU
+# git clone https://github.com/pollockjj/ComfyUI-MultiGPU
 git clone https://github.com/kijai/ComfyUI-WanAnimatePreprocess/
 git clone https://github.com/kijai/ComfyUI-SCAIL-Pose
 git clone https://github.com/akatz-ai/ComfyUI-DepthCrafter-Nodes
@@ -347,7 +347,7 @@ pip install -r /workspace/ComfyUI/custom_nodes/comfyui_controlnet_aux/requiremen
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-QwenVL/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-tbox/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/RES4LYF/requirements.txt
-pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-MultiGPU/requirements.txt
+# pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-MultiGPU/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-WanAnimatePreprocess/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-SCAIL-Pose/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-DepthCrafter-Nodes/requirements.txt

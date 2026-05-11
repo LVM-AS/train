@@ -419,13 +419,17 @@ echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
 echo "- - - - - - |||| 49108215MI 0.013 GB |||| - - - - - -"
 echo "downloading MI files"
-cd /workspace/ComfyUI && hf download LVMCS/49108215MI --local-dir . && rm -rf .cache/
+cd /workspace/ComfyUI
+hf download LVMCS/49108215MI --local-dir .
+rm -rf .cache/
 echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 
 echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
 echo "- - - - - - |||| 49108215MM 4.66 GB |||| - - - - - -"
-cd /workspace/ComfyUI && hf download LVMCS/49108215MM --local-dir . && rm -rf .cache/
+cd /workspace/ComfyUI
+hf download LVMCS/49108215MM --local-dir .
+rm -rf .cache/
 echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 
@@ -433,7 +437,9 @@ echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 # echo "- - - - - - |||| 49108215LT 108.0 GB |||| - - - - - -"
 # echo "49108215LT                  108.0 GB"
 # echo "downloading LT repository"
-# cd /workspace/ComfyUI && hf download LVMCS/49108215LT --local-dir . && rm -rf .cache/
+# cd /workspace/ComfyUI
+# hf download LVMCS/49108215LT --local-dir . #--exclude="models/loras/LTX23/people/*"
+# rm -rf .cache/
 # echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 
@@ -441,7 +447,9 @@ echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 # echo "- - - - - - |||| 49108215KL 35.50 GB |||| - - - - - -"
 # echo "49108215KL                  35.50 GB"
 # echo "downloading KL model"
-# cd /workspace/ComfyUI && hf download LVMCS/49108215KL --local-dir . && rm -rf .cache/
+# cd /workspace/ComfyUI
+# hf download LVMCS/49108215KL --local-dir . #--exclude="models/loras/flux/klein/people/*"
+# rm -rf .cache/
 # echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 
@@ -449,7 +457,9 @@ echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 # echo "- - - - - - |||| 49108215WA 89.00 GB |||| - - - - - -"
 # echo "49108215WA                  89.00 GB"
 # echo "downloading WA model"
-# cd /workspace/ComfyUI && hf download LVMCS/49108215WA --local-dir . && rm -rf .cache/
+# cd /workspace/ComfyUI
+# hf download LVMCS/49108215WA --local-dir . #--exclude="/*"
+# rm -rf .cache/
 # echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 
@@ -457,7 +467,9 @@ echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 # echo "- - - - - - |||| 49108215QW 59.90 GB |||| - - - - - -"
 # echo "49108215QW                  59.90 GB"
 # echo "downloading QW model"
-# cd /workspace/ComfyUI && hf download LVMCS/49108215QW --local-dir . && rm -rf .cache/
+# cd /workspace/ComfyUI
+# hf download LVMCS/49108215QW --local-dir . #--exclude="/*"
+# rm -rf .cache/
 # echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 

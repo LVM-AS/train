@@ -468,8 +468,10 @@ hf download LVMCS/49108215LT --local-dir . --include="models/loras/LTX23/general
 rm -rf .cache/
 hf download LVMCS/49108215LT --local-dir . --include="models/loras/LTX23/style/*"
 rm -rf .cache/
-hf download LVMCS/49108215LT --local-dir . --include="models/loras/LVMCS/*"
-rm -rf .cache/
+# hf download LVMCS/49108215LT --local-dir . --include="models/loras/LTX23/nsfw/*"
+# rm -rf .cache/
+# hf download LVMCS/49108215LT --local-dir . --include="models/loras/LVMCS/*"
+# rm -rf .cache/
 mkdir -p /workspace/ComfyUI/models/loras/LVMCS/
 cd /workspace/ComfyUI/models/loras/LVMCS/
 hf download LVMCS/n4tal1a --local-dir .

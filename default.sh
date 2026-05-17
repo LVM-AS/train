@@ -436,55 +436,30 @@ rm -rf .cache/
 echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 
-# echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
-# echo "- - - - - - |||| 49108215LT 146.0 GB |||| - - - - - -"
-# echo "- - - - - - |||| MR LORAS - 40.20 GB |||| - - - - - -"
-# echo "- - - - - - |||| WITHOUT MR 105.8 GB |||| - - - - - -"
-# cd /workspace/ComfyUI
-# hf download LVMCS/49108215LT --local-dir . --exclude="models/loras/*"
-# rm -rf .cache/
-# echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
-# 
-# echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
-# mkdir -p /workspace/ComfyUI/models/checkpoints/LTX23
-# cd /workspace/ComfyUI/models/checkpoints/LTX23
-# hf download SulphurAI/Sulphur-2-base sulphur_dev_fp8mixed.safetensors --local-dir .
-# rm -rf .cache/
-# echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - - - - - -"
-# 
-# echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
-# mkdir -p /workspace/ComfyUI/models/loras/LTX23/utility/
-# cd /workspace/ComfyUI/models/loras/LTX23/utility/
-# wget https://huggingface.co/SulphurAI/Sulphur-2-base/resolve/main/distill_loras/ltx-2.3-22b-distilled-lora-1.1_fro90_ceil72_condsafe.safetensors
-# echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
+echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
+echo "- - - - - - |||| 49108215LT 146.0 GB |||| - - - - - -"
+echo "- - - - - - |||| MR LORAS - 40.20 GB |||| - - - - - -"
+echo "- - - - - - |||| WITHOUT MR 105.8 GB |||| - - - - - -"
+cd /workspace/ComfyUI
+hf download LVMCS/49108215LT --local-dir . --exclude="models/loras/*"
+rm -rf .cache/
+echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
-# echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
-# cd /workspace/ComfyUI
-# hf download LVMCS/49108215LT --local-dir . --include="models/loras/LTX23/utility/*"
-# rm -rf .cache/
-# hf download LVMCS/49108215LT --local-dir . --include="models/loras/LTX23/GEMMA/*"
-# rm -rf .cache/
+echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
+cd /workspace/ComfyUI
+hf download LVMCS/49108215LT --local-dir . --include="models/loras/LTX23/utility/*"
+rm -rf .cache/
+hf download LVMCS/49108215LT --local-dir . --include="models/loras/LTX23/GEMMA/*"
+rm -rf .cache/
 # hf download LVMCS/49108215LT --local-dir . --include="models/loras/LTX23/general/*"
 # rm -rf .cache/
 # hf download LVMCS/49108215LT --local-dir . --include="models/loras/LTX23/style/*"
 # rm -rf .cache/
 # hf download LVMCS/49108215LT --local-dir . --include="models/loras/LTX23/nsfw/*"
 # rm -rf .cache/
-# hf download LVMCS/49108215LT --local-dir . --include="models/loras/LVMCS/*"
-# rm -rf .cache/
-# mkdir -p /workspace/ComfyUI/models/loras/LVMCS/
-# cd /workspace/ComfyUI/models/loras/LVMCS/
-# hf download LVMCS/n4tal1a --local-dir .
-# rm -rf .cache/
-# hf download LVMCS/b3lla --local-dir .
-# rm -rf .cache/
-# hf download LVMCS/c3c3 --local-dir .
-# rm -rf .cache/
-# hf download LVMCS/m4n --local-dir .
-# rm -rf .cache/
-# cd /workspace/
-# echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
-
+hf download LVMCS/49108215LT --local-dir . --include="models/loras/LVMCS/*"
+rm -rf .cache/
+echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 # echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
 # echo "- - - - - - |||| 49108215KL 158.0 GB |||| - - - - - -"

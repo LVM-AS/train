@@ -429,63 +429,9 @@ echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 
 echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
-echo "- - - - - - |||| 49108215MM 4.66 GB |||| - - - - - -"
-cd /workspace/ComfyUI
-hf download LVMCS/49108215MM --local-dir .
-rm -rf .cache/
+echo "cleaning up pip cache to save space"
+pip cache purge
 echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
-
-
-echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
-echo "- - - - - - |||| 49108215LT 146.0 GB |||| - - - - - -"
-echo "- - - - - - |||| MR LORAS - 40.20 GB |||| - - - - - -"
-echo "- - - - - - |||| WITHOUT MR 105.8 GB |||| - - - - - -"
-cd /workspace/ComfyUI
-hf download LVMCS/49108215LT --local-dir . --exclude="models/loras/*"
-rm -rf .cache/
-echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
-
-echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
-cd /workspace/ComfyUI
-hf download LVMCS/49108215LT --local-dir . --include="models/loras/LTX23/utility/*"
-rm -rf .cache/
-hf download LVMCS/49108215LT --local-dir . --include="models/loras/LTX23/GEMMA/*"
-rm -rf .cache/
-# hf download LVMCS/49108215LT --local-dir . --include="models/loras/LTX23/general/*"
-# rm -rf .cache/
-# hf download LVMCS/49108215LT --local-dir . --include="models/loras/LTX23/style/*"
-# rm -rf .cache/
-# hf download LVMCS/49108215LT --local-dir . --include="models/loras/LTX23/nsfw/*"
-# rm -rf .cache/
-hf download LVMCS/49108215LT --local-dir . --include="models/loras/LVMCS/*"
-rm -rf .cache/
-echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
-
-# echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
-# echo "- - - - - - |||| 49108215KL 158.0 GB |||| - - - - - -"
-# echo "- - - - - - |||| MR LORAS - 122.0 GB |||| - - - - - -"
-# echo "- - - - - - |||| WITHOUT MR 36.00 GB |||| - - - - - -"
-# cd /workspace/ComfyUI
-# hf download LVMCS/49108215KL --local-dir . #--exclude="models/loras/flux/klein/people/*"
-# rm -rf .cache/
-# echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
-
-
-# echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
-# echo "- - - - - - |||| 49108215WA 89.00 GB |||| - - - - - -"
-# cd /workspace/ComfyUI
-# hf download LVMCS/49108215WA --local-dir .
-# rm -rf .cache/
-# echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
-
-
-# echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
-# echo "- - - - - - |||| 49108215QW 59.90 GB |||| - - - - - -"
-# cd /workspace/ComfyUI
-# hf download LVMCS/49108215QW --local-dir .
-# rm -rf .cache/
-# echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
-
 
 echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
 echo "removing .cache folders to save space"
@@ -511,13 +457,6 @@ rm -rf */*/*/*/*/*/*/*/.cache/
 rm -rf */*/*/*/*/*/*/*/*/.cache/
 rm -rf */*/*/*/*/*/*/*/*/.cache/
 echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
-
-
-echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
-echo "cleaning up pip cache to save space"
-pip cache purge
-echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
-
 
 echo "|||||||||||||||||||||||||||||||||||||||||||||||||||||"
 echo "|||||||||||||||||||||||||||||||||||||||||||||||||||||"

@@ -301,6 +301,11 @@ git clone https://github.com/kijai/ComfyUI-segment-anything-2
 git clone https://github.com/mengqin/ComfyUI-UnetBnbModelLoader
 git clone https://github.com/Lightricks/ComfyUI-LTXVideo
 git clone https://github.com/alisson-anjos/ComfyUI-BFSNodes
+git clone https://github.com/Nekodificador/ComfyUI-NKD-Klein-Tools
+git clone https://github.com/supermansundies/comfyui-klein-edit-composite
+git clone https://github.com/capitan01R/Comfyui-flux2klein-Lora-loader
+git clone https://github.com/capitan01R/ComfyUI-Flux2Klein-Enhancer
+git clone https://github.com/Bisnis3d/ComfyUI_KleinAngleSelector
 echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 
@@ -355,6 +360,11 @@ pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-segment-anything-2/requir
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-UnetBnbModelLoader/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-LTXVideo/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-BFSNodes/requirements.txt
+pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-NKD-Klein-Tools/requirements.txt
+pip install -r /workspace/ComfyUI/custom_nodes/comfyui-klein-edit-composite/requirements.txt
+pip install -r /workspace/ComfyUI/custom_nodes/Comfyui-flux2klein-Lora-loader/requirements.txt
+pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Flux2Klein-Enhancer/requirements.txt
+pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI_KleinAngleSelector/requirements.txt
 echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 
@@ -391,11 +401,16 @@ echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
 echo "cleaning up pip cache to save space"
 pip cache purge
+pip3 cache purge
 echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 
 echo "|||||||||||||||||||||||||||||||||||||||||||||||||||||"
+echo "|||||||||||||||||||||||||||||||||||||||||||||||||||||"
 echo "||||||||||||||||| STARTING DOWNLOADS ||||||||||||||||"
+echo "||||||||||||||||| STARTING DOWNLOADS ||||||||||||||||"
+echo "||||||||||||||||| STARTING DOWNLOADS ||||||||||||||||"
+echo "|||||||||||||||||||||||||||||||||||||||||||||||||||||"
 echo "|||||||||||||||||||||||||||||||||||||||||||||||||||||"
 
 

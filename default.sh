@@ -448,6 +448,7 @@ echo "cleaning up pip cache to save space"
 pip cache purge
 echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
+
 echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
 echo "removing .cache folders to save space"
 cd /workspace
@@ -472,6 +473,7 @@ rm -rf */*/*/*/*/*/*/*/.cache/
 rm -rf */*/*/*/*/*/*/*/*/.cache/
 rm -rf */*/*/*/*/*/*/*/*/.cache/
 echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
+
 
 echo "|||||||||||||||||||||||||||||||||||||||||||||||||||||"
 echo "|||||||||||||||||||||||||||||||||||||||||||||||||||||"

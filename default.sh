@@ -293,12 +293,12 @@ git clone https://github.com/Fannovel16/comfyui_controlnet_aux
 git clone https://github.com/1038lab/ComfyUI-QwenVL
 git clone https://github.com/ai-shizuka/ComfyUI-tbox
 git clone https://github.com/ClownsharkBatwing/RES4LYF
-# git clone https://github.com/pollockjj/ComfyUI-MultiGPU
+git clone https://github.com/pollockjj/ComfyUI-MultiGPU
 git clone https://github.com/kijai/ComfyUI-WanAnimatePreprocess/
 git clone https://github.com/kijai/ComfyUI-SCAIL-Pose
 git clone https://github.com/akatz-ai/ComfyUI-DepthCrafter-Nodes
 git clone https://github.com/kijai/ComfyUI-segment-anything-2
-# git clone https://github.com/mengqin/ComfyUI-UnetBnbModelLoader
+git clone https://github.com/mengqin/ComfyUI-UnetBnbModelLoader
 git clone https://github.com/Nekodificador/ComfyUI-NKD-Klein-Tools
 git clone https://github.com/supermansundies/comfyui-klein-edit-composite
 git clone https://github.com/capitan01R/Comfyui-flux2klein-Lora-loader
@@ -352,12 +352,12 @@ pip install -r /workspace/ComfyUI/custom_nodes/comfyui_controlnet_aux/requiremen
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-QwenVL/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-tbox/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/RES4LYF/requirements.txt
-# pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-MultiGPU/requirements.txt
+pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-MultiGPU/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-WanAnimatePreprocess/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-SCAIL-Pose/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-DepthCrafter-Nodes/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-segment-anything-2/requirements.txt
-# pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-UnetBnbModelLoader/requirements.txt
+pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-UnetBnbModelLoader/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-NKD-Klein-Tools/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/comfyui-klein-edit-composite/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/Comfyui-flux2klein-Lora-loader/requirements.txt

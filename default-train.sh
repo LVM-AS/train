@@ -474,50 +474,6 @@ echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 
 echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
-echo "creating LTX 2.3 checkpoint model folder and changing to it"
-mkdir -p /workspace/ComfyUI/models/checkpoints/LTX23
-cd /workspace/ComfyUI/models/checkpoints/LTX23
-echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
-
-
-# echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
-# echo "downloading LTX 2.3 Dev BF16 checkpoint model from Hugging Face"
-# hf download Lightricks/LTX-2.3 ltx-2.3-22b-dev.safetensors --local-dir .
-# rm -rf .cache/
-# echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
-
-
-# echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
-# echo "downloading LTX 2.3 Dev FP8 checkpoint model from Hugging Face"
-# hf download Lightricks/LTX-2.3-fp8 ltx-2.3-22b-dev-fp8.safetensors --local-dir .
-# rm -rf .cache/
-# echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
-
-
-echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
-echo "downloading Sulphur-2-base Dev BF16 checkpoint model from Hugging Face"
-hf download SulphurAI/Sulphur-2-base sulphur_dev_bf16.safetensors --local-dir .
-rm -rf .cache/
-echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
-
-
-# echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
-# echo "downloading Sulphur-2-base Dev FP8 checkpoint model from Hugging Face"
-# hf download SulphurAI/Sulphur-2-base sulphur_dev_fp8mixed.safetensors --local-dir .
-# rm -rf .cache/
-# echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
-
-
-echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
-echo "downloading Gemma text encoder"
-mkdir -p /workspace/ComfyUI/models/text_encoders/LTX23
-cd /workspace/ComfyUI/models/text_encoders/LTX23
-hf download Lightricks/gemma-3-12b-it-qat-q4_0-unquantized --local-dir .
-rm -rf .cache/
-echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
-
-
-echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
 echo "downloading training repo from GitHub"
 cd /workspace/
 git clone https://github.com/LVM-AS/train

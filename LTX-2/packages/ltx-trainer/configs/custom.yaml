@@ -1,5 +1,5 @@
 model:
-  model_path: "/workspace/ComfyUI/models/checkpoints/LTX23/ltx-2.3-22b-dev.safetensors"
+  model_path: "/workspace/ComfyUI/models/checkpoints/LTX23/sulphur_dev_bf16.safetensors"
   text_encoder_path: "/workspace/ComfyUI/models/text_encoders/LTX23"
   training_mode: "lora"
   load_checkpoint: null
@@ -50,6 +50,11 @@ acceleration:
   mixed_precision_mode: "bf16"
   quantization: "int8-quanto"
   load_text_encoder_in_8bit: true
+
+  # Offload optimizer state to CPU during validation video sampling.
+  # Helps avoid OOM when VAE decoder + transformer + optimizer state can't coexist
+  # on the GPU (full fine-tune, high-rank LoRA). No effect for FSDP.
+  offload_optimizer_during_validation: false
 
 checkpoints:
   interval: 500

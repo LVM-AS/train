@@ -364,6 +364,7 @@ pip install -r /workspace/ComfyUI/custom_nodes/Comfyui-flux2klein-Lora-loader/re
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Flux2Klein-Enhancer/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI_KleinAngleSelector/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-BFSNodes/requirements.txt
+pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Licon-MSR/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-LTXVideo/requirements.txt
 echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 

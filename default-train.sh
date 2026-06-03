@@ -296,6 +296,7 @@ git clone https://github.com/pollockjj/ComfyUI-MultiGPU
 # git clone https://github.com/akatz-ai/ComfyUI-DepthCrafter-Nodes
 # git clone https://github.com/kijai/ComfyUI-segment-anything-2
 # git clone https://github.com/mengqin/ComfyUI-UnetBnbModelLoader
+git clone https://github.com/liconstudio/ComfyUI-Licon-MSR
 git clone https://github.com/Lightricks/ComfyUI-LTXVideo
 # git clone https://github.com/alisson-anjos/ComfyUI-BFSNodes
 # git clone https://github.com/Nekodificador/ComfyUI-NKD-Klein-Tools
@@ -355,6 +356,7 @@ pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-MultiGPU/requirements.txt
 # pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-DepthCrafter-Nodes/requirements.txt
 # pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-segment-anything-2/requirements.txt
 # pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-UnetBnbModelLoader/requirements.txt
+pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Licon-MSR/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-LTXVideo/requirements.txt
 # pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-BFSNodes/requirements.txt
 # pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-NKD-Klein-Tools/requirements.txt

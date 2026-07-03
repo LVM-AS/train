@@ -306,6 +306,7 @@ echo "|||||||||||||||||||||||||||||||||||||||||||||||||||||"
 # git clone https://github.com/capitan01R/ComfyUI-Flux2Klein-Enhancer
 # git clone https://github.com/Bisnis3d/ComfyUI_KleinAngleSelector
 # git clone https://github.com/alisson-anjos/ComfyUI-BFSNodes
+# git clone https://github.com/liconstudio/ComfyUI-Licon-MSR
 # git clone https://github.com/Lightricks/ComfyUI-LTXVideo
 # echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 

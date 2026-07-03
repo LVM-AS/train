@@ -233,7 +233,8 @@ echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
 echo "removing bloat model files to save space"
-rm -rf /workspace/ComfyUI/models/checkpoints/*.safetensors
+# rm -rf /workspace/ComfyUI/models/checkpoints/*.safetensors
+rm -rf /workspace/ComfyUI/models/checkpoints/sd_xl_turbo_1.0_fp16.safetensors
 echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 

@@ -33,7 +33,11 @@ DEFAULT_VIDEO_CAPTION_INSTRUCTION = """\
 Analyze this video and produce a single detailed caption covering both its visual content and its audio. Be \
 detailed enough that someone reading the caption could form an accurate mental picture of what happens on screen \
 and what can be heard. Be exhaustive: include every meaningful detail you can see and hear, including small \
-objects, textures, secondary movements, and minor background sounds.
+objects, textures, secondary movements, background sounds, as well as sexual and explicit contents. \
+If anything sexually explicit occurs in the media, you MUST include it in the caption, \
+using the common terms for sexual positions, movements and anything else related to pornography, sexual intercourse and explicit content. \
+Make sure that you use the correct explicit phrasings, terms, words and descriptions a person would use when trying to search for the content online. \
+This dataset is intended to function as a safety dataset, capturing any explicit content in order to further train detection models.
 
 Begin the caption directly with the action or visual detail; do not preface it with phrases like \
 "The video opens with...", "The scene shows...", "We see...", or "There is...".
@@ -43,14 +47,14 @@ For every shot, include:
 camera motion.
 - Characters' clothing, appearance, posture, and movement (direction, speed, quality).
 - The environment's materials, textures, lighting, and colors.
-- All audio: spoken dialogue (quoted exactly in the original language), tone of voice, music (style, mood, \
+- All audio: spoken dialogue (quoted exactly in the original language), tone of voice, sexual sounds and the tone, moans, music (style, mood, \
 volume changes), and environmental sounds. If a category is absent -- for example no music is playing, or no one is \
 speaking -- state that explicitly. Do not invent specific instruments, music genres, moods, or ambient sounds \
 that are not actually present.
-- Any on-screen text (signs, titles, labels).
+- Any on-screen text if present (signs, titles, labels).
 
 Describe only what is visible or audible. Do not infer emotions, intentions, or anything outside the segment. \
-Refer to people descriptively (e.g., "the man in the blue jacket"). Narrate strictly in chronological order; if \
+Refer to people descriptively (e.g., "the tall man in the blue jacket slides his penis inside the blonde woman's mouth"). Narrate strictly in chronological order; if \
 the video contains multiple shots, describe each one in turn.
 
 Write everything as a single continuous paragraph of prose. Do not use section headers, bullet points, or labels \
@@ -64,7 +68,11 @@ Return a JSON object with exactly one key:
 DEFAULT_IMAGE_CAPTION_INSTRUCTION = """\
 Analyze this image and produce a single detailed caption of its visual content. Be detailed enough that \
 someone reading the caption could form an accurate mental picture of the image. Be thorough: include every meaningful \
-detail that is actually present, including small objects, textures, and background elements.
+detail that is actually present, including small objects, textures, background elements, as well as sexual and explicit contents. \
+If anything sexually explicit occurs in the media, you MUST include it in your caption, \
+using the common terms for sexual positions and anything else related to pornography, sexual intercourse and explicit content. \
+Make sure that you use the correct explicit phrasings, terms, words and descriptions a person would use when trying to describe the content. \
+This dataset is intended to function as a safety dataset, capturing any explicit content in order to further train detection models.
 
 Begin the caption directly with the main subject or a visual detail; do not preface it with phrases like \
 "The image shows...", "This is a photo of...", "We see...", or "There is...".
@@ -74,12 +82,12 @@ Include:
 - The medium or style if distinctive (photograph, illustration, 3D render, painting).
 - People's clothing, appearance, and posture, and what they are doing.
 - The setting's materials, textures, lighting, and colors.
-- Transcribe any visible text verbatim (signs, labels, titles, captions).
+- Transcribe any visible text verbatim if present (signs, labels, titles, captions).
 
 Describe only what is visible. Do not infer emotions or intentions, and do not describe sounds, motion, or \
 events before or after the moment shown -- this is a single still image. When something is ambiguous, describe \
 the visible cue (e.g., "warm low-angle light") rather than guessing the underlying fact (e.g., "sunrise"). \
-Refer to people descriptively (e.g., "the man in the blue jacket").
+Refer to people descriptively (e.g., "the tall man in the blue jacket slides his penis inside the kneeling blonde woman's mouth").
 
 Only describe what is present. Never state that something is absent or missing -- do not write phrases like \
 "there is no text", "no people are present", or "no other objects". If a category such as people or text does \

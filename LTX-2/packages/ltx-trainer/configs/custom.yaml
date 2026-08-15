@@ -11,11 +11,32 @@ data:
   preprocessed_data_root: "/workspace/train/data/dataset/.precomputed"
   num_dataloader_workers: 2
 
-training_strategy:
-  name: "text_to_video"
-  first_frame_conditioning_p: 0.3
-  with_audio: false
-  audio_latents_dir: "audio_latents"
+  # Video modality configuration
+  video:
+    # Whether the model generates video (true) or uses it as frozen conditioning (false)
+    is_generated: true
+
+    # Directory name (within preprocessed_data_root) containing video latents
+    latents_dir: "latents"
+
+    # Conditions applied to the video modality during training
+    # First-frame conditioning: the first frame of each video is provided as a clean
+    # conditioning signal (no noise, timestep=0, excluded from loss)
+    conditions:
+      - type: first_frame
+        # Probability of applying first-frame conditioning per training sample
+        # At 0.5, half the training samples use I2V mode, half use pure T2V
+        # Higher values improve I2V quality but may reduce T2V diversity
+        probability: 0.2
+
+  # Audio modality configuration
+  audio:
+    # Whether the model generates audio (true) or uses it as frozen conditioning (false)
+    is_generated: false
+
+    # Directory name (within preprocessed_data_root) containing audio latents
+    latents_dir: "audio_latents"
+
 
 lora:
   rank: 32
@@ -33,10 +54,10 @@ lora:
 
 optimization:
 #                1e-5 = 0.00001
-#                1e-5 = 0.00001
 #                5e-5 = 0.00005
-  learning_rate: 5e-5
-  steps: 4000
+#                1e-4 = 0.00010
+  learning_rate: 1e-4
+  steps: 3000
   batch_size: 1
   gradient_accumulation_steps: 1
   max_grad_norm: 1.0
@@ -44,7 +65,7 @@ optimization:
   # Options: "constant", "linear", "cosine", "cosine_with_restarts", "polynomial"
   scheduler_type: "linear"
   scheduler_params: { }
-  enable_gradient_checkpointing: True
+  enable_gradient_checkpointing: true
 
 acceleration:
   mixed_precision_mode: "bf16"
@@ -72,7 +93,7 @@ validation:
     - "A young woman with long beautiful hair cascading down her shoulders is walking in a public street. She is wearing a skirt and a form-fitting top. She has a slight smile as the breeze of the wind gently blows through her hair. The audio captures the background sounds of the people walking past her, and the woman is humming an eerie melody."
     # - "A woman with dark striped hair is walking in a sunny beach, smiling beautifully towards the camera, sunlight lighting across her skin. The audio captures the sounds of dripping water, the woman breathing as well as the distant sounds of the city."
   
-  negative_prompt: "worst quality, blurry, jittery, distorted, low resolution, watermark"
+  negative_prompt: "worst quality, inconsistent motion, blurry, jittery, distorted"
 
   images: null # Optional: First frame images for image-to-video validation. If provided, must have one image per prompt.
   video_dims: [ 576, 832, 49 ]
@@ -81,7 +102,7 @@ validation:
   inference_steps: 25
   interval: null
   videos_per_prompt: 1
-  guidance_scale: 4
+  guidance_scale: 4.0
   stg_scale: 1.0  # Recommended: 1.0 (0.0 disables STG)
   stg_blocks: [29]  # Recommended: single block 29
   stg_mode: "stg_av"  # "stg_av" perturbs both audio and video, "stg_v" video only
@@ -96,5 +117,5 @@ wandb:
   enabled: false
   project: "ltx-2-trainer"
   entity: null
-  tags: [ "ltx2", "lora" ]
+  tags: [ "ltx2", "lora", "t2v", "low-vram" ]
   log_validation_videos: true

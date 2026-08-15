@@ -439,7 +439,6 @@ echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
 echo "- - - - - - |||| 49108215MI 0.013 GB |||| - - - - - -"
-echo "downloading MI files"
 cd /workspace/ComfyUI
 hf download LVMCS/49108215MI --local-dir .
 rm -rf .cache/

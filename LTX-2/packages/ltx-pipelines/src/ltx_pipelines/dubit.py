@@ -1,4 +1,4 @@
-"""Two-stage lip-dubbing pipeline with IC-LoRA and appended audio reference conditioning."""
+"""Two-stage Dub-It pipeline with IC-LoRA and appended audio reference conditioning."""
 
 from __future__ import annotations
 
@@ -21,10 +21,11 @@ from ltx_pipelines.iclora_utils import (
     append_ic_lora_reference_video_conditionings,
     read_lora_reference_downscale_factor,
 )
+from ltx_pipelines.utils.allocator_trim_strategy import AllocatorTrimStrategy
 from ltx_pipelines.utils.args import (
     ImageConditioningInput,
-    detect_checkpoint_path,
-    lipdub_arg_parser,
+    dubit_arg_parser,
+    resolve_cli_params,
 )
 from ltx_pipelines.utils.blocks import (
     AudioConditioner,
@@ -35,7 +36,7 @@ from ltx_pipelines.utils.blocks import (
     VideoDecoder,
     VideoUpsampler,
 )
-from ltx_pipelines.utils.constants import DISTILLED_SIGMAS, STAGE_2_DISTILLED_SIGMAS, detect_params
+from ltx_pipelines.utils.constants import DISTILLED_SIGMAS, STAGE_2_DISTILLED_SIGMAS
 from ltx_pipelines.utils.denoisers import SimpleDenoiser
 from ltx_pipelines.utils.helpers import assert_resolution, combined_image_conditionings, get_device
 from ltx_pipelines.utils.media_io import decode_audio_from_file, encode_video, get_videostream_metadata
@@ -48,8 +49,8 @@ def _snap_frames_to_8k1(frames: int) -> int:
     return ((frames - 1) // time_scale) * time_scale + 1
 
 
-class LipDubPipeline:
-    """Two-stage lip-dubbing with IC-LoRA video reference and appended audio reference tokens."""
+class DubItPipeline:
+    """Two-stage Dub-It with IC-LoRA video reference and appended audio reference tokens."""
 
     def __init__(
         self,
@@ -62,6 +63,7 @@ class LipDubPipeline:
         registry: Registry | None = None,
         compilation_config: CompilationConfig | None = None,
         offload_mode: OffloadMode = OffloadMode.NONE,
+        alloc_trim_strategy: AllocatorTrimStrategy = AllocatorTrimStrategy.TRIM,
     ) -> None:
         self.device = device or get_device()
         self.dtype = torch.bfloat16
@@ -75,15 +77,23 @@ class LipDubPipeline:
             self.device,
             registry=registry,
             offload_mode=offload_mode,
+            alloc_trim_strategy=alloc_trim_strategy,
         )
-        self.image_conditioner = ImageConditioner(distilled_checkpoint_path, self.dtype, self.device, registry=registry)
+        self.image_conditioner = ImageConditioner(
+            distilled_checkpoint_path,
+            self.dtype,
+            self.device,
+            registry=registry,
+            alloc_trim_strategy=alloc_trim_strategy,
+        )
         self.audio_conditioner = AudioConditioner(
             distilled_checkpoint_path,
             self.dtype,
             self.device,
             registry=registry,
+            alloc_trim_strategy=alloc_trim_strategy,
         )
-        self.stage = DiffusionStage(
+        self.stage = DiffusionStage.from_checkpoint(
             distilled_checkpoint_path,
             self.dtype,
             self.device,
@@ -92,12 +102,30 @@ class LipDubPipeline:
             registry=registry,
             compilation_config=compilation_config,
             offload_mode=offload_mode,
+            alloc_trim_strategy=alloc_trim_strategy,
         )
         self.upsampler = VideoUpsampler(
-            distilled_checkpoint_path, spatial_upsampler_path, self.dtype, self.device, registry=registry
+            distilled_checkpoint_path,
+            spatial_upsampler_path,
+            self.dtype,
+            self.device,
+            registry=registry,
+            alloc_trim_strategy=alloc_trim_strategy,
         )
-        self.video_decoder = VideoDecoder(distilled_checkpoint_path, self.dtype, self.device, registry=registry)
-        self.audio_decoder = AudioDecoder(distilled_checkpoint_path, self.dtype, self.device, registry=registry)
+        self.video_decoder = VideoDecoder(
+            distilled_checkpoint_path,
+            self.dtype,
+            self.device,
+            registry=registry,
+            alloc_trim_strategy=alloc_trim_strategy,
+        )
+        self.audio_decoder = AudioDecoder(
+            distilled_checkpoint_path,
+            self.dtype,
+            self.device,
+            registry=registry,
+            alloc_trim_strategy=alloc_trim_strategy,
+        )
         self.reference_downscale_factor = read_lora_reference_downscale_factor(ic_lora.path)
 
     def _create_stage_conditionings(
@@ -198,7 +226,7 @@ class LipDubPipeline:
             )
 
         def build_audio_ref_conditioning(audio_latent: torch.Tensor) -> AudioConditionByReferenceLatent:
-            ref_patch, ref_pos = patchify_lipdub_audio_reference_latent(
+            ref_patch, ref_pos = patchify_dubit_audio_reference_latent(
                 audio_latent,
                 negative_positions=True,
                 device=self.device,
@@ -266,7 +294,7 @@ class LipDubPipeline:
         return decoded_video, decoded_audio
 
 
-def patchify_lipdub_audio_reference_latent(
+def patchify_dubit_audio_reference_latent(
     vae_latents: torch.Tensor,
     *,
     negative_positions: bool,
@@ -291,15 +319,14 @@ def patchify_lipdub_audio_reference_latent(
 @torch.inference_mode()
 def main() -> None:
     logging.basicConfig(level=logging.INFO)
-    checkpoint_path = detect_checkpoint_path(distilled=True)
-    params = detect_params(checkpoint_path)
-    parser = lipdub_arg_parser(params=params)
+    params = resolve_cli_params(distilled=True)
+    parser = dubit_arg_parser(params=params)
     args = parser.parse_args()
 
     if not args.lora or len(args.lora) != 1:
-        raise ValueError("LipDub requires exactly one --lora (the lip-dub IC-LoRA).")
+        raise ValueError("Dub-It requires exactly one --lora (the Dub-It IC-LoRA).")
 
-    pipeline = LipDubPipeline(
+    pipeline = DubItPipeline(
         distilled_checkpoint_path=args.distilled_checkpoint_path,
         spatial_upsampler_path=args.spatial_upsampler_path,
         gemma_root=args.gemma_root,

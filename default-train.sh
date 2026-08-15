@@ -484,9 +484,9 @@ echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 
 # echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
-# echo "running uv sync to install ltx-core, ltx-pipelines, and ltx-trainer"
+# echo "running uv sync to install ltx-core, ltx-pipelines, ltx-kernels and ltx-trainer"
 # uv sync
-
+# echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
 echo "installing ltx-core requirements"
@@ -505,6 +505,13 @@ echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
 echo "installing ltx-trainer requirements"
 cd /workspace/train/LTX-2/packages/ltx-trainer
+pip3 install .
+echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
+
+
+echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
+echo "installing ltx-trainer requirements"
+cd /workspace/train/LTX-2/packages/ltx-kernels
 pip3 install .
 echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 

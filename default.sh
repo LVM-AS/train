@@ -400,6 +400,10 @@ echo "reinstalling numpy to ensure compatibility"
 pip install numpy==1.26.4
 echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
+echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
+echo "installing wget2 to speed up downloads"
+sudo apt install -y wget2
+echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
 echo "cleaning up pip cache to save space"

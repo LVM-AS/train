@@ -307,6 +307,7 @@ git clone https://github.com/capitan01R/ComfyUI-Flux2Klein-Enhancer
 git clone https://github.com/Bisnis3d/ComfyUI_KleinAngleSelector
 git clone https://github.com/alisson-anjos/ComfyUI-BFSNodes
 git clone https://github.com/liconstudio/ComfyUI-Licon-MSR
+git clone https://github.com/blepping/ComfyUI-bleh
 # git clone https://github.com/Lightricks/ComfyUI-LTXVideo
 echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
@@ -367,6 +368,7 @@ pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Flux2Klein-Enhancer/requi
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI_KleinAngleSelector/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-BFSNodes/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Licon-MSR/requirements.txt
+pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-bleh/requirements.txt
 # pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-LTXVideo/requirements.txt
 echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 

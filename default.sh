@@ -308,6 +308,7 @@ git clone https://github.com/Bisnis3d/ComfyUI_KleinAngleSelector
 git clone https://github.com/alisson-anjos/ComfyUI-BFSNodes
 git clone https://github.com/liconstudio/ComfyUI-Licon-MSR
 git clone https://github.com/blepping/ComfyUI-bleh
+git clone https://github.com/LBH-123-AI/Comfyui_Minimax_h3_latent_Upscaler
 # git clone https://github.com/Lightricks/ComfyUI-LTXVideo
 echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
@@ -369,6 +370,7 @@ pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI_KleinAngleSelector/requir
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-BFSNodes/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Licon-MSR/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-bleh/requirements.txt
+pip install -r /workspace/ComfyUI/custom_nodes/Comfyui_Minimax_h3_latent_Upscaler/requirements.txt
 # pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-LTXVideo/requirements.txt
 echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 

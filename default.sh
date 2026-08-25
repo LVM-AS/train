@@ -452,6 +452,7 @@ hf download LVMCS/49108215MI --local-dir .
 rm -rf .cache/
 echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
+mkdir -p /workspace/extra
 
 echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
 echo "cleaning up pip cache to save space"

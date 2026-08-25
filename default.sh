@@ -385,6 +385,12 @@ cd /workspace
 echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 
+echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
+echo "installing triton for faster attention"
+pip install triton
+echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
+
+
 # echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
 # echo "installing sageattention"
 # pip install sageattention --no-build-isolation

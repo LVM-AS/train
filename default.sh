@@ -458,12 +458,14 @@ hf download LVMCS/49108215MI --local-dir .
 rm -rf .cache/
 echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
-echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
-echo "- - - - ||||| EXTRA MODEL PATHS 0.00 GB ||||| - - - -"
-cd /workspace/ComfyUI
-wget https://raw.githubusercontent.com/LVM-AS/train/refs/heads/main/extra_model_paths.yaml
-mkdir -p /workspace/extra
-echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
+
+# echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
+# echo "- - - - ||||| EXTRA MODEL PATHS 0.00 GB ||||| - - - -"
+# cd /workspace/ComfyUI
+# wget https://raw.githubusercontent.com/LVM-AS/train/refs/heads/main/extra_model_paths.yaml
+# mkdir -p /workspace/extra
+# echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
+
 
 echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
 echo "cleaning up pip cache to save space"

@@ -235,6 +235,8 @@ echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
 echo "removing bloat model files to save space"
 # rm -rf /workspace/ComfyUI/models/checkpoints/sd_xl_turbo_1.0_fp16.safetensors
 rm -rf /workspace/ComfyUI/models/checkpoints/*.safetensors
+rm -rf /workspace/ComfyUI/models/checkpoints/*.safetensors.*
+rm -rf /workspace/ComfyUI/models/checkpoints/.cache/
 echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 
@@ -311,6 +313,17 @@ git clone https://github.com/blepping/ComfyUI-bleh
 git clone https://github.com/LBH-123-AI/Comfyui_Minimax_h3_latent_Upscaler
 git clone https://github.com/imbutus/ComfyUI-MiniMaxDirector
 # git clone https://github.com/Lightricks/ComfyUI-LTXVideo
+git clone https://github.com/kijai/ComfyUI-SolAttn_triton
+echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
+
+
+echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
+echo "installing H3-Longvideos custom node from Hugging Face"
+mkdir -p /workspace/ComfyUI/custom_nodes/H3-Longvideos
+cd /workspace/ComfyUI/custom_nodes/H3-Longvideos
+hf download Smite79/MiniMax-H3-Longvideos --local-dir .
+rm -rf .cache/
+cd /workspace/ComfyUI/custom_nodes
 echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 
@@ -374,6 +387,7 @@ pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-bleh/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/Comfyui_Minimax_h3_latent_Upscaler/requirements.txt
 # pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-MiniMaxDirector/requirements.txt
 # pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-LTXVideo/requirements.txt
+# pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-SolAttn_triton/requirements.txt
 echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 
@@ -401,21 +415,41 @@ echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 
 echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
+echo "uninstalling numpy to restore correct version with ComfyUI requirements"
+pip uninstall -y numpy
+pip3 uninstall -y numpy
+echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
+
+
+echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
 echo "installing base requirements again to ensure all dependencies are met"
 pip install -r /workspace/ComfyUI/requirements.txt #numpy==1.26.4 torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu128
 pip install -r /workspace/ComfyUI/manager_requirements.txt #numpy==1.26.4 torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu128
 echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 
-echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
-echo "reinstalling numpy to ensure compatibility"
-pip install numpy==1.26.4
-echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
+# echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
+# echo "reinstalling numpy to ensure compatibility"
+# pip install numpy==1.26.4
+# echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
+
 
 echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
 echo "installing wget2 to speed up downloads"
 sudo apt install -y wget2
 echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
+
+
+echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
+echo "fixing ComfyUI-WanAnimatePreprocess requirements with pip-tools"
+cd /workspace/ComfyUI/custom_nodes/ComfyUI-WanAnimatePreprocess
+pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-WanAnimatePreprocess/requirements.txt
+pip install pip-tools
+pip-compile pyproject.toml
+pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-WanAnimatePreprocess/requirements.txt
+cd /workspace/ComfyUI
+echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
+
 
 echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
 echo "cleaning up pip cache to save space"

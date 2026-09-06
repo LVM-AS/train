@@ -25,7 +25,7 @@ WORKFLOWS=(
 )
 
 CHECKPOINT_MODELS=(
-    #    ""
+#    ""
 )
 
 UNET_MODELS=(
@@ -233,8 +233,11 @@ echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
 echo "removing bloat model files to save space"
-# rm -rf /workspace/ComfyUI/models/checkpoints/*.safetensors
 rm -rf /workspace/ComfyUI/models/checkpoints/sd_xl_turbo_1.0_fp16.safetensors
+rm -rf /workspace/ComfyUI/models/checkpoints/sd_xl_turbo_1.0_fp16.safetensors.lock
+# rm -rf /workspace/ComfyUI/models/checkpoints/*.safetensors
+# rm -rf /workspace/ComfyUI/models/checkpoints/*.safetensors.*
+# rm -rf /workspace/ComfyUI/models/checkpoints/.cache/
 echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 
@@ -307,8 +310,22 @@ echo "|||||||||||||||||||||||||||||||||||||||||||||||||||||"
 # git clone https://github.com/Bisnis3d/ComfyUI_KleinAngleSelector
 # git clone https://github.com/alisson-anjos/ComfyUI-BFSNodes
 # git clone https://github.com/liconstudio/ComfyUI-Licon-MSR
-# git clone https://github.com/Lightricks/ComfyUI-LTXVideo
+# git clone https://github.com/blepping/ComfyUI-bleh
+# git clone https://github.com/LBH-123-AI/Comfyui_Minimax_h3_latent_Upscaler
+# git clone https://github.com/imbutus/ComfyUI-MiniMaxDirector
+# # git clone https://github.com/Lightricks/ComfyUI-LTXVideo
+# git clone https://github.com/kijai/ComfyUI-SolAttn_triton
 # echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
+
+
+echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
+echo "installing H3-Longvideos custom node from Hugging Face"
+mkdir -p /workspace/ComfyUI/custom_nodes/H3-Longvideos
+cd /workspace/ComfyUI/custom_nodes/H3-Longvideos
+hf download Smite79/MiniMax-H3-Longvideos --local-dir .
+rm -rf .cache/
+cd /workspace/ComfyUI/custom_nodes
+echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 
 echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
@@ -367,7 +384,11 @@ pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Flux2Klein-Enhancer/requi
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI_KleinAngleSelector/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-BFSNodes/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Licon-MSR/requirements.txt
-pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-LTXVideo/requirements.txt
+pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-bleh/requirements.txt
+pip install -r /workspace/ComfyUI/custom_nodes/Comfyui_Minimax_h3_latent_Upscaler/requirements.txt
+# pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-MiniMaxDirector/requirements.txt
+# pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-LTXVideo/requirements.txt
+# pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-SolAttn_triton/requirements.txt
 echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 
@@ -381,11 +402,24 @@ cd /workspace
 echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 
+echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
+echo "installing triton for faster attention"
+pip install triton
+echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
+
+
 # echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
 # echo "installing sageattention"
 # pip install sageattention --no-build-isolation
 # pip install sageattention==1.0.6
 # echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
+
+
+echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
+echo "uninstalling numpy to restore correct version with ComfyUI requirements"
+pip uninstall -y numpy
+pip3 uninstall -y numpy
+echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 
 echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
@@ -395,9 +429,26 @@ pip install -r /workspace/ComfyUI/manager_requirements.txt #numpy==1.26.4 torch 
 echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 
+# echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
+# echo "reinstalling numpy to ensure compatibility"
+# pip install numpy==1.26.4
+# echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
+
+
 echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
-echo "reinstalling numpy to ensure compatibility"
-pip install numpy==1.26.4
+echo "installing wget2 to speed up downloads"
+sudo apt install -y wget2
+echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
+
+
+echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
+echo "fixing ComfyUI-WanAnimatePreprocess requirements with pip-tools"
+cd /workspace/ComfyUI/custom_nodes/ComfyUI-WanAnimatePreprocess
+pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-WanAnimatePreprocess/requirements.txt
+pip install pip-tools
+pip-compile pyproject.toml
+pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-WanAnimatePreprocess/requirements.txt
+cd /workspace/ComfyUI
 echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 
@@ -405,6 +456,57 @@ echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
 echo "cleaning up pip cache to save space"
 pip cache purge
 pip3 cache purge
+echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
+
+
+# echo "|||||||||||||||||||||||||||||||||||||||||||||||||||||"
+# echo "|||||||||||||||||||||||||||||||||||||||||||||||||||||"
+# echo "||||||||||||||||| STARTING DOWNLOADS ||||||||||||||||"
+# echo "||||||||||||||||| STARTING DOWNLOADS ||||||||||||||||"
+# echo "||||||||||||||||| STARTING DOWNLOADS ||||||||||||||||"
+# echo "|||||||||||||||||||||||||||||||||||||||||||||||||||||"
+# echo "|||||||||||||||||||||||||||||||||||||||||||||||||||||"
+
+
+# echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
+# echo "removing files and folders to be replaced by huggingface repo"
+# rm -rf /workspace/ComfyUI/user/default/comfy.settings.json
+# rm -rf /workspace/ComfyUI/comfy_extras/nodes_qwen.py
+# rm -rf /workspace/ComfyUI/custom_nodes/ComfyUI-QwenVL/hf_models.json
+# echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
+
+
+echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
+echo "navigating to ComfyUI directory for repo downloads"
+cd /workspace/ComfyUI
+echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
+
+
+echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
+echo "logging in to huggingface hub again just in case"
+hf auth login --token "$HF_TOKEN"
+echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
+
+
+# echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
+# echo "- - - - - - |||| 49108215MI 0.013 GB |||| - - - - - -"
+# cd /workspace/ComfyUI
+# hf download LVMCS/49108215MI --local-dir .
+# rm -rf .cache/
+# echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
+
+
+# echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
+# echo "- - - - ||||| EXTRA MODEL PATHS 0.00 GB ||||| - - - -"
+# cd /workspace/ComfyUI
+# wget https://raw.githubusercontent.com/LVM-AS/train/refs/heads/main/extra_model_paths.yaml
+# mkdir -p /workspace/extra
+# echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
+
+
+echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
+echo "cleaning up pip cache to save space"
+pip cache purge
 echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 
@@ -433,6 +535,7 @@ rm -rf */*/*/*/*/*/*/*/*/.cache/
 rm -rf */*/*/*/*/*/*/*/*/.cache/
 echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
+export COMFYUI_ARGS="$COMFYUI_ARGS $LVMCSARGS"
 
 echo "|||||||||||||||||||||||||||||||||||||||||||||||||||||"
 echo "|||||||||||||||||||||||||||||||||||||||||||||||||||||"

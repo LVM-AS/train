@@ -318,14 +318,14 @@ echo "|||||||||||||||||||||||||||||||||||||||||||||||||||||"
 # echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 
-echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
-echo "installing H3-Longvideos custom node from Hugging Face"
-mkdir -p /workspace/ComfyUI/custom_nodes/H3-Longvideos
-cd /workspace/ComfyUI/custom_nodes/H3-Longvideos
-hf download Smite79/MiniMax-H3-Longvideos --local-dir .
-rm -rf .cache/
-cd /workspace/ComfyUI/custom_nodes
-echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
+# echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
+# echo "installing H3-Longvideos custom node from Hugging Face"
+# mkdir -p /workspace/ComfyUI/custom_nodes/H3-Longvideos
+# cd /workspace/ComfyUI/custom_nodes/H3-Longvideos
+# hf download Smite79/MiniMax-H3-Longvideos --local-dir .
+# rm -rf .cache/
+# cd /workspace/ComfyUI/custom_nodes
+# echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 
 echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"

@@ -429,10 +429,10 @@ pip install -r /workspace/ComfyUI/manager_requirements.txt #numpy==1.26.4 torch 
 echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 
-# echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
-# echo "reinstalling numpy to ensure compatibility"
-# pip install numpy==1.26.4
-# echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
+echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
+echo "reinstalling numpy to ensure compatibility"
+pip install numpy==1.26.4
+echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 
 echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
@@ -441,15 +441,15 @@ sudo apt install -y wget2
 echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 
-echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
-echo "fixing ComfyUI-WanAnimatePreprocess requirements with pip-tools"
-cd /workspace/ComfyUI/custom_nodes/ComfyUI-WanAnimatePreprocess
-pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-WanAnimatePreprocess/requirements.txt
-pip install pip-tools
-pip-compile pyproject.toml
-pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-WanAnimatePreprocess/requirements.txt
-cd /workspace/ComfyUI
-echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
+# echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
+# echo "fixing ComfyUI-WanAnimatePreprocess requirements with pip-tools"
+# cd /workspace/ComfyUI/custom_nodes/ComfyUI-WanAnimatePreprocess
+# pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-WanAnimatePreprocess/requirements.txt
+# pip install pip-tools
+# pip-compile pyproject.toml
+# pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-WanAnimatePreprocess/requirements.txt
+# cd /workspace/ComfyUI
+# echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 
 echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"

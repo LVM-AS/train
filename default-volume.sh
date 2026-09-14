@@ -316,6 +316,7 @@ echo "|||||||||||||||||||||||||||||||||||||||||||||||||||||"
 # # git clone https://github.com/Lightricks/ComfyUI-LTXVideo
 # git clone https://github.com/kijai/ComfyUI-SolAttn_triton
 # git clone https://github.com/Speach1sdef178/MiniMax-H3-Semantic-Bridge
+# git clone https://github.com/yolain/ComfyUI-Easy-Media
 # echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 
@@ -391,6 +392,7 @@ pip install -r /workspace/ComfyUI/custom_nodes/Comfyui_Minimax_h3_latent_Upscale
 # pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-LTXVideo/requirements.txt
 # pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-SolAttn_triton/requirements.txt
 # pip install -r /workspace/ComfyUI/custom_nodes/MiniMax-H3-Semantic-Bridge/requirements.txt
+# pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Easy-Media/requirements.txt
 echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 

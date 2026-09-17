@@ -317,6 +317,8 @@ git clone https://github.com/imbutus/ComfyUI-MiniMaxDirector
 # git clone https://github.com/kijai/ComfyUI-SolAttn_triton
 git clone https://github.com/Speach1sdef178/MiniMax-H3-Semantic-Bridge
 git clone https://github.com/yolain/ComfyUI-Easy-Media
+git clone https://github.com/Comfy-Org/Nvidia_RTX_Nodes_ComfyUI
+mv /workspace/ComfyUI/custom_nodes/Nvidia_RTX_Nodes_ComfyUI /workspace/ComfyUI/custom_nodes/comfyui_nvidia_rtx_nodes
 echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 
@@ -393,6 +395,7 @@ pip install -r /workspace/ComfyUI/custom_nodes/Comfyui_Minimax_h3_latent_Upscale
 # pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-SolAttn_triton/requirements.txt
 # pip install -r /workspace/ComfyUI/custom_nodes/MiniMax-H3-Semantic-Bridge/requirements.txt
 # pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Easy-Media/requirements.txt
+pip install -r /workspace/ComfyUI/custom_nodes/comfyui_nvidia_rtx_nodes/requirements.txt
 echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 

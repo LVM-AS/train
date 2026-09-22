@@ -319,7 +319,7 @@ git clone https://github.com/Speach1sdef178/MiniMax-H3-Semantic-Bridge
 git clone https://github.com/yolain/ComfyUI-Easy-Media
 git clone https://github.com/Comfy-Org/Nvidia_RTX_Nodes_ComfyUI
 mv /workspace/ComfyUI/custom_nodes/Nvidia_RTX_Nodes_ComfyUI /workspace/ComfyUI/custom_nodes/comfyui_nvidia_rtx_nodes
-git clone https://github.com/Comfy-Org/Nvidia_RTX_Nodes_ComfyUI
+# git clone https://github.com/Comfy-Org/Nvidia_RTX_Nodes_ComfyUI
 echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 

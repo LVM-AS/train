@@ -320,6 +320,8 @@ git clone https://github.com/yolain/ComfyUI-Easy-Media
 git clone https://github.com/Comfy-Org/Nvidia_RTX_Nodes_ComfyUI
 mv /workspace/ComfyUI/custom_nodes/Nvidia_RTX_Nodes_ComfyUI /workspace/ComfyUI/custom_nodes/comfyui_nvidia_rtx_nodes
 # git clone https://github.com/Comfy-Org/Nvidia_RTX_Nodes_ComfyUI
+git clone https://github.com/Luisacaotica/ComfyUI-MiniMaxH3Mod.git
+git clone https://github.com/2929Dance/ComfyUI-Minimax-H3-Text-Embeddings
 echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 
@@ -397,6 +399,8 @@ pip install -r /workspace/ComfyUI/custom_nodes/Comfyui_Minimax_h3_latent_Upscale
 # pip install -r /workspace/ComfyUI/custom_nodes/MiniMax-H3-Semantic-Bridge/requirements.txt
 # pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Easy-Media/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/comfyui_nvidia_rtx_nodes/requirements.txt
+# pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-MiniMaxH3Mod/requirements.txt
+# pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Minimax-H3-Text-Embeddings/requirements.txt
 echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 

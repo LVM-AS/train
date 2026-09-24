@@ -322,6 +322,7 @@ echo "|||||||||||||||||||||||||||||||||||||||||||||||||||||"
 # git clone https://github.com/Comfy-Org/Nvidia_RTX_Nodes_ComfyUI
 # git clone https://github.com/Luisacaotica/ComfyUI-MiniMaxH3Mod.git
 # git clone https://github.com/2929Dance/ComfyUI-Minimax-H3-Text-Embeddings
+# git clone https://github.com/Adudeguyman/ComfyUI-Fantastic-MiniMaxH3-PromptBuilder
 # echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 
@@ -401,6 +402,7 @@ pip install -r /workspace/ComfyUI/custom_nodes/Comfyui_Minimax_h3_latent_Upscale
 pip install -r /workspace/ComfyUI/custom_nodes/comfyui_nvidia_rtx_nodes/requirements.txt
 # pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-MiniMaxH3Mod/requirements.txt
 # pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Minimax-H3-Text-Embeddings/requirements.txt
+# pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Fantastic-MiniMaxH3-PromptBuilder/requirements.txt
 echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 

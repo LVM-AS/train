@@ -401,7 +401,7 @@ pip install -r /workspace/ComfyUI/custom_nodes/Comfyui_Minimax_h3_latent_Upscale
 # pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Easy-Media/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/comfyui_nvidia_rtx_nodes/requirements.txt
 # pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-MiniMaxH3Mod/requirements.txt
-pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Minimax-H3-Text-Embeddings/requirements.txt
+# pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Minimax-H3-Text-Embeddings/requirements.txt
 # pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Fantastic-MiniMaxH3-PromptBuilder/requirements.txt
 echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 

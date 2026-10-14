@@ -321,8 +321,10 @@ echo "|||||||||||||||||||||||||||||||||||||||||||||||||||||"
 # mv /workspace/ComfyUI/custom_nodes/Nvidia_RTX_Nodes_ComfyUI /workspace/ComfyUI/custom_nodes/comfyui_nvidia_rtx_nodes
 # git clone https://github.com/Comfy-Org/Nvidia_RTX_Nodes_ComfyUI
 # git clone https://github.com/Luisacaotica/ComfyUI-MiniMaxH3Mod.git
+# git clone https://github.com/FranckyB/ComfyUI-H3RefModPicker
 # git clone https://github.com/2929Dance/ComfyUI-Minimax-H3-Text-Embeddings
 # git clone https://github.com/Adudeguyman/ComfyUI-Fantastic-MiniMaxH3-PromptBuilder
+# git clone https://github.com/duckyshell/ComfyUI-MiniMaxH3-Prompt-Writer
 # echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 
@@ -401,8 +403,10 @@ pip install -r /workspace/ComfyUI/custom_nodes/Comfyui_Minimax_h3_latent_Upscale
 # pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Easy-Media/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/comfyui_nvidia_rtx_nodes/requirements.txt
 # pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-MiniMaxH3Mod/requirements.txt
+# pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-H3RefModPicker/requirements.txt
 # pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Minimax-H3-Text-Embeddings/requirements.txt
 # pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Fantastic-MiniMaxH3-PromptBuilder/requirements.txt
+# pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-MiniMaxH3-Prompt-Writer/requirements.txt
 echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 

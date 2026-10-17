@@ -469,6 +469,14 @@ pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-WanAnimatePreprocess/requ
 cd /workspace/ComfyUI
 echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
+echo "- - - - - - - - - - - - ||||||||| - - - - - - - - - -"
+echo "fixing rgthree-comfy custom node repository"
+cd /workspace/ComfyUI/custom_nodes/rgthree-comfy
+git switch -c main --track origin/main
+git switch main
+git reset --hard origin/main
+echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
+
 
 echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
 echo "cleaning up pip cache to save space"

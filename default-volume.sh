@@ -316,6 +316,7 @@ echo "|||||||||||||||||||||||||||||||||||||||||||||||||||||"
 # # git clone https://github.com/Lightricks/ComfyUI-LTXVideo
 # git clone https://github.com/kijai/ComfyUI-SolAttn_triton
 # git clone https://github.com/Speach1sdef178/MiniMax-H3-Semantic-Bridge
+# git clone https://github.com/aa335615543-ux/BUNNY_H3_Conditioning_Bridge
 # git clone https://github.com/yolain/ComfyUI-Easy-Media
 # git clone https://github.com/Comfy-Org/Nvidia_RTX_Nodes_ComfyUI
 # mv /workspace/ComfyUI/custom_nodes/Nvidia_RTX_Nodes_ComfyUI /workspace/ComfyUI/custom_nodes/comfyui_nvidia_rtx_nodes
@@ -400,6 +401,7 @@ pip install -r /workspace/ComfyUI/custom_nodes/Comfyui_Minimax_h3_latent_Upscale
 # pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-LTXVideo/requirements.txt
 # pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-SolAttn_triton/requirements.txt
 # pip install -r /workspace/ComfyUI/custom_nodes/MiniMax-H3-Semantic-Bridge/requirements.txt
+# pip install -r /workspace/ComfyUI/custom_nodes/BUNNY_H3_Conditioning_Bridge/requirements.txt
 # pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Easy-Media/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/comfyui_nvidia_rtx_nodes/requirements.txt
 # pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-MiniMaxH3Mod/requirements.txt

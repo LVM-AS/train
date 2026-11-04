@@ -305,8 +305,8 @@ git clone https://github.com/kijai/ComfyUI-segment-anything-2
 git clone https://github.com/mengqin/ComfyUI-UnetBnbModelLoader
 git clone https://github.com/Nekodificador/ComfyUI-NKD-Klein-Tools
 git clone https://github.com/supermansundies/comfyui-klein-edit-composite
-git clone https://github.com/capitan01R/Comfyui-flux2klein-Lora-loader
-git clone https://github.com/capitan01R/ComfyUI-Flux2Klein-Enhancer
+# git clone https://github.com/capitan01R/Comfyui-flux2klein-Lora-loader
+# git clone https://github.com/capitan01R/ComfyUI-Flux2Klein-Enhancer
 git clone https://github.com/Bisnis3d/ComfyUI_KleinAngleSelector
 git clone https://github.com/alisson-anjos/ComfyUI-BFSNodes
 git clone https://github.com/liconstudio/ComfyUI-Licon-MSR
@@ -325,17 +325,10 @@ git clone https://github.com/Luisacaotica/ComfyUI-MiniMaxH3Mod.git
 git clone https://github.com/FranckyB/ComfyUI-H3RefModPicker
 git clone https://github.com/2929Dance/ComfyUI-Minimax-H3-Text-Embeddings
 git clone https://github.com/Adudeguyman/ComfyUI-Fantastic-MiniMaxH3-PromptBuilder
-git clone https://github.com/duckyshell/ComfyUI-MiniMaxH3-Prompt-Writer
-echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
-
-
-echo "- - - - - - - - - - - ||||||||| - - - - - - - - - - -"
-echo "installing H3-Longvideos custom node from Hugging Face"
-mkdir -p /workspace/ComfyUI/custom_nodes/H3-Longvideos
-cd /workspace/ComfyUI/custom_nodes/H3-Longvideos
-hf download Smite79/MiniMax-H3-Longvideos --local-dir .
-rm -rf .cache/
-cd /workspace/ComfyUI/custom_nodes
+# git clone https://github.com/duckyshell/ComfyUI-MiniMaxH3-Prompt-Writer
+git clone https://github.com/Smite79/MiniMax-H3-LongVideos
+git clone https://github.com/willmiao/ComfyUI-Lora-Manager
+git clone https://github.com/erehr/ComfyUI-EreNodes
 echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 
@@ -390,8 +383,8 @@ pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-segment-anything-2/requir
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-UnetBnbModelLoader/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-NKD-Klein-Tools/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/comfyui-klein-edit-composite/requirements.txt
-pip install -r /workspace/ComfyUI/custom_nodes/Comfyui-flux2klein-Lora-loader/requirements.txt
-pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Flux2Klein-Enhancer/requirements.txt
+# pip install -r /workspace/ComfyUI/custom_nodes/Comfyui-flux2klein-Lora-loader/requirements.txt
+# pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Flux2Klein-Enhancer/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI_KleinAngleSelector/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-BFSNodes/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Licon-MSR/requirements.txt
@@ -409,6 +402,9 @@ pip install -r /workspace/ComfyUI/custom_nodes/comfyui_nvidia_rtx_nodes/requirem
 # pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Minimax-H3-Text-Embeddings/requirements.txt
 # pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Fantastic-MiniMaxH3-PromptBuilder/requirements.txt
 # pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-MiniMaxH3-Prompt-Writer/requirements.txt
+# pip install -r /workspace/ComfyUI/custom_nodes/MiniMax-H3-LongVideos/requirements.txt
+pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Lora-Manager/requirements.txt
+pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-EreNodes/requirements.txt
 echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 
@@ -501,6 +497,7 @@ echo "removing files and folders to be replaced by huggingface repo"
 rm -rf /workspace/ComfyUI/user/default/comfy.settings.json
 rm -rf /workspace/ComfyUI/comfy_extras/nodes_qwen.py
 rm -rf /workspace/ComfyUI/custom_nodes/ComfyUI-QwenVL/hf_models.json
+cd /workspace
 echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 

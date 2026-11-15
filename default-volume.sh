@@ -330,6 +330,7 @@ echo "|||||||||||||||||||||||||||||||||||||||||||||||||||||"
 # git clone https://github.com/willmiao/ComfyUI-Lora-Manager
 # git clone https://github.com/erehr/ComfyUI-EreNodes
 # git clone https://github.com/civitai/civitai-comfy-nodes
+# git clone https://github.com/ethanfel/ComfyUI-MiniMax-H3-Guide
 # echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 
@@ -407,6 +408,7 @@ pip install -r /workspace/ComfyUI/custom_nodes/comfyui_nvidia_rtx_nodes/requirem
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-Lora-Manager/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-EreNodes/requirements.txt
 pip install -r /workspace/ComfyUI/custom_nodes/civitai-comfy-nodes/requirements.txt
+# pip install -r /workspace/ComfyUI/custom_nodes/ComfyUI-MiniMax-H3-Guide/requirements.txt
 echo "- - - - - - - - - - --  DONE -- - - - - - - - - - - -"
 
 
